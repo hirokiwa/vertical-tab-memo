@@ -1,13 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link id="app-favicon" rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tab-memo</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" class="memo-app">
+      <main class="memo-app__main">
+        <section class="memo-card" aria-label="Memo editor">
+          <h2 class="memo-card__title">タブメモ</h2>
+          <p class="memo-card__description">ブラウザの縦タブで表示する 1 行メモ</p>
+          <form class="memo-card__form" aria-label="Memo form">
+            <label class="memo-card__label" for="memo-input">表示テキスト</label>
+            <input
+              id="memo-input"
+              class="memo-card__input"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              aria-describedby="memo-preview memo-url"
+            />
+          </form>
+          <section class="memo-card__icon-section" aria-label="Favicon icon selector">
+            <h3 class="memo-card__icon-title">アイコン</h3>
+            <ul id="memo-icon-list" class="memo-card__icon-list"></ul>
+          </section>
+          <h3 class="memo-card__preview-title">プレビュー</h3>
+          <p id="memo-preview" class="memo-card__preview" aria-live="polite"></p>
+          <h3 class="memo-card__url-title">URL共有</h3>
+          <div class="memo-card__url-row">
+            <p id="memo-url" class="memo-card__url" aria-live="polite"></p>
+            <button id="memo-url-copy" class="memo-card__copy-button" type="button" aria-label="URLをコピー">
+              📋 コピー
+            </button>
+          </div>
+        </section>
+      </main>
+      <dialog id="memo-custom-icon-dialog" class="memo-dialog" aria-label="任意アイコン入力モーダル">
+        <form
+          id="memo-custom-icon-form"
+          class="memo-dialog__form"
+          method="dialog"
+          aria-label="Custom favicon icon form"
+        >
+          <h3 class="memo-dialog__title">任意アイコン</h3>
+          <label class="memo-card__label" for="memo-custom-icon-input">絵文字1文字</label>
+          <input
+            id="memo-custom-icon-input"
+            class="memo-card__custom-icon-input"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            aria-describedby="memo-custom-icon-error"
+          />
+          <p id="memo-custom-icon-error" class="memo-card__custom-icon-error" aria-live="polite"></p>
+          <div class="memo-dialog__actions">
+            <button id="memo-custom-icon-close" class="memo-dialog__button" type="button" aria-label="閉じる">✖️ 閉じる</button>
+            <button
+              id="memo-custom-icon-save"
+              class="memo-dialog__button memo-dialog__button--primary"
+              type="submit"
+              aria-label="保存"
+            >
+              ✅ 保存
+            </button>
+          </div>
+        </form>
+      </dialog>
+      <footer class="memo-app__footer" aria-label="Footer">
+        <p class="memo-app__footer-text">ページタイトルと URL クエリは入力にあわせて即時更新されます。</p>
+      </footer>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
