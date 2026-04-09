@@ -56,6 +56,23 @@ body {
   gap: 0.75rem;
 }
 
+.memo-app__ad-section {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.memo-app__ad-card {
+  flex: 0 1 20rem;
+  max-width: 20rem;
+}
+
+.memo-app__ad-unit {
+  min-height: 16rem;
+}
+
 .memo-app__footer-text {
   color: var(--memo-color-subtext);
   font-size: clamp(0.95rem, 2vw, 1.1rem);
@@ -641,6 +658,12 @@ body {
   min-height: 72rem;
   border: 0;
   display: block;
+}
+
+@media (max-width: 719px) {
+  .memo-app__ad-section {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
