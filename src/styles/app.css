@@ -1,5 +1,5 @@
 :root {
-  --memo-color-background: #f5f5ef;
+  --memo-color-background: #ffffff;
   --memo-color-surface: #ffffff;
   --memo-color-text: #1f2933;
   --memo-color-subtext: #44566c;
@@ -27,17 +27,16 @@ ul {
 body {
   min-height: 100svh;
   padding: 0;
-  background:
-    radial-gradient(circle at 0% 0%, #d7efe9 0%, transparent 48%),
-    radial-gradient(circle at 100% 100%, #fce8cc 0%, transparent 52%),
-    var(--memo-color-background);
+  background: var(--memo-color-background);
   color: var(--memo-color-text);
   font-family: var(--memo-font-ui);
+  display: flex;
+  justify-content: center;
 }
 
 .memo-app {
   min-height: 100svh;
-  max-width: 880px;
+  max-width: 760px;
   width: 100%;
   padding: clamp(0.75rem, 2vw, 1.25rem);
   display: flex;
@@ -46,11 +45,7 @@ body {
 }
 
 .memo-app__footer {
-  background: var(--memo-color-surface);
-  border: 1px solid var(--memo-color-border);
-  border-radius: 1rem;
-  box-shadow: var(--memo-shadow-surface);
-  padding: clamp(1rem, 2.6vw, 1.5rem);
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -129,10 +124,6 @@ body {
 }
 
 .memo-card {
-  background: var(--memo-color-surface);
-  border: 1px solid var(--memo-color-border);
-  border-radius: 1rem;
-  box-shadow: var(--memo-shadow-surface);
   min-width: 0;
   padding: clamp(0.8rem, 2vw, 1.1rem);
   display: flex;
@@ -538,7 +529,7 @@ body {
 
 .privacy-page {
   min-height: 100svh;
-  max-width: 880px;
+  max-width: 760px;
   padding: clamp(0.75rem, 2vw, 1.25rem);
   display: flex;
   flex-direction: column;
@@ -555,11 +546,7 @@ body {
 }
 
 .privacy-policy {
-  background: var(--memo-color-surface);
-  border: 1px solid var(--memo-color-border);
-  border-radius: 1rem;
-  box-shadow: var(--memo-shadow-surface);
-  padding: clamp(0.95rem, 2.2vw, 1.4rem);
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
