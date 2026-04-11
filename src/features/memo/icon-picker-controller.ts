@@ -4,6 +4,7 @@ import type { StateService } from './state-service'
 import { createIconOptionElementId } from './view'
 
 type SetupIconPickerParameters = {
+  initialFaviconIcon: string
   pageElements: PageElements
   stateService: StateService
 }
@@ -114,10 +115,8 @@ const createUpdateSelectedIconButtons = (pageElements: PageElements) => (selecte
   })
 }
 
-export const setupIconPicker = ({ pageElements, stateService }: SetupIconPickerParameters): void => {
+export const setupIconPicker = ({ initialFaviconIcon, pageElements, stateService }: SetupIconPickerParameters): void => {
   writeCustomIconButtonIds(pageElements, [])
-  const updateSelectedIconButtons = createUpdateSelectedIconButtons(pageElements)
-  stateService.setSelectedIconButtonUpdater(updateSelectedIconButtons)
 
   const onCustomOptionClick = (event: Event): void => {
     const customIconButtonElement = event.currentTarget instanceof HTMLButtonElement ? event.currentTarget : null
@@ -182,6 +181,13 @@ export const setupIconPicker = ({ pageElements, stateService }: SetupIconPickerP
     attachCustomIconButtonHandlers(customIconButtonElement)
     return customIconButtonElement
   }
+
+  if (!isPresetFaviconIcon(initialFaviconIcon)) {
+    ensureCustomIconButton(initialFaviconIcon)
+  }
+
+  const updateSelectedIconButtons = createUpdateSelectedIconButtons(pageElements)
+  stateService.setSelectedIconButtonUpdater(updateSelectedIconButtons)
 
   const onCustomToggleClick = (): void => {
     stateService.clearCustomIconValidationMessage()

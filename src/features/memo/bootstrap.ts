@@ -20,6 +20,7 @@ export const initializePage = (initialMemoState: MemoState): void => {
   })
 
   setupIconPicker({
+    initialFaviconIcon: initialMemoState.faviconIcon,
     pageElements,
     stateService,
   })
