@@ -156,10 +156,15 @@ type LocaleMessages = {
     metaDescription: string
     title: string
     lead: string
+    privacyNoticeAriaLabel: string
     mailTitle: string
     formTitle: string
     formFrameTitle: string
     formFallback: string
+    privacyNoticeLine1: string
+    privacyNoticePrefix: string
+    privacyNoticeLinkLabel: string
+    privacyNoticeSuffix: string
     footerHome: string
     footerPrivacy: string
   }
@@ -500,10 +505,16 @@ const createContactPage = (
     LANGUAGE_SWITCH_LABEL: escapeHtml(localeMessages.switchLabel),
     TITLE: escapeHtml(localeMessages.contact.title),
     LEAD: escapeHtml(localeMessages.contact.lead),
+    PRIVACY_NOTICE_ARIA_LABEL: escapeHtml(localeMessages.contact.privacyNoticeAriaLabel),
     MAIL_TITLE: escapeHtml(localeMessages.contact.mailTitle),
     FORM_TITLE: escapeHtml(localeMessages.contact.formTitle),
     FORM_FRAME_TITLE: escapeHtml(localeMessages.contact.formFrameTitle),
     FORM_FALLBACK: escapeHtml(localeMessages.contact.formFallback),
+    PRIVACY_NOTICE_LINE_1: escapeHtml(localeMessages.contact.privacyNoticeLine1),
+    PRIVACY_NOTICE_PREFIX: escapeHtml(localeMessages.contact.privacyNoticePrefix),
+    PRIVACY_NOTICE_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
+    PRIVACY_NOTICE_LINK_LABEL: escapeHtml(localeMessages.contact.privacyNoticeLinkLabel),
+    PRIVACY_NOTICE_SUFFIX: escapeHtml(localeMessages.contact.privacyNoticeSuffix),
     CONTACT_EMAIL: messages.site.contactEmail,
     CONTACT_FORM_URL: localeMessages.contactFormUrl,
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.contactFooterNavAriaLabel),

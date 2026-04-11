@@ -6,10 +6,15 @@
         "metaDescription": "縦タブメモ のお問い合わせページ",
         "title": "お問い合わせ",
         "lead": "ご質問、ご要望、不具合報告は、メールまたはフォームからご連絡ください。",
+        "privacyNoticeAriaLabel": "個人情報の取り扱いに関する注意",
         "mailTitle": "メール",
         "formTitle": "フォーム",
         "formFrameTitle": "縦タブメモ お問い合わせフォーム",
         "formFallback": "お問い合わせフォームを表示できない場合は、contact@hirokiwa.com へご連絡ください。",
+        "privacyNoticeLine1": "ご入力いただいた個人情報は、お問い合わせ対応の目的で利用いたします。",
+        "privacyNoticePrefix": "個人情報の取り扱いについては、",
+        "privacyNoticeLinkLabel": "プライバシーポリシー",
+        "privacyNoticeSuffix": "をご確認ください。",
         "footerHome": "ホーム",
         "footerPrivacy": "プライバシーポリシー"
       }
@@ -20,10 +25,15 @@
         "metaDescription": "Contact page for Vertical Tab Memo",
         "title": "Contact",
         "lead": "For questions, requests, or bug reports, please contact us by email or through the form.",
+        "privacyNoticeAriaLabel": "Note about personal information handling",
         "mailTitle": "Email",
         "formTitle": "Form",
         "formFrameTitle": "Vertical Tab Memo contact form",
         "formFallback": "If the contact form cannot be displayed, please email contact@hirokiwa.com.",
+        "privacyNoticeLine1": "The personal information you provide will be used for the purpose of responding to your inquiry.",
+        "privacyNoticePrefix": "For details on how we handle personal information, please see our ",
+        "privacyNoticeLinkLabel": "Privacy Policy",
+        "privacyNoticeSuffix": ".",
         "footerHome": "Home",
         "footerPrivacy": "Privacy Policy"
       }

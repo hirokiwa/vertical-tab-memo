@@ -744,6 +744,20 @@ body {
   font-weight: 700;
 }
 
+.contact-page__privacy-note {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-page__privacy-note-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--memo-color-subtext);
+  margin: 0;
+}
+
 .contact-page__frame-shell {
   overflow: hidden;
   margin-inline: clamp(-0.95rem, -2.2vw, -1.4rem);
