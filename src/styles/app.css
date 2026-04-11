@@ -181,7 +181,7 @@ body {
 .memo-app__footer-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 1rem;
   place-content: center;
 }
 
@@ -189,8 +189,6 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.2rem 0.35rem;
-  border-radius: 0.45rem;
   color: var(--memo-color-subtext);
   text-decoration-line: underline;
   text-decoration-thickness: 0.08em;
@@ -230,8 +228,8 @@ body {
     color 160ms ease;
 }
 
-.memo-app__footer-link:hover {
-  border-radius: 0.65rem;
+.memo-app__footer-link:hover,
+.memo-app__footer-link:focus-visible {
   color: var(--memo-color-text);
   text-decoration-thickness: 0.12em;
   text-underline-offset: 0.2em;
@@ -243,16 +241,6 @@ body {
   text-decoration-thickness: 0.18em;
   text-underline-offset: 0.26em;
   transform: translateY(-1px);
-}
-
-.memo-app__footer-link:focus-visible {
-  outline: 2px solid rgba(15, 118, 110, 0.22);
-  outline-offset: 2px;
-  border-radius: 0.75rem;
-  color: var(--memo-color-text);
-  text-decoration-thickness: 0.12em;
-  text-underline-offset: 0.2em;
-  transform: scale(1.01);
 }
 
 .memo-app__footer-link[aria-current='page'] {
