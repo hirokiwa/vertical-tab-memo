@@ -425,6 +425,10 @@ body {
 }
 
 .memo-dialog__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   border: 2px solid var(--memo-color-border);
   border-radius: 0.7rem;
   min-height: 2.5rem;
@@ -452,6 +456,12 @@ body {
 .memo-dialog__button--primary {
   border-color: var(--memo-color-focus);
   background: #e8f4f2;
+}
+
+.memo-dialog__button-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
 }
 
 .memo-card__label {

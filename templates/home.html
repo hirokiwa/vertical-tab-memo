@@ -222,8 +222,18 @@
           />
           <p id="memo-custom-icon-error" class="memo-card__custom-icon-error" aria-live="polite"></p>
           <div class="memo-dialog__actions">
-            <button id="memo-custom-icon-close" class="memo-dialog__button" type="button" aria-label="{{CUSTOM_CLOSE_ARIA_LABEL}}">{{CUSTOM_CLOSE_LABEL}}</button>
-            <button id="memo-custom-icon-save" class="memo-dialog__button memo-dialog__button--primary" type="submit" aria-label="{{CUSTOM_SAVE_ARIA_LABEL}}">{{CUSTOM_SAVE_LABEL}}</button>
+            <button id="memo-custom-icon-close" class="memo-dialog__button" type="button" aria-label="{{CUSTOM_CLOSE_ARIA_LABEL}}">
+              <svg class="memo-dialog__button-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              </svg>
+              <span>{{CUSTOM_CLOSE_LABEL}}</span>
+            </button>
+            <button id="memo-custom-icon-save" class="memo-dialog__button memo-dialog__button--primary" type="submit" aria-label="{{CUSTOM_SAVE_ARIA_LABEL}}">
+              <svg class="memo-dialog__button-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+              </svg>
+              <span>{{CUSTOM_SAVE_LABEL}}</span>
+            </button>
           </div>
         </form>
       </dialog>

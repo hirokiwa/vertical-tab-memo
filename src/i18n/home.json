@@ -19,8 +19,8 @@
         "customDialogTitle": "任意アイコン",
         "customInputLabel": "絵文字1文字",
         "customToggleAriaLabel": "任意アイコン入力を開く",
-        "customCloseLabel": "✖️ 閉じる",
-        "customSaveLabel": "✅ 保存",
+        "customCloseLabel": "閉じる",
+        "customSaveLabel": "保存",
         "customValidationEmpty": "絵文字1文字を入力してください。",
         "customValidationMultiple": "絵文字は1文字だけ入力してください。"
       },
@@ -53,8 +53,8 @@
         "customDialogTitle": "Custom Icon",
         "customInputLabel": "One emoji",
         "customToggleAriaLabel": "Open custom icon input",
-        "customCloseLabel": "✖️ Close",
-        "customSaveLabel": "✅ Save",
+        "customCloseLabel": "Close",
+        "customSaveLabel": "Save",
         "customValidationEmpty": "Enter one emoji.",
         "customValidationMultiple": "Enter exactly one emoji."
       },
