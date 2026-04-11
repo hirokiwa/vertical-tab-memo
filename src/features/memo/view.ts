@@ -5,8 +5,8 @@ const MEMO_FORM_ID = 'memo-form'
 const MEMO_INPUT_ID = 'memo-input'
 const MEMO_ICON_LIST_ID = 'memo-icon-list'
 const MEMO_PREVIEW_ID = 'memo-preview'
-const MEMO_URL_ID = 'memo-url'
 const MEMO_URL_COPY_ID = 'memo-url-copy'
+const MEMO_URL_COPY_ICON_ID = 'memo-url-copy-icon'
 const MEMO_SHARE_X_ID = 'memo-share-x'
 const MEMO_SHARE_LINE_ID = 'memo-share-line'
 const MEMO_SHARE_NATIVE_ID = 'memo-share-native'
@@ -25,8 +25,8 @@ export const elementIds = {
   memoInput: MEMO_INPUT_ID,
   memoIconList: MEMO_ICON_LIST_ID,
   memoPreview: MEMO_PREVIEW_ID,
-  memoUrl: MEMO_URL_ID,
   memoUrlCopy: MEMO_URL_COPY_ID,
+  memoUrlCopyIcon: MEMO_URL_COPY_ICON_ID,
   memoShareX: MEMO_SHARE_X_ID,
   memoShareLine: MEMO_SHARE_LINE_ID,
   memoShareNative: MEMO_SHARE_NATIVE_ID,

@@ -8,8 +8,8 @@ export type PageElements = {
   memoInput: HTMLInputElement
   memoIconList: HTMLUListElement
   memoPreview: HTMLParagraphElement
-  memoUrl: HTMLParagraphElement
   memoUrlCopyButton: HTMLButtonElement
+  memoUrlCopyIconPath: SVGPathElement
   memoShareXButton: HTMLButtonElement
   memoShareLineButton: HTMLButtonElement
   memoShareNativeButton: HTMLButtonElement
@@ -29,8 +29,8 @@ export const getPageElements = (): PageElements => ({
   memoInput: getRequiredElementById<HTMLInputElement>(elementIds.memoInput),
   memoIconList: getRequiredElementById<HTMLUListElement>(elementIds.memoIconList),
   memoPreview: getRequiredElementById<HTMLParagraphElement>(elementIds.memoPreview),
-  memoUrl: getRequiredElementById<HTMLParagraphElement>(elementIds.memoUrl),
   memoUrlCopyButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoUrlCopy),
+  memoUrlCopyIconPath: document.getElementById(elementIds.memoUrlCopyIcon)?.querySelector('path') as SVGPathElement,
   memoShareXButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareX),
   memoShareLineButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareLine),
   memoShareNativeButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareNative),

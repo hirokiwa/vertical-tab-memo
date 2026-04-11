@@ -22,7 +22,7 @@
               type="text"
               autocomplete="off"
               spellcheck="false"
-              aria-describedby="memo-preview memo-url"
+              aria-describedby="memo-preview"
             />
           </form>
           <section class="memo-card__icon-section" aria-label="Favicon icon selector">
@@ -61,6 +61,14 @@
                 </span>
                 <span class="memo-card__share-label">LINE</span>
               </button>
+              <button id="memo-url-copy" class="memo-card__share-button" type="button" aria-label="URLをコピー">
+                <span class="memo-card__share-icon memo-card__share-icon--copy" aria-hidden="true">
+                  <svg id="memo-url-copy-icon" class="memo-card__share-icon-svg" viewBox="0 -960 960 960" fill="currentColor">
+                    <path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                  </svg>
+                </span>
+                <span class="memo-card__share-label">URLをコピー</span>
+              </button>
               <button id="memo-share-native" class="memo-card__share-button" type="button" aria-label="共有メニューを開く">
                 <span class="memo-card__share-icon memo-card__share-icon--native" aria-hidden="true">
                   <svg class="memo-card__share-icon-svg" viewBox="0 -960 960 960" fill="currentColor">
@@ -69,10 +77,6 @@
                 </span>
                 <span class="memo-card__share-label">その他</span>
               </button>
-            </div>
-            <div class="memo-card__url-row">
-              <p id="memo-url" class="memo-card__url" aria-live="polite"></p>
-              <button id="memo-url-copy" class="memo-card__copy-button" type="button" aria-label="URLをコピー">📋 コピー</button>
             </div>
             <p id="memo-share-note" class="memo-card__note">
               共有 URL を第三者へ送ると入力内容が相手にも表示されます。

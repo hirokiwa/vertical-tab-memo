@@ -367,39 +367,15 @@ body {
   transform: scale(1.01);
 }
 
-.memo-card__preview,
-.memo-card__url {
+.memo-card__preview {
   border: 1px solid var(--memo-color-border);
   border-radius: 0.7rem;
   padding: 0.6rem 0.85rem;
   background: #fbfcfe;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
-}
-
-.memo-card__preview {
   font-size: clamp(1.25rem, 4vw, 2rem);
   font-weight: 700;
-}
-
-.memo-card__url {
-  color: var(--memo-color-subtext);
-  font-family: var(--memo-font-mono);
-  font-size: 0.9rem;
-  flex: 1 1 16rem;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-wrap: normal;
-}
-
-.memo-card__url-row {
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 0;
-  gap: 0.45rem;
-  align-items: center;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .memo-card__share-section {
@@ -414,15 +390,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-  gap: 0.3rem;
 }
 
-.memo-card__copy-button,
 .memo-card__share-button {
   border: 2px solid transparent;
   border-radius: 0.7rem;
-  min-height: 2.35rem;
-  padding: 0.5rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 4.7rem;
+  min-width: 4.7rem;
+  padding: 0;
   background: transparent;
   color: var(--memo-color-text);
   font: inherit;
@@ -437,22 +417,10 @@ body {
     background-color 160ms ease;
 }
 
-.memo-card__copy-button {
-  min-width: 7.5rem;
-  flex: 0 0 auto;
-}
-
-.memo-card__copy-button:hover {
-  background: #f3f8f7;
-  border-radius: 0.95rem;
-  transform: translateY(-1px);
-}
-
 .memo-card__share-button:hover .memo-card__share-icon {
   transform: scale(1.08);
 }
 
-.memo-card__copy-button:focus-visible,
 .memo-card__share-button:focus-visible {
   outline: 3px solid rgba(15, 118, 110, 0.32);
   outline-offset: 2px;
@@ -465,17 +433,6 @@ body {
   opacity: 0.55;
   cursor: not-allowed;
   transform: none;
-}
-
-.memo-card__share-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  min-height: 4.7rem;
-  max-width: 100%;
-  padding: 0.55rem 0.5rem;
 }
 
 .memo-card__share-icon {
@@ -498,7 +455,17 @@ body {
   color: #ffffff;
 }
 
+.memo-card__share-icon--copy {
+  background: #dc2626;
+  color: #ffffff;
+}
+
 .memo-card__share-icon--native .memo-card__share-icon-svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.memo-card__share-icon--copy .memo-card__share-icon-svg {
   width: 1.05rem;
   height: 1.05rem;
 }
@@ -555,6 +522,7 @@ body {
 .privacy-policy__header,
 .privacy-policy__section,
 .privacy-policy__contact-list {
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
@@ -578,6 +546,7 @@ body {
 .privacy-policy__contact-description {
   font-size: 0.98rem;
   line-height: 1.75;
+  margin: 0;
 }
 
 .privacy-policy__section-title {
@@ -612,10 +581,6 @@ body {
   line-height: 1.7;
 }
 
-.privacy-policy__contact-list {
-  padding: 0;
-}
-
 .privacy-policy__contact-row {
   padding: 0.8rem 0.9rem;
   border: 1px solid var(--memo-color-border);
@@ -628,10 +593,6 @@ body {
 
 .privacy-policy__contact-term {
   font-weight: 700;
-}
-
-.privacy-policy__contact-description {
-  margin: 0;
 }
 
 .contact-page__frame-shell {
