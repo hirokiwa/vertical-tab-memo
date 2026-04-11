@@ -14,6 +14,7 @@ type SiteMessages = {
     lineIconUrl: string
     contactEmail: string
     operatorName: string
+    creatorUrl: string
   }
   iconOptions: Array<{
     icon: string
@@ -47,6 +48,9 @@ type CommonMessagesFile = {
       | 'homeFooterNavAriaLabel'
       | 'contactFooterNavAriaLabel'
       | 'privacyFooterNavAriaLabel'
+      | 'creatorCreditPrefix'
+      | 'creatorCreditLabel'
+      | 'creatorCreditAriaLabel'
     >
   >
 }
@@ -113,6 +117,9 @@ type LocaleMessages = {
   homeFooterNavAriaLabel: string
   contactFooterNavAriaLabel: string
   privacyFooterNavAriaLabel: string
+  creatorCreditPrefix: string
+  creatorCreditLabel: string
+  creatorCreditAriaLabel: string
   memo: {
     fallbackText: string
     editorTitle: string
@@ -465,6 +472,10 @@ const createHomePage = (
     AD_SECTION_ARIA_LABEL: escapeHtml(localeMessages.adSectionAriaLabel),
     FOOTER_ARIA_LABEL: escapeHtml(localeMessages.homeFooterAriaLabel),
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.homeFooterNavAriaLabel),
+    CREATOR_LINK_HREF: messages.site.creatorUrl,
+    CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
+    CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
+    CREATOR_LINK_ARIA_LABEL: escapeHtml(localeMessages.creatorCreditAriaLabel),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
     HOME_LINK_TEXT: escapeHtml(localeMessages.home.footerHome),
     CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
@@ -520,6 +531,10 @@ const createContactPage = (
     CONTACT_EMAIL: messages.site.contactEmail,
     CONTACT_FORM_URL: localeMessages.contactFormUrl,
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.contactFooterNavAriaLabel),
+    CREATOR_LINK_HREF: messages.site.creatorUrl,
+    CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
+    CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
+    CREATOR_LINK_ARIA_LABEL: escapeHtml(localeMessages.creatorCreditAriaLabel),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
     HOME_LINK_TEXT: escapeHtml(localeMessages.contact.footerHome),
     CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
@@ -561,6 +576,10 @@ const createPrivacyPage = (
     TITLE: escapeHtml(localeMessages.privacy.title),
     LEAD: escapeHtml(localeMessages.privacy.lead),
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.privacyFooterNavAriaLabel),
+    CREATOR_LINK_HREF: messages.site.creatorUrl,
+    CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
+    CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
+    CREATOR_LINK_ARIA_LABEL: escapeHtml(localeMessages.creatorCreditAriaLabel),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
     HOME_LINK_TEXT: escapeHtml(localeMessages.privacy.footerHome),
     PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),

@@ -9,7 +9,8 @@
     "xIconUrl": "https://grandring.hirokiwa.com/x-icon.svg",
     "lineIconUrl": "https://grandring.hirokiwa.com/line-icon.svg",
     "contactEmail": "contact@hirokiwa.com",
-    "operatorName": "hirokiwa"
+    "operatorName": "hirokiwa",
+    "creatorUrl": "https://me.hirokiwa.com"
   },
   "iconOptions": [
     { "icon": "😀", "ja": "笑顔", "en": "Smile" },
@@ -61,7 +62,10 @@
       "homeFooterAriaLabel": "フッター",
       "homeFooterNavAriaLabel": "フッターリンク",
       "contactFooterNavAriaLabel": "お問い合わせページのフッターリンク",
-      "privacyFooterNavAriaLabel": "プライバシーポリシーページのフッターリンク"
+      "privacyFooterNavAriaLabel": "プライバシーポリシーページのフッターリンク",
+      "creatorCreditPrefix": "2026 ",
+      "creatorCreditLabel": "ひろきゎ",
+      "creatorCreditAriaLabel": "ひろきゎのプロフィールを新しいタブで開く"
     },
     "en": {
       "htmlLang": "en",
@@ -80,7 +84,10 @@
       "homeFooterAriaLabel": "Footer",
       "homeFooterNavAriaLabel": "Footer links",
       "contactFooterNavAriaLabel": "Contact page footer links",
-      "privacyFooterNavAriaLabel": "Privacy policy page footer links"
+      "privacyFooterNavAriaLabel": "Privacy policy page footer links",
+      "creatorCreditPrefix": "2026 ",
+      "creatorCreditLabel": "ひろきゎ",
+      "creatorCreditAriaLabel": "Open Hirokiwa profile in a new tab"
     }
   }
 }
