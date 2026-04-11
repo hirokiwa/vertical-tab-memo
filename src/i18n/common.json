@@ -8,7 +8,6 @@
     "twitterSite": "@hirokiwasan",
     "xIconUrl": "https://grandring.hirokiwa.com/x-icon.svg",
     "lineIconUrl": "https://grandring.hirokiwa.com/line-icon.svg",
-    "contactFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd8bpfI5QppLfBfRvHRrGM2N-nkhPpXSy6vbva--LU0qOjWmg/viewform?embedded=true",
     "contactEmail": "contact@hirokiwa.com",
     "operatorName": "hirokiwa"
   },
@@ -57,6 +56,7 @@
       "iconSectionAriaLabel": "アイコンの選択",
       "shareGroupAriaLabel": "共有方法",
       "customDialogFormAriaLabel": "任意アイコン入力フォーム",
+      "contactFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd8bpfI5QppLfBfRvHRrGM2N-nkhPpXSy6vbva--LU0qOjWmg/viewform?embedded=true",
       "adSectionAriaLabel": "スポンサーリンク",
       "homeFooterAriaLabel": "フッター",
       "homeFooterNavAriaLabel": "フッターリンク",
@@ -75,6 +75,7 @@
       "iconSectionAriaLabel": "Choose an icon",
       "shareGroupAriaLabel": "Share options",
       "customDialogFormAriaLabel": "Custom icon input form",
+      "contactFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLScAIuQEAJkrqHUJXx1XDkb_J7hJfC2EtDjvm7Na6F0YzP9xsg/viewform?embedded=true",
       "adSectionAriaLabel": "Sponsored links",
       "homeFooterAriaLabel": "Footer",
       "homeFooterNavAriaLabel": "Footer links",

@@ -12,7 +12,6 @@ type SiteMessages = {
     twitterSite: string
     xIconUrl: string
     lineIconUrl: string
-    contactFormUrl: string
     contactEmail: string
     operatorName: string
   }
@@ -42,6 +41,7 @@ type CommonMessagesFile = {
       | 'iconSectionAriaLabel'
       | 'shareGroupAriaLabel'
       | 'customDialogFormAriaLabel'
+      | 'contactFormUrl'
       | 'adSectionAriaLabel'
       | 'homeFooterAriaLabel'
       | 'homeFooterNavAriaLabel'
@@ -107,6 +107,7 @@ type LocaleMessages = {
   iconSectionAriaLabel: string
   shareGroupAriaLabel: string
   customDialogFormAriaLabel: string
+  contactFormUrl: string
   adSectionAriaLabel: string
   homeFooterAriaLabel: string
   homeFooterNavAriaLabel: string
@@ -504,7 +505,7 @@ const createContactPage = (
     FORM_FRAME_TITLE: escapeHtml(localeMessages.contact.formFrameTitle),
     FORM_FALLBACK: escapeHtml(localeMessages.contact.formFallback),
     CONTACT_EMAIL: messages.site.contactEmail,
-    CONTACT_FORM_URL: messages.site.contactFormUrl,
+    CONTACT_FORM_URL: localeMessages.contactFormUrl,
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.contactFooterNavAriaLabel),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
     HOME_LINK_TEXT: escapeHtml(localeMessages.contact.footerHome),
