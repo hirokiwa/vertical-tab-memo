@@ -685,14 +685,6 @@ body {
   gap: 0.65rem;
 }
 
-.privacy-policy__eyebrow {
-  color: var(--memo-color-highlight);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .privacy-policy__title {
   font-size: clamp(1.45rem, 3vw, 1.95rem);
   line-height: 1.2;

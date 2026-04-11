@@ -153,7 +153,6 @@ type LocaleMessages = {
   contact: {
     metaTitle: string
     metaDescription: string
-    eyebrow: string
     title: string
     lead: string
     mailTitle: string
@@ -166,7 +165,6 @@ type LocaleMessages = {
   privacy: {
     metaTitle: string
     metaDescription: string
-    eyebrow: string
     title: string
     lead: string
     sections: PrivacySection[]
@@ -499,7 +497,6 @@ const createContactPage = (
     LANGUAGE_SWITCH_LOCALE: localeMessages.switchLocale,
     LANGUAGE_SWITCH_ARIA_LABEL: escapeHtml(localeMessages.switchAriaLabel),
     LANGUAGE_SWITCH_LABEL: escapeHtml(localeMessages.switchLabel),
-    EYEBROW: escapeHtml(localeMessages.contact.eyebrow),
     TITLE: escapeHtml(localeMessages.contact.title),
     LEAD: escapeHtml(localeMessages.contact.lead),
     MAIL_TITLE: escapeHtml(localeMessages.contact.mailTitle),
@@ -546,7 +543,6 @@ const createPrivacyPage = (
     LANGUAGE_SWITCH_LOCALE: localeMessages.switchLocale,
     LANGUAGE_SWITCH_ARIA_LABEL: escapeHtml(localeMessages.switchAriaLabel),
     LANGUAGE_SWITCH_LABEL: escapeHtml(localeMessages.switchLabel),
-    EYEBROW: escapeHtml(localeMessages.privacy.eyebrow),
     TITLE: escapeHtml(localeMessages.privacy.title),
     LEAD: escapeHtml(localeMessages.privacy.lead),
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.privacyFooterNavAriaLabel),
