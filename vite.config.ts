@@ -72,6 +72,21 @@ const moveGeneratedBuildFiles = (): void => {
   rmSync(distGeneratedRoot, { recursive: true, force: true })
 }
 
+const resolveGeneratedPagePath = (requestPathname: string): string | undefined => {
+  const directMatch = generatedPages.routes[requestPathname]
+
+  if (directMatch !== undefined) {
+    return directMatch
+  }
+
+  if (requestPathname.includes('.')) {
+    return undefined
+  }
+
+  const normalizedRequestPathname = requestPathname.endsWith('/') ? requestPathname : `${requestPathname}/`
+  return generatedPages.routes[normalizedRequestPathname]
+}
+
 export default defineConfig(() => ({
   plugins: [
     {
@@ -81,10 +96,7 @@ export default defineConfig(() => ({
         server.middlewares.use(async (request, response, next) => {
           const requestUrl = request.url === undefined ? '/' : request.url
           const requestPathname = requestUrl.split('?')[0]
-          const normalizedRequestPathname = requestPathname.endsWith('/')
-            ? requestPathname
-            : `${requestPathname}/`
-          const htmlFilePath = generatedPages.routes[normalizedRequestPathname]
+          const htmlFilePath = resolveGeneratedPagePath(requestPathname)
 
           if (htmlFilePath === undefined) {
             next()
