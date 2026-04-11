@@ -1,6 +1,3 @@
-import { FAVICON_OPTIONS } from '../../lib/memo'
-import { getRequiredElementById } from '../../shared/dom'
-
 const MEMO_FORM_ID = 'memo-form'
 const MEMO_INPUT_ID = 'memo-input'
 const MEMO_ICON_LIST_ID = 'memo-icon-list'
@@ -40,30 +37,3 @@ export const elementIds = {
 } as const
 
 export const createIconOptionElementId = (index: number): string => `memo-icon-option-${index}`
-
-const createIconButtonMarkup = (icon: string, label: string, index: number): string => `
-  <li class="memo-card__icon-item">
-    <button
-      id="${createIconOptionElementId(index)}"
-      class="memo-card__icon-button"
-      type="button"
-      aria-pressed="false"
-      aria-label="${label}アイコンを選択"
-      tabindex="-1"
-    >
-      ${icon}
-    </button>
-  </li>
-`
-
-export const renderPresetIconButtons = (): void => {
-  const iconListElement = getRequiredElementById<HTMLUListElement>(elementIds.memoIconList)
-  const customToggleItemElement = getRequiredElementById<HTMLLIElement>(elementIds.memoCustomIconToggleItem)
-  const iconMarkup = FAVICON_OPTIONS.map((faviconOption, index) =>
-    createIconButtonMarkup(faviconOption.icon, faviconOption.label, index),
-  ).join('')
-
-  const presetIconTemplateElement = document.createElement('template')
-  presetIconTemplateElement.innerHTML = iconMarkup
-  iconListElement.insertBefore(presetIconTemplateElement.content, customToggleItemElement)
-}

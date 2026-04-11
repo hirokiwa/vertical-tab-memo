@@ -4,11 +4,8 @@ import { setupForm } from './form-controller'
 import { setupIconPicker } from './icon-picker-controller'
 import { setupShare } from './share-controller'
 import { createStateService } from './state-service'
-import { renderPresetIconButtons } from './view'
 
 export const initializePage = (initialMemoState: MemoState): void => {
-  renderPresetIconButtons()
-
   const pageElements = getPageElements()
   const stateService = createStateService(pageElements)
 
