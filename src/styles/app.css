@@ -682,7 +682,18 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+}
+
+.privacy-policy__heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.privacy-policy__site-name {
+  color: var(--memo-color-subtext);
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
 .privacy-policy__title {
