@@ -1,8 +1,10 @@
 import { createShareText, createShareUrlFromMemoState, createWebShareDataFromMemoState } from '../../lib/memo'
 import type { PageElements } from './elements'
+import type { PageConfig } from './page-config'
 import type { StateService } from './state-service'
 
 type SetupShareParameters = {
+  pageConfig: PageConfig
   pageElements: PageElements
   stateService: StateService
 }
@@ -15,7 +17,7 @@ const openShareWindow = (shareUrl: string): void => {
   window.open(shareUrl, '_blank', 'noopener,noreferrer')
 }
 
-export const setupShare = ({ pageElements, stateService }: SetupShareParameters): void => {
+export const setupShare = ({ pageConfig, pageElements, stateService }: SetupShareParameters): void => {
   const onCopyClick = (): void => {
     const shareUrl = createShareUrlFromMemoState(stateService.readCurrentMemoState(), window.location)
     if (shareUrl.length === 0) {
@@ -32,14 +34,14 @@ export const setupShare = ({ pageElements, stateService }: SetupShareParameters)
   const onShareXClick = (): void => {
     const memoState = stateService.readCurrentMemoState()
     const shareUrl = createShareUrlFromMemoState(memoState, window.location)
-    const shareText = createShareText('x', memoState)
+    const shareText = createShareText('x', memoState, pageConfig.share, pageConfig.fallbackMemoText)
     openShareWindow(`https://x.com/intent/post?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`)
   }
 
   const onShareLineClick = (): void => {
     const memoState = stateService.readCurrentMemoState()
     const shareUrl = createShareUrlFromMemoState(memoState, window.location)
-    const shareText = `${createShareText('line', memoState)}\n${shareUrl}`
+    const shareText = `${createShareText('line', memoState, pageConfig.share, pageConfig.fallbackMemoText)}\n${shareUrl}`
     openShareWindow(`https://line.me/R/msg/text/?${encodeURIComponent(shareText)}`)
   }
 
@@ -50,7 +52,7 @@ export const setupShare = ({ pageElements, stateService }: SetupShareParameters)
 
     const memoState = stateService.readCurrentMemoState()
     const shareUrl = createShareUrlFromMemoState(memoState, window.location)
-    const webShareData = createWebShareDataFromMemoState(memoState)
+    const webShareData = createWebShareDataFromMemoState(memoState, pageConfig.share, pageConfig.fallbackMemoText)
 
     void navigator.share({
       title: webShareData.title,

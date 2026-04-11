@@ -2,145 +2,32 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link id="app-favicon" rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/src/styles/app.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="縦タブメモ のプライバシーポリシー" />
-    <title>プライバシーポリシー | 縦タブメモ</title>
+    <meta name="robots" content="noindex,follow" />
+    <title>Redirecting...</title>
+    <script>
+      const readPreferredLocale = () => {
+        const languageCandidates =
+          Array.isArray(navigator.languages) && navigator.languages.length > 0
+            ? navigator.languages
+            : typeof navigator.language === 'string' && navigator.language.length > 0
+              ? [navigator.language]
+              : []
+
+        const preferredLanguage = languageCandidates[0]
+        if (typeof preferredLanguage !== 'string' || preferredLanguage.length === 0) {
+          return 'ja'
+        }
+
+        return preferredLanguage.toLowerCase().startsWith('ja') ? 'ja' : 'en'
+      }
+
+      const redirectLocale = readPreferredLocale()
+      window.location.replace(`/${redirectLocale}/privacy/`)
+    </script>
   </head>
   <body>
-    <div id="app" class="privacy-page">
-      <main class="privacy-page__main">
-        <article class="privacy-policy" aria-labelledby="privacy-policy-title">
-          <header class="privacy-policy__header">
-            <p class="privacy-policy__eyebrow">🔐 Privacy Policy</p>
-            <h1 id="privacy-policy-title" class="privacy-policy__title">プライバシーポリシー</h1>
-            <p class="privacy-policy__lead">
-              縦タブメモ（以下、「当サイト」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、
-              ユーザー情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
-            </p>
-          </header>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-1">
-            <h2 id="privacy-section-1" class="privacy-policy__section-title">第1条（個人情報）</h2>
-            <p class="privacy-policy__text">
-              「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，
-              生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報，容貌，指紋，声紋にかかるデータ，
-              健康保険証の保険者番号など単体で特定の個人を識別できる情報（個人識別情報）をいいます。
-            </p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-2">
-            <h2 id="privacy-section-2" class="privacy-policy__section-title">第2条（利用目的）</h2>
-            <ul class="privacy-policy__list">
-              <li class="privacy-policy__list-item">
-                Google Analytics によるアクセス解析
-                閲覧ページ，利用端末，ブラウザ情報，IP アドレス等（匿名化され，個人を特定するものではありません）を取得し，
-                本サービスの利用状況の分析およびサービス改善のために利用します。
-              </li>
-              <li class="privacy-policy__list-item">
-                お問い合わせフォーム
-                名前，メールアドレス，その他必要事項を取得し，お問い合わせへの回答および必要な情報提供のために利用します。
-              </li>
-            </ul>
-            <p class="privacy-policy__text">上記の目的以外では，あらかじめ本人の同意を得ることなく利用しません。</p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-3">
-            <h2 id="privacy-section-3" class="privacy-policy__section-title">第3条（当サイトの提携先に関する事項）</h2>
-            <h3 class="privacy-policy__subsection-title">1. 広告の配信について</h3>
-            <p class="privacy-policy__text">
-              当サイトは第三者配信の広告サービス「Google Adsense」を利用しています。Google を含む第三者配信事業者は，
-              ユーザーの過去のアクセス情報に基づいて広告を配信します。Google が広告 Cookie を使用することで，
-              ユーザーが当サイトや他のサイトにアクセスした情報に基づき適切な広告を表示できます。
-            </p>
-            <p class="privacy-policy__text">
-              ユーザーは
-              <a class="privacy-policy__link" href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer">Google 広告設定</a>
-              からパーソナライズ広告を無効にできます。また，
-              <a class="privacy-policy__link" href="https://www.aboutads.info" target="_blank" rel="noreferrer">www.aboutads.info</a>
-              にアクセスすることで，第三者配信事業者の Cookie の使用を無効にできます。Cookie はブラウザの設定で無効化することも可能です。
-              Google アドセンスに関する詳細は，
-              <a class="privacy-policy__link" href="https://www.google.co.jp/policies/technologies/ads/" target="_blank" rel="noreferrer">広告ポリシーと規約</a>
-              をご覧ください。
-            </p>
-            <h3 class="privacy-policy__subsection-title">2. アクセス解析ツールについて</h3>
-            <p class="privacy-policy__text">
-              当サイトでは，Google によるアクセス解析ツール「Google アナリティクス」を利用しています。Google アナリティクスは
-              トラフィックデータ収集のために Cookie を使用します。このデータは匿名で収集され，個人を特定するものではありません。詳細は
-              <a class="privacy-policy__link" href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noreferrer">
-                Google アナリティクス利用規約
-              </a>
-              をご覧ください。
-            </p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-4">
-            <h2 id="privacy-section-4" class="privacy-policy__section-title">第4条（利用目的の変更）</h2>
-            <p class="privacy-policy__text">当サイトは，利用目的が変更前と関連性を有すると合理的に認められる場合に限り，個人情報の利用目的を変更するものとします。</p>
-            <p class="privacy-policy__text">利用目的の変更を行った場合には，変更後の目的について，当サイト所定の方法により，ユーザーに通知し，または本ウェブサイト上に公表します。</p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-5">
-            <h2 id="privacy-section-5" class="privacy-policy__section-title">第5条（個人情報の第三者提供）</h2>
-            <ol class="privacy-policy__ordered-list">
-              <li class="privacy-policy__ordered-list-item">当サイトは，次に掲げる場合を除いて，あらかじめユーザーの同意を得ることなく，第三者に個人情報を提供しません。ただし，個人情報保護法その他の法令で認められる場合を除きます。</li>
-              <li class="privacy-policy__ordered-list-item">人の生命，身体または財産の保護のために必要がある場合</li>
-              <li class="privacy-policy__ordered-list-item">公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合</li>
-              <li class="privacy-policy__ordered-list-item">国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに協力する必要がある場合</li>
-              <li class="privacy-policy__ordered-list-item">あらかじめ次の事項を告知あるいは公表し，かつ当サイトが個人情報保護委員会に届出をしたとき</li>
-            </ol>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-6">
-            <h2 id="privacy-section-6" class="privacy-policy__section-title">第6条（個人情報の開示）</h2>
-            <p class="privacy-policy__text">当サイトは，本人から個人情報の開示を求められたときは，本人に対し，遅滞なくこれを開示します。ただし，開示することにより次のいずれかに該当する場合は，その全部または一部を開示しないこともあり，開示しない決定をした場合には，その旨を遅滞なく通知します。</p>
-            <ol class="privacy-policy__ordered-list">
-              <li class="privacy-policy__ordered-list-item">本人または第三者の生命，身体，財産その他の権利利益を害するおそれがある場合</li>
-              <li class="privacy-policy__ordered-list-item">当サイトの運営の適正な実施に著しい支障を及ぼすおそれがある場合</li>
-              <li class="privacy-policy__ordered-list-item">その他法令に違反することとなる場合</li>
-            </ol>
-            <p class="privacy-policy__text">前項の定めにかかわらず，履歴情報および特性情報などの個人情報以外の情報については，原則として開示いたしません。</p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-7">
-            <h2 id="privacy-section-7" class="privacy-policy__section-title">第7条（個人情報の訂正および削除）</h2>
-            <p class="privacy-policy__text">ユーザーは，当サイトの保有する自己の個人情報が誤った情報である場合には，当サイトが定める手続により，当サイトに対して個人情報の訂正，追加または削除を請求できます。</p>
-            <p class="privacy-policy__text">当サイトは，ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の訂正等を行います。</p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-8">
-            <h2 id="privacy-section-8" class="privacy-policy__section-title">第8条（個人情報の利用停止等）</h2>
-            <p class="privacy-policy__text">当サイトは，本人から，個人情報が利用目的の範囲を超えて取り扱われているという理由，または不正の手段により取得されたものであるという理由により，その利用の停止または消去を求められた場合には，遅滞なく必要な調査を行います。</p>
-            <p class="privacy-policy__text">前項の調査結果に基づき，その請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の利用停止等を行います。</p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-9">
-            <h2 id="privacy-section-9" class="privacy-policy__section-title">第9条（プライバシーポリシーの変更）</h2>
-            <p class="privacy-policy__text">本ポリシーの内容は，法令その他本ポリシーに別段の定めのある事項を除いて，ユーザーに通知することなく，変更することができます。</p>
-            <p class="privacy-policy__text">当サイトが別途定める場合を除いて，変更後のプライバシーポリシーは，本ウェブサイトに掲載したときから効力を生じるものとします。</p>
-          </section>
-          <section class="privacy-policy__section" aria-labelledby="privacy-section-10">
-            <h2 id="privacy-section-10" class="privacy-policy__section-title">第10条（お問い合わせ）</h2>
-            <p class="privacy-policy__text">本ポリシーに関するお問い合わせは、下記までお願いいたします。</p>
-            <dl class="privacy-policy__contact-list">
-              <div class="privacy-policy__contact-row">
-                <dt class="privacy-policy__contact-term">サイト名</dt>
-                <dd class="privacy-policy__contact-description">縦タブメモ</dd>
-              </div>
-              <div class="privacy-policy__contact-row">
-                <dt class="privacy-policy__contact-term">運営者</dt>
-                <dd class="privacy-policy__contact-description">hirokiwa</dd>
-              </div>
-              <div class="privacy-policy__contact-row">
-                <dt class="privacy-policy__contact-term">E-mail</dt>
-                <dd class="privacy-policy__contact-description">
-                  <a class="privacy-policy__link" href="mailto:contact@hirokiwa.com">contact@hirokiwa.com</a>
-                </dd>
-              </div>
-            </dl>
-            <p class="privacy-policy__text">お問い合わせフォーム: <a class="privacy-policy__link" href="/contact/">📝 お問い合わせページ</a></p>
-          </section>
-        </article>
-      </main>
-      <footer class="privacy-page__footer">
-        <nav class="memo-app__footer-nav" aria-label="Privacy footer links">
-          <a class="memo-app__footer-link" href="/">🏠 メイン画面に戻る</a>
-          <a class="memo-app__footer-link" href="/contact/">✉️ お問い合わせ</a>
-        </nav>
-      </footer>
-    </div>
+    <p>Redirecting to your preferred language...</p>
     <!-- <script type="module" src="/src/entries/privacy.ts"></script> -->
   </body>
 </html>

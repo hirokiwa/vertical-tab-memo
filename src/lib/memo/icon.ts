@@ -55,10 +55,13 @@ export const createFaviconDataUrl = (faviconIcon: string): string => {
   return `data:image/svg+xml,${encodeURIComponent(faviconSvg)}`
 }
 
-export const createCustomIconValidationMessage = (rawIconValue: string): string => {
+export const createCustomIconValidationMessage = (
+  rawIconValue: string,
+  messages: { empty: string; multiple: string },
+): string => {
   const trimmedIconValue = rawIconValue.trim()
   if (isSingleEmoji(trimmedIconValue)) {
     return ''
   }
-  return trimmedIconValue.length === 0 ? '絵文字1文字を入力してください。' : '絵文字は1文字だけ入力してください。'
+  return trimmedIconValue.length === 0 ? messages.empty : messages.multiple
 }

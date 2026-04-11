@@ -1,5 +1,4 @@
 export const EMPTY_MEMO_TEXT = ''
-export const FALLBACK_MEMO_TEXT = '縦タブワロタ'
 export const MAX_MEMO_TEXT_LENGTH = 30
 
 export type MemoTextState = {
@@ -10,7 +9,7 @@ export const clampMemoText = (value: string): string => value.slice(0, MAX_MEMO_
 
 export const countMemoTextCharacters = (value: string): number => value.length
 
-export const normalizeMemoText = (value: string): string => {
+export const normalizeMemoText = (value: string, fallbackMemoText: string): string => {
   const trimmedValue = clampMemoText(value).trim()
-  return trimmedValue.length > 0 ? trimmedValue : FALLBACK_MEMO_TEXT
+  return trimmedValue.length > 0 ? trimmedValue : fallbackMemoText
 }

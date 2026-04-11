@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex,follow" />
-    <title>Redirecting...</title>
+    <title>{{REDIRECT_TITLE}}</title>
     <script>
       const readPreferredLocale = () => {
         const languageCandidates =
@@ -23,11 +23,11 @@
       }
 
       const redirectLocale = readPreferredLocale()
-      window.location.replace(`/${redirectLocale}/`)
+      window.location.replace(`/${redirectLocale}{{REDIRECT_SUFFIX}}`)
     </script>
   </head>
   <body>
-    <p>Redirecting to your preferred language...</p>
-    
+    <p>{{REDIRECT_MESSAGE}}</p>
+    {{EXTRA_COMMENT}}
   </body>
 </html>

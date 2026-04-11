@@ -1,0 +1,34 @@
+{
+  "locales": {
+    "ja": {
+      "contact": {
+        "metaTitle": "お問い合わせ | 縦タブメモ",
+        "metaDescription": "縦タブメモ のお問い合わせページ",
+        "eyebrow": "✉️ Contact",
+        "title": "お問い合わせ",
+        "lead": "ご質問、ご要望、不具合報告は、メールまたはフォームからご連絡ください。",
+        "mailTitle": "メール",
+        "formTitle": "フォーム",
+        "formFrameTitle": "縦タブメモ お問い合わせフォーム",
+        "formFallback": "お問い合わせフォームを表示できない場合は、contact@hirokiwa.com へご連絡ください。",
+        "footerHome": "🏠 メイン画面に戻る",
+        "footerPrivacy": "🔐 プライバシーポリシー"
+      }
+    },
+    "en": {
+      "contact": {
+        "metaTitle": "Contact | Vertical Tab Memo",
+        "metaDescription": "Contact page for Vertical Tab Memo",
+        "eyebrow": "✉️ Contact",
+        "title": "Contact",
+        "lead": "For questions, requests, or bug reports, please contact us by email or through the form.",
+        "mailTitle": "Email",
+        "formTitle": "Form",
+        "formFrameTitle": "Vertical Tab Memo contact form",
+        "formFallback": "If the contact form cannot be displayed, please email contact@hirokiwa.com.",
+        "footerHome": "🏠 Back to Home",
+        "footerPrivacy": "🔐 Privacy Policy"
+      }
+    }
+  }
+}

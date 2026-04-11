@@ -1,10 +1,12 @@
 import { createCustomIconValidationMessage, FAVICON_OPTIONS, isPresetFaviconIcon, normalizeFaviconIcon } from '../../lib/memo'
 import type { PageElements } from './elements'
+import type { PageConfig } from './page-config'
 import type { StateService } from './state-service'
 import { createIconOptionElementId } from './view'
 
 type SetupIconPickerParameters = {
   initialFaviconIcon: string
+  pageConfig: PageConfig
   pageElements: PageElements
   stateService: StateService
 }
@@ -115,7 +117,13 @@ const createUpdateSelectedIconButtons = (pageElements: PageElements) => (selecte
   })
 }
 
-export const setupIconPicker = ({ initialFaviconIcon, pageElements, stateService }: SetupIconPickerParameters): void => {
+const createCustomIconMessage = (iconValue: string, pageConfig: PageConfig): string =>
+  createCustomIconValidationMessage(iconValue, {
+    empty: pageConfig.customValidationEmpty,
+    multiple: pageConfig.customValidationMultiple,
+  })
+
+export const setupIconPicker = ({ initialFaviconIcon, pageConfig, pageElements, stateService }: SetupIconPickerParameters): void => {
   writeCustomIconButtonIds(pageElements, [])
 
   const onCustomOptionClick = (event: Event): void => {
@@ -201,7 +209,7 @@ export const setupIconPicker = ({ initialFaviconIcon, pageElements, stateService
   }
 
   const onCustomInput = (): void => {
-    const validationMessage = createCustomIconValidationMessage(pageElements.memoCustomIconInput.value)
+    const validationMessage = createCustomIconMessage(pageElements.memoCustomIconInput.value, pageConfig)
     if (validationMessage.length === 0) {
       stateService.clearCustomIconValidationMessage()
       return
@@ -212,7 +220,7 @@ export const setupIconPicker = ({ initialFaviconIcon, pageElements, stateService
 
   const onCustomSubmit = (event: Event): void => {
     event.preventDefault()
-    const validationMessage = createCustomIconValidationMessage(pageElements.memoCustomIconInput.value)
+    const validationMessage = createCustomIconMessage(pageElements.memoCustomIconInput.value, pageConfig)
     if (validationMessage.length > 0) {
       stateService.setCustomIconValidationMessage(validationMessage)
       return

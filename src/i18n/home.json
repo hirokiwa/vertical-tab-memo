@@ -1,0 +1,70 @@
+{
+  "locales": {
+    "ja": {
+      "memo": {
+        "fallbackText": "縦タブワロタ",
+        "editorTitle": "テキスト",
+        "placeholder": "縦タブワロタ",
+        "iconTitle": "アイコン",
+        "shareTitle": "このメモをシェア",
+        "shareNote": "共有 URL を第三者へ送ると入力内容が相手にも表示されます。個人情報や機密情報の入力は避けてください。",
+        "copyLabel": "URLをコピー",
+        "copyAriaLabel": "URLをコピー",
+        "nativeLabel": "その他",
+        "nativeAriaLabel": "共有メニューを開く",
+        "xLabel": "X",
+        "xAriaLabel": "Xで共有",
+        "lineLabel": "LINE",
+        "lineAriaLabel": "LINEで共有",
+        "customDialogTitle": "任意アイコン",
+        "customInputLabel": "絵文字1文字",
+        "customToggleAriaLabel": "任意アイコン入力を開く",
+        "customCloseLabel": "✖️ 閉じる",
+        "customSaveLabel": "✅ 保存",
+        "customValidationEmpty": "絵文字1文字を入力してください。",
+        "customValidationMultiple": "絵文字は1文字だけ入力してください。"
+      },
+      "home": {
+        "metaTitle": "縦タブメモ",
+        "metaDescription": "Chromeの縦タブ向けメモ",
+        "pageTitle": "縦タブメモ",
+        "pageDescription": "ブラウザの縦タブで表示する 1 行メモ",
+        "footerContact": "✉️ お問い合わせ",
+        "footerPrivacy": "🔐 プライバシーポリシー"
+      }
+    },
+    "en": {
+      "memo": {
+        "fallbackText": "Vertical Tab LOL",
+        "editorTitle": "Text",
+        "placeholder": "Vertical Tab LOL",
+        "iconTitle": "Icon",
+        "shareTitle": "Share This Memo",
+        "shareNote": "Anyone with the shared URL can view the text you entered. Do not include personal or sensitive information.",
+        "copyLabel": "Copy URL",
+        "copyAriaLabel": "Copy URL",
+        "nativeLabel": "More",
+        "nativeAriaLabel": "Open share menu",
+        "xLabel": "X",
+        "xAriaLabel": "Share on X",
+        "lineLabel": "LINE",
+        "lineAriaLabel": "Share on LINE",
+        "customDialogTitle": "Custom Icon",
+        "customInputLabel": "One emoji",
+        "customToggleAriaLabel": "Open custom icon input",
+        "customCloseLabel": "✖️ Close",
+        "customSaveLabel": "✅ Save",
+        "customValidationEmpty": "Enter one emoji.",
+        "customValidationMultiple": "Enter exactly one emoji."
+      },
+      "home": {
+        "metaTitle": "Vertical Tab Memo",
+        "metaDescription": "A one-line memo for Chrome vertical tabs",
+        "pageTitle": "Vertical Tab Memo",
+        "pageDescription": "A one-line memo for your browser's vertical tabs",
+        "footerContact": "✉️ Contact",
+        "footerPrivacy": "🔐 Privacy Policy"
+      }
+    }
+  }
+}

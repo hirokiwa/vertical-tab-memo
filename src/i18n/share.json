@@ -1,0 +1,20 @@
+{
+  "locales": {
+    "ja": {
+      "share": {
+        "xTemplate": "『{{ICON}} {{MESSAGE}}』\n\nブラウザの縦タブで表示する 1 行メモ\n\n#縦タブメモ\n",
+        "lineTemplate": "🎉 縦タブメモ\n\n『{{ICON}} {{MESSAGE}}』\n\nブラウザの縦タブで表示する 1 行メモ",
+        "webShareTitle": "縦タブメモ",
+        "webShareText": "🎉 縦タブメモ\n\n『{{ICON}} {{MESSAGE}}』\n\nブラウザの縦タブで表示する 1 行メモ"
+      }
+    },
+    "en": {
+      "share": {
+        "xTemplate": "\"{{ICON}} {{MESSAGE}}\"\n\nA one-line memo for your browser's vertical tabs\n\n#VerticalTabMemo\n",
+        "lineTemplate": "🎉 Vertical Tab Memo\n\n\"{{ICON}} {{MESSAGE}}\"\n\nA one-line memo for your browser's vertical tabs",
+        "webShareTitle": "Vertical Tab Memo",
+        "webShareText": "🎉 Vertical Tab Memo\n\n\"{{ICON}} {{MESSAGE}}\"\n\nA one-line memo for your browser's vertical tabs"
+      }
+    }
+  }
+}

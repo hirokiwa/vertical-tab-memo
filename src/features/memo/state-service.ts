@@ -10,6 +10,7 @@ import {
   type MemoState,
 } from '../../lib/memo'
 import type { PageElements } from './elements'
+import type { PageConfig } from './page-config'
 
 export type StateService = ReturnType<typeof createStateService>
 
@@ -20,7 +21,7 @@ const createNormalizedMemoState = (memoState: MemoState): MemoState => ({
 
 const readMemoText = (pageElements: PageElements): string => pageElements.memoInput.value
 
-export const createStateService = (pageElements: PageElements) => {
+export const createStateService = (pageElements: PageElements, pageConfig: PageConfig) => {
   let updateSelectedIconButtons = (_selectedIcon: string): void => {}
 
   const readCurrentMemoState = (): MemoState => ({
@@ -35,7 +36,7 @@ export const createStateService = (pageElements: PageElements) => {
   const updateView = (memoState: MemoState): void => {
     const normalizedMemoState = createNormalizedMemoState(memoState)
     const currentMemoText = normalizedMemoState.memoText
-    const normalizedMemoText = normalizeMemoText(currentMemoText)
+    const normalizedMemoText = normalizeMemoText(currentMemoText, pageConfig.fallbackMemoText)
     const memoCharacterCount = countMemoTextCharacters(currentMemoText)
 
     document.title = normalizedMemoText

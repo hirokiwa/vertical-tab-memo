@@ -28,6 +28,7 @@ hgroup {
 }
 
 body {
+  margin: 0;
   min-height: 100svh;
   padding: 0;
   background: var(--memo-color-background);
@@ -37,11 +38,63 @@ body {
   justify-content: center;
 }
 
+.page-language-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-language-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  background: transparent;
+  color: var(--memo-color-subtext);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition:
+    border-color 160ms ease,
+    border-radius 160ms ease,
+    transform 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.page-language-nav__link:hover {
+  border-color: var(--memo-color-border);
+  border-radius: 0.65rem;
+  color: var(--memo-color-text);
+  transform: translateY(-1px);
+}
+
+.page-language-nav__link:focus-visible {
+  outline: 2px solid rgba(15, 118, 110, 0.22);
+  outline-offset: 2px;
+  border-color: var(--memo-color-focus);
+  border-radius: 0.75rem;
+  color: var(--memo-color-text);
+  transform: scale(1.01);
+}
+
+.page-language-nav__icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
+}
+
+.page-language-nav__label {
+  line-height: 1;
+}
+
 .memo-app {
   min-height: 100svh;
   max-width: 760px;
   width: 100%;
-  padding: clamp(0.75rem, 2vw, 1.25rem);
+  padding: 0 clamp(0.75rem, 2vw, 1.25rem) clamp(0.75rem, 2vw, 1.25rem);
   display: flex;
   flex-direction: column;
   gap: clamp(1rem, 2vw, 1.35rem);

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="{{HTML_LANG}}">
+  <head>
+    <meta charset="UTF-8" />
+    <link id="app-favicon" rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/app.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{META_DESCRIPTION}}" />
+    <title>{{META_TITLE}}</title>
+    {{SEO_LINKS}}
+  </head>
+  <body>
+    <div id="app" class="memo-app">
+      <main class="memo-app__main">
+        <article class="memo-card" aria-labelledby="page-title">
+          <header class="memo-card__header">
+            <nav class="page-language-nav" aria-label="{{LANGUAGE_NAV_LABEL}}">
+              <a class="page-language-nav__link" href="{{LANGUAGE_SWITCH_HREF}}" hreflang="{{LANGUAGE_SWITCH_LOCALE}}" lang="{{LANGUAGE_SWITCH_LOCALE}}" aria-label="{{LANGUAGE_SWITCH_ARIA_LABEL}}">
+                <svg class="page-language-nav__icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+                  <path d="M325-111.5q-73-31.5-127.5-86t-86-127.5Q80-398 80-480.5t31.5-155q31.5-72.5 86-127t127.5-86Q398-880 480.5-880t155 31.5q72.5 31.5 127 86t86 127Q880-563 880-480.5T848.5-325q-31.5 73-86 127.5t-127 86Q563-80 480.5-80T325-111.5ZM480-162q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z" />
+                </svg>
+                <span class="page-language-nav__label">{{LANGUAGE_SWITCH_LABEL}}</span>
+              </a>
+            </nav>
+            <hgroup class="memo-card__heading-group">
+              <h1 id="page-title" class="memo-card__title">{{PAGE_TITLE}}</h1>
+              <p class="memo-card__description">{{PAGE_DESCRIPTION}}</p>
+            </hgroup>
+          </header>
+          <section class="memo-card__editor-section" aria-labelledby="memo-editor-title">
+            <h2 id="memo-editor-title" class="memo-card__editor-title">{{EDITOR_TITLE}}</h2>
+            <div id="memo-editor" class="memo-card__editor">
+              <span id="memo-preview-icon" class="memo-card__editor-icon" aria-hidden="true"></span>
+              <input
+                id="memo-input"
+                class="memo-card__editor-text"
+                type="text"
+                placeholder="{{MEMO_PLACEHOLDER}}"
+                aria-labelledby="memo-editor-title"
+                autocomplete="off"
+                maxlength="30"
+                spellcheck="false"
+              />
+            </div>
+            <p id="memo-character-count" class="memo-card__character-count" aria-live="polite">0/30</p>
+          </section>
+          <section class="memo-card__icon-section" aria-label="{{ICON_SECTION_ARIA_LABEL}}">
+            <h2 class="memo-card__icon-title">{{ICON_TITLE}}</h2>
+            <ul id="memo-icon-list" class="memo-card__icon-list">
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-0" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_0_ARIA_LABEL}}" tabindex="-1">😀</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-1" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_1_ARIA_LABEL}}" tabindex="-1">😂</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-2" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_2_ARIA_LABEL}}" tabindex="-1">🥺</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-3" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_3_ARIA_LABEL}}" tabindex="-1">😎</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-4" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_4_ARIA_LABEL}}" tabindex="-1">🤔</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-5" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_5_ARIA_LABEL}}" tabindex="-1">😴</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-6" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_6_ARIA_LABEL}}" tabindex="-1">🔥</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-7" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_7_ARIA_LABEL}}" tabindex="-1">✅</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-8" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_8_ARIA_LABEL}}" tabindex="-1">👆</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-9" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_9_ARIA_LABEL}}" tabindex="-1">👇</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-10" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_10_ARIA_LABEL}}" tabindex="-1">❤️</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-11" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_11_ARIA_LABEL}}" tabindex="-1">💡</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-12" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_12_ARIA_LABEL}}" tabindex="-1">⭐</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-13" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_13_ARIA_LABEL}}" tabindex="-1">🚀</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-14" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_14_ARIA_LABEL}}" tabindex="-1">📌</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-15" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_15_ARIA_LABEL}}" tabindex="-1">✏️</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-16" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_16_ARIA_LABEL}}" tabindex="-1">📣</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-17" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_17_ARIA_LABEL}}" tabindex="-1">⚠️</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-18" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_18_ARIA_LABEL}}" tabindex="-1">🎉</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-19" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_19_ARIA_LABEL}}" tabindex="-1">🐙</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-20" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_20_ARIA_LABEL}}" tabindex="-1">🍀</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-21" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_21_ARIA_LABEL}}" tabindex="-1">🍄</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-22" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_22_ARIA_LABEL}}" tabindex="-1">🌏</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-23" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_23_ARIA_LABEL}}" tabindex="-1">🐥</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-24" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_24_ARIA_LABEL}}" tabindex="-1">🥦</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-25" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_25_ARIA_LABEL}}" tabindex="-1">🍔</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-26" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_26_ARIA_LABEL}}" tabindex="-1">🍙</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-27" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_27_ARIA_LABEL}}" tabindex="-1">🍺</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-28" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_28_ARIA_LABEL}}" tabindex="-1">🎁</button>
+              </li>
+              <li class="memo-card__icon-item">
+                <button id="memo-icon-option-29" class="memo-card__icon-button" type="button" aria-pressed="false" aria-label="{{ICON_OPTION_29_ARIA_LABEL}}" tabindex="-1">🚗</button>
+              </li>
+              <li id="memo-custom-icon-toggle-item" class="memo-card__icon-item">
+                <button
+                  id="memo-custom-icon-toggle"
+                  class="memo-card__icon-button memo-card__icon-button--custom"
+                  type="button"
+                  aria-pressed="false"
+                  aria-haspopup="dialog"
+                  aria-controls="memo-custom-icon-dialog"
+                  aria-label="{{CUSTOM_TOGGLE_ARIA_LABEL}}"
+                  tabindex="-1"
+                >
+                  <svg class="memo-card__icon-button-svg" viewBox="160 -800 640 640" fill="currentColor" aria-hidden="true">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </section>
+          <section class="memo-card__share-section" aria-labelledby="memo-share-title" aria-describedby="memo-share-note">
+            <h2 id="memo-share-title" class="memo-card__url-title">{{SHARE_TITLE}}</h2>
+            <div class="memo-card__share-actions" role="group" aria-label="{{SHARE_GROUP_ARIA_LABEL}}">
+              <button id="memo-share-x" class="memo-card__share-button" type="button" aria-label="{{SHARE_X_ARIA_LABEL}}">
+                <span class="memo-card__share-icon memo-card__share-icon--image" aria-hidden="true">
+                  <img class="memo-card__share-icon-image" src="{{X_ICON_URL}}" alt="" width="24" height="24" />
+                </span>
+                <span class="memo-card__share-label">{{SHARE_X_LABEL}}</span>
+              </button>
+              <button id="memo-share-line" class="memo-card__share-button" type="button" aria-label="{{SHARE_LINE_ARIA_LABEL}}">
+                <span class="memo-card__share-icon memo-card__share-icon--image" aria-hidden="true">
+                  <img class="memo-card__share-icon-image" src="{{LINE_ICON_URL}}" alt="" width="24" height="24" />
+                </span>
+                <span class="memo-card__share-label">{{SHARE_LINE_LABEL}}</span>
+              </button>
+              <button id="memo-url-copy" class="memo-card__share-button" type="button" aria-label="{{COPY_ARIA_LABEL}}">
+                <span class="memo-card__share-icon memo-card__share-icon--copy" aria-hidden="true">
+                  <svg id="memo-url-copy-icon" class="memo-card__share-icon-svg" viewBox="0 -960 960 960" fill="currentColor">
+                    <path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                  </svg>
+                </span>
+                <span class="memo-card__share-label">{{COPY_LABEL}}</span>
+              </button>
+              <button id="memo-share-native" class="memo-card__share-button" type="button" aria-label="{{SHARE_NATIVE_ARIA_LABEL}}">
+                <span class="memo-card__share-icon memo-card__share-icon--native" aria-hidden="true">
+                  <svg class="memo-card__share-icon-svg" viewBox="0 -960 960 960" fill="currentColor">
+                    <path d="M680-80q-50 0-85-35t-35-85q0-6 3-28L282-392q-16 15-37 23.5t-45 8.5q-50 0-85-35t-35-85q0-50 35-85t85-35q24 0 45 8.5t37 23.5l281-164q-2-7-2.5-13.5T560-760q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-24 0-45-8.5T598-672L317-508q2 7 2.5 13.5t.5 14.5q0 8-.5 14.5T317-452l281 164q16-15 37-23.5t45-8.5q50 0 85 35t35 85q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T720-200q0-17-11.5-28.5T680-240q-17 0-28.5 11.5T640-200q0 17 11.5 28.5T680-160ZM200-440q17 0 28.5-11.5T240-480q0-17-11.5-28.5T200-520q-17 0-28.5 11.5T160-480q0 17 11.5 28.5T200-440Zm508.5-291.5Q720-743 720-760t-11.5-28.5Q697-800 680-800t-28.5 11.5Q640-777 640-760t11.5 28.5Q663-720 680-720t28.5-11.5ZM680-200ZM200-480Zm480-280Z" />
+                  </svg>
+                </span>
+                <span class="memo-card__share-label">{{SHARE_NATIVE_LABEL}}</span>
+              </button>
+            </div>
+            <p id="memo-share-note" class="memo-card__note">{{SHARE_NOTE}}</p>
+          </section>
+        </article>
+      </main>
+      <dialog id="memo-custom-icon-dialog" class="memo-dialog" aria-label="{{CUSTOM_DIALOG_ARIA_LABEL}}">
+        <form id="memo-custom-icon-form" class="memo-dialog__form" method="dialog" aria-label="{{CUSTOM_DIALOG_FORM_ARIA_LABEL}}">
+          <h2 class="memo-dialog__title">{{CUSTOM_DIALOG_TITLE}}</h2>
+          <label class="memo-card__label" for="memo-custom-icon-input">{{CUSTOM_INPUT_LABEL}}</label>
+          <input
+            id="memo-custom-icon-input"
+            class="memo-card__custom-icon-input"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            aria-describedby="memo-custom-icon-error"
+          />
+          <p id="memo-custom-icon-error" class="memo-card__custom-icon-error" aria-live="polite"></p>
+          <div class="memo-dialog__actions">
+            <button id="memo-custom-icon-close" class="memo-dialog__button" type="button" aria-label="{{CUSTOM_CLOSE_ARIA_LABEL}}">{{CUSTOM_CLOSE_LABEL}}</button>
+            <button id="memo-custom-icon-save" class="memo-dialog__button memo-dialog__button--primary" type="submit" aria-label="{{CUSTOM_SAVE_ARIA_LABEL}}">{{CUSTOM_SAVE_LABEL}}</button>
+          </div>
+        </form>
+      </dialog>
+      <script id="memo-page-config" type="application/json">{{PAGE_CONFIG_JSON}}</script>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5553296223899055"
+        crossorigin="anonymous"
+      ></script>
+      <section class="memo-app__ad-section" aria-label="{{AD_SECTION_ARIA_LABEL}}">
+        <!-- Vertical Tab Memo Horizon 1 -->
+        <ins
+          class="adsbygoogle memo-app__ad-unit"
+          style="display:block"
+          data-ad-client="ca-pub-5553296223899055"
+          data-ad-slot="4516386159"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
+      <footer class="memo-app__footer" aria-label="{{FOOTER_ARIA_LABEL}}">
+        <nav class="memo-app__footer-nav" aria-label="{{FOOTER_NAV_ARIA_LABEL}}">
+          <a class="memo-app__footer-link" href="{{CONTACT_LINK_HREF}}">{{CONTACT_LINK_LABEL}}</a>
+          <a class="memo-app__footer-link" href="{{PRIVACY_LINK_HREF}}">{{PRIVACY_LINK_LABEL}}</a>
+        </nav>
+      </footer>
+    </div>
+    <script type="module" src="/src/entries/index.ts"></script>
+  </body>
+</html>

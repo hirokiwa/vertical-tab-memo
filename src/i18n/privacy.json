@@ -1,0 +1,302 @@
+{
+  "locales": {
+    "ja": {
+      "privacy": {
+        "metaTitle": "プライバシーポリシー | 縦タブメモ",
+        "metaDescription": "縦タブメモ のプライバシーポリシー",
+        "eyebrow": "🔐 Privacy Policy",
+        "title": "プライバシーポリシー",
+        "lead": "縦タブメモ（以下、「当サイト」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザー情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。",
+        "sections": [
+          {
+            "id": "privacy-section-1",
+            "title": "第1条（個人情報）",
+            "blocks": [
+              { "type": "paragraph", "text": "「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報，容貌，指紋，声紋にかかるデータ，健康保険証の保険者番号など単体で特定の個人を識別できる情報（個人識別情報）をいいます。" }
+            ]
+          },
+          {
+            "id": "privacy-section-2",
+            "title": "第2条（利用目的）",
+            "blocks": [
+              {
+                "type": "unorderedList",
+                "items": [
+                  "Google Analytics によるアクセス解析 閲覧ページ，利用端末，ブラウザ情報，IP アドレス等（匿名化され，個人を特定するものではありません）を取得し，本サービスの利用状況の分析およびサービス改善のために利用します。",
+                  "お問い合わせフォーム 名前，メールアドレス，その他必要事項を取得し，お問い合わせへの回答および必要な情報提供のために利用します。"
+                ]
+              },
+              { "type": "paragraph", "text": "上記の目的以外では，あらかじめ本人の同意を得ることなく利用しません。" }
+            ]
+          },
+          {
+            "id": "privacy-section-3",
+            "title": "第3条（当サイトの提携先に関する事項）",
+            "blocks": [
+              { "type": "subheading", "text": "1. 広告の配信について" },
+              { "type": "paragraph", "text": "当サイトは第三者配信の広告サービス「Google Adsense」を利用しています。Google を含む第三者配信事業者は，ユーザーの過去のアクセス情報に基づいて広告を配信します。Google が広告 Cookie を使用することで，ユーザーが当サイトや他のサイトにアクセスした情報に基づき適切な広告を表示できます。" },
+              {
+                "type": "richParagraph",
+                "parts": [
+                  { "type": "text", "value": "ユーザーは" },
+                  { "type": "link", "href": "https://www.google.com/settings/ads", "label": "Google 広告設定" },
+                  { "type": "text", "value": "からパーソナライズ広告を無効にできます。また，" },
+                  { "type": "link", "href": "https://www.aboutads.info", "label": "www.aboutads.info" },
+                  { "type": "text", "value": "にアクセスすることで，第三者配信事業者の Cookie の使用を無効にできます。Cookie はブラウザの設定で無効化することも可能です。Google アドセンスに関する詳細は，" },
+                  { "type": "link", "href": "https://www.google.co.jp/policies/technologies/ads/", "label": "広告ポリシーと規約" },
+                  { "type": "text", "value": "をご覧ください。" }
+                ]
+              },
+              { "type": "subheading", "text": "2. アクセス解析ツールについて" },
+              {
+                "type": "richParagraph",
+                "parts": [
+                  { "type": "text", "value": "当サイトでは，Google によるアクセス解析ツール「Google アナリティクス」を利用しています。Google アナリティクスはトラフィックデータ収集のために Cookie を使用します。このデータは匿名で収集され，個人を特定するものではありません。詳細は" },
+                  { "type": "link", "href": "https://marketingplatform.google.com/about/analytics/terms/jp/", "label": "Google アナリティクス利用規約" },
+                  { "type": "text", "value": "をご覧ください。" }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "privacy-section-4",
+            "title": "第4条（利用目的の変更）",
+            "blocks": [
+              { "type": "paragraph", "text": "当サイトは，利用目的が変更前と関連性を有すると合理的に認められる場合に限り，個人情報の利用目的を変更するものとします。" },
+              { "type": "paragraph", "text": "利用目的の変更を行った場合には，変更後の目的について，当サイト所定の方法により，ユーザーに通知し，または本ウェブサイト上に公表します。" }
+            ]
+          },
+          {
+            "id": "privacy-section-5",
+            "title": "第5条（個人情報の第三者提供）",
+            "blocks": [
+              {
+                "type": "orderedList",
+                "items": [
+                  "当サイトは，次に掲げる場合を除いて，あらかじめユーザーの同意を得ることなく，第三者に個人情報を提供しません。ただし，個人情報保護法その他の法令で認められる場合を除きます。",
+                  "人の生命，身体または財産の保護のために必要がある場合",
+                  "公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合",
+                  "国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに協力する必要がある場合",
+                  "あらかじめ次の事項を告知あるいは公表し，かつ当サイトが個人情報保護委員会に届出をしたとき"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "privacy-section-6",
+            "title": "第6条（個人情報の開示）",
+            "blocks": [
+              { "type": "paragraph", "text": "当サイトは，本人から個人情報の開示を求められたときは，本人に対し，遅滞なくこれを開示します。ただし，開示することにより次のいずれかに該当する場合は，その全部または一部を開示しないこともあり，開示しない決定をした場合には，その旨を遅滞なく通知します。" },
+              {
+                "type": "orderedList",
+                "items": [
+                  "本人または第三者の生命，身体，財産その他の権利利益を害するおそれがある場合",
+                  "当サイトの運営の適正な実施に著しい支障を及ぼすおそれがある場合",
+                  "その他法令に違反することとなる場合"
+                ]
+              },
+              { "type": "paragraph", "text": "前項の定めにかかわらず，履歴情報および特性情報などの個人情報以外の情報については，原則として開示いたしません。" }
+            ]
+          },
+          {
+            "id": "privacy-section-7",
+            "title": "第7条（個人情報の訂正および削除）",
+            "blocks": [
+              { "type": "paragraph", "text": "ユーザーは，当サイトの保有する自己の個人情報が誤った情報である場合には，当サイトが定める手続により，当サイトに対して個人情報の訂正，追加または削除を請求できます。" },
+              { "type": "paragraph", "text": "当サイトは，ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の訂正等を行います。" }
+            ]
+          },
+          {
+            "id": "privacy-section-8",
+            "title": "第8条（個人情報の利用停止等）",
+            "blocks": [
+              { "type": "paragraph", "text": "当サイトは，本人から，個人情報が利用目的の範囲を超えて取り扱われているという理由，または不正の手段により取得されたものであるという理由により，その利用の停止または消去を求められた場合には，遅滞なく必要な調査を行います。" },
+              { "type": "paragraph", "text": "前項の調査結果に基づき，その請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の利用停止等を行います。" }
+            ]
+          },
+          {
+            "id": "privacy-section-9",
+            "title": "第9条（プライバシーポリシーの変更）",
+            "blocks": [
+              { "type": "paragraph", "text": "本ポリシーの内容は，法令その他本ポリシーに別段の定めのある事項を除いて，ユーザーに通知することなく，変更することができます。" },
+              { "type": "paragraph", "text": "当サイトが別途定める場合を除いて，変更後のプライバシーポリシーは，本ウェブサイトに掲載したときから効力を生じるものとします。" }
+            ]
+          },
+          {
+            "id": "privacy-section-10",
+            "title": "第10条（お問い合わせ）",
+            "blocks": [
+              { "type": "paragraph", "text": "本ポリシーに関するお問い合わせは、下記までお願いいたします。" },
+              {
+                "type": "contactList",
+                "rows": [
+                  { "term": "サイト名", "description": "縦タブメモ" },
+                  { "term": "運営者", "description": "hirokiwa" },
+                  { "term": "E-mail", "descriptionLink": { "href": "mailto:contact@hirokiwa.com", "label": "contact@hirokiwa.com" } }
+                ]
+              },
+              {
+                "type": "richParagraph",
+                "parts": [
+                  { "type": "text", "value": "お問い合わせフォーム: " },
+                  { "type": "link", "href": "/contact/", "label": "📝 お問い合わせページ" }
+                ]
+              }
+            ]
+          }
+        ],
+        "footerHome": "🏠 メイン画面に戻る",
+        "footerContact": "✉️ お問い合わせ"
+      }
+    },
+    "en": {
+      "privacy": {
+        "metaTitle": "Privacy Policy | Vertical Tab Memo",
+        "metaDescription": "Privacy policy for Vertical Tab Memo",
+        "eyebrow": "🔐 Privacy Policy",
+        "title": "Privacy Policy",
+        "lead": "Vertical Tab Memo (\"this site\") sets out the following privacy policy regarding the handling of user information in the service provided on this website (\"the service\").",
+        "sections": [
+          {
+            "id": "privacy-section-1",
+            "title": "Article 1 (Personal Information)",
+            "blocks": [
+              { "type": "paragraph", "text": "\"Personal information\" refers to personal information as defined by the Act on the Protection of Personal Information, including information about a living individual that can identify a specific individual by name, date of birth, address, telephone number, contact details, or other descriptions, as well as data related to appearance, fingerprints, voiceprints, and insurer numbers on health insurance cards." }
+            ]
+          },
+          {
+            "id": "privacy-section-2",
+            "title": "Article 2 (Purpose of Use)",
+            "blocks": [
+              {
+                "type": "unorderedList",
+                "items": [
+                  "Google Analytics access analysis: We obtain visited pages, device information, browser information, IP addresses, and similar data (anonymized and not identifying individuals) to analyze usage and improve the service.",
+                  "Contact form: We collect names, email addresses, and other required information to respond to inquiries and provide necessary information."
+                ]
+              },
+              { "type": "paragraph", "text": "We will not use personal information for purposes other than those listed above without obtaining prior consent from the individual." }
+            ]
+          },
+          {
+            "id": "privacy-section-3",
+            "title": "Article 3 (Third-Party Partners on This Site)",
+            "blocks": [
+              { "type": "subheading", "text": "1. Advertising Delivery" },
+              { "type": "paragraph", "text": "This site uses the third-party advertising service Google Adsense. Third-party vendors, including Google, may display ads based on users' past access information. By using advertising cookies, Google can display appropriate ads based on information about users' visits to this site and other sites." },
+              {
+                "type": "richParagraph",
+                "parts": [
+                  { "type": "text", "value": "Users can disable personalized advertising from " },
+                  { "type": "link", "href": "https://www.google.com/settings/ads", "label": "Google Ads Settings" },
+                  { "type": "text", "value": ". They can also disable cookies used by third-party vendors by visiting " },
+                  { "type": "link", "href": "https://www.aboutads.info", "label": "www.aboutads.info" },
+                  { "type": "text", "value": ". Cookies can also be disabled through browser settings. For more details about Google Adsense, please see " },
+                  { "type": "link", "href": "https://www.google.co.jp/policies/technologies/ads/", "label": "Advertising Policies and Terms" },
+                  { "type": "text", "value": "." }
+                ]
+              },
+              { "type": "subheading", "text": "2. Access Analysis Tools" },
+              {
+                "type": "richParagraph",
+                "parts": [
+                  { "type": "text", "value": "This site uses Google Analytics, an access analysis tool provided by Google. Google Analytics uses cookies to collect traffic data. This data is collected anonymously and does not identify individuals. For details, please see the " },
+                  { "type": "link", "href": "https://marketingplatform.google.com/about/analytics/terms/jp/", "label": "Google Analytics Terms of Service" },
+                  { "type": "text", "value": "." }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "privacy-section-4",
+            "title": "Article 4 (Change of Purpose of Use)",
+            "blocks": [
+              { "type": "paragraph", "text": "This site may change the purpose of use of personal information only when the changed purpose is reasonably recognized to be related to the original purpose." },
+              { "type": "paragraph", "text": "If the purpose of use is changed, the new purpose will be notified to users or announced on this website by the method prescribed by this site." }
+            ]
+          },
+          {
+            "id": "privacy-section-5",
+            "title": "Article 5 (Provision of Personal Information to Third Parties)",
+            "blocks": [
+              {
+                "type": "orderedList",
+                "items": [
+                  "This site will not provide personal information to third parties without prior consent from the user, except in the following cases or where permitted by the Personal Information Protection Act or other laws.",
+                  "When necessary to protect the life, body, or property of a person.",
+                  "When especially necessary for improving public health or promoting the sound growth of children.",
+                  "When cooperation is necessary for a national agency, local government, or a party entrusted by such an entity to perform affairs prescribed by laws and regulations.",
+                  "When the following matters have been announced or made public in advance and the site has notified the Personal Information Protection Commission."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "privacy-section-6",
+            "title": "Article 6 (Disclosure of Personal Information)",
+            "blocks": [
+              { "type": "paragraph", "text": "When requested by the individual, this site will disclose personal information without delay. However, all or part of the information may not be disclosed if disclosure would fall under any of the following cases. If a decision is made not to disclose, notice will be given without delay." },
+              {
+                "type": "orderedList",
+                "items": [
+                  "When there is a risk of harming the life, body, property, or other rights or interests of the individual or a third party.",
+                  "When there is a risk of significantly hindering the proper operation of this site's business.",
+                  "When disclosure would otherwise violate laws or regulations."
+                ]
+              },
+              { "type": "paragraph", "text": "Notwithstanding the preceding paragraph, information other than personal information, such as history information and characteristic information, will generally not be disclosed." }
+            ]
+          },
+          {
+            "id": "privacy-section-7",
+            "title": "Article 7 (Correction and Deletion of Personal Information)",
+            "blocks": [
+              { "type": "paragraph", "text": "If a user's personal information held by this site is incorrect, the user may request correction, addition, or deletion of the personal information according to procedures established by this site." },
+              { "type": "paragraph", "text": "If this site determines that it is necessary to comply with such a request, it will correct the relevant personal information without delay." }
+            ]
+          },
+          {
+            "id": "privacy-section-8",
+            "title": "Article 8 (Suspension of Use of Personal Information)",
+            "blocks": [
+              { "type": "paragraph", "text": "If the individual requests suspension or deletion of personal information on the grounds that it is being handled beyond the scope of the purpose of use or was obtained by improper means, this site will conduct the necessary investigation without delay." },
+              { "type": "paragraph", "text": "If, based on the results of the investigation, this site determines that it is necessary to comply with the request, it will suspend or delete the use of the relevant personal information without delay." }
+            ]
+          },
+          {
+            "id": "privacy-section-9",
+            "title": "Article 9 (Changes to This Privacy Policy)",
+            "blocks": [
+              { "type": "paragraph", "text": "The contents of this policy may be changed without notifying users, except for matters otherwise stipulated by laws or in this policy." },
+              { "type": "paragraph", "text": "Unless otherwise specified by this site, the revised privacy policy becomes effective when posted on this website." }
+            ]
+          },
+          {
+            "id": "privacy-section-10",
+            "title": "Article 10 (Contact)",
+            "blocks": [
+              { "type": "paragraph", "text": "For inquiries about this policy, please contact us below." },
+              {
+                "type": "contactList",
+                "rows": [
+                  { "term": "Site", "description": "Vertical Tab Memo" },
+                  { "term": "Operator", "description": "hirokiwa" },
+                  { "term": "E-mail", "descriptionLink": { "href": "mailto:contact@hirokiwa.com", "label": "contact@hirokiwa.com" } }
+                ]
+              },
+              {
+                "type": "richParagraph",
+                "parts": [
+                  { "type": "text", "value": "Contact form: " },
+                  { "type": "link", "href": "/contact/", "label": "📝 Contact page" }
+                ]
+              }
+            ]
+          }
+        ],
+        "footerHome": "🏠 Back to Home",
+        "footerContact": "✉️ Contact"
+      }
+    }
+  }
+}
