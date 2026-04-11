@@ -64,20 +64,12 @@ body {
     color 160ms ease;
 }
 
-.page-language-nav__link:hover {
+.page-language-nav__link:hover,
+.page-language-nav__link:focus-visible {
   border-color: var(--memo-color-border);
   border-radius: 0.65rem;
   color: var(--memo-color-text);
   transform: translateY(-1px);
-}
-
-.page-language-nav__link:focus-visible {
-  outline: 2px solid rgba(15, 118, 110, 0.22);
-  outline-offset: 2px;
-  border-color: var(--memo-color-focus);
-  border-radius: 0.75rem;
-  color: var(--memo-color-text);
-  transform: scale(1.01);
 }
 
 .page-language-nav__icon {
@@ -236,8 +228,8 @@ body {
   transform: translateY(-1px);
 }
 
-.privacy-policy__link:hover {
-  color: #0b5d57;
+.privacy-policy__link:hover,
+.privacy-policy__link:focus-visible {
   text-decoration-thickness: 0.18em;
   text-underline-offset: 0.26em;
   transform: translateY(-1px);
@@ -247,15 +239,6 @@ body {
   color: var(--memo-color-text);
   text-decoration-thickness: 0.14em;
   text-underline-offset: 0.22em;
-}
-
-.privacy-policy__link:focus-visible {
-  outline: 3px solid rgba(15, 118, 110, 0.32);
-  outline-offset: 2px;
-  border-radius: 0.35rem;
-  text-decoration-thickness: 0.18em;
-  text-underline-offset: 0.28em;
-  transform: scale(1.01);
 }
 
 .memo-app__main {
@@ -380,17 +363,11 @@ body {
     background-color 160ms ease;
 }
 
-.memo-card__icon-button:hover {
+.memo-card__icon-button:hover,
+.memo-card__icon-button:focus-visible {
   border-radius: 1rem;
   transform: translateY(-1px);
   background: #f1f5f9;
-}
-
-.memo-card__icon-button:focus-visible {
-  outline: 3px solid rgba(15, 118, 110, 0.32);
-  outline-offset: 2px;
-  border-radius: 1.05rem;
-  transform: scale(1.02);
 }
 
 .memo-card__icon-button[aria-pressed='true'] {
@@ -465,18 +442,11 @@ body {
     background-color 160ms ease;
 }
 
-.memo-dialog__button:hover {
+.memo-dialog__button:hover,
+.memo-dialog__button:focus-visible {
   border-color: var(--memo-color-highlight);
   border-radius: 0.95rem;
   transform: translateY(-1px);
-}
-
-.memo-dialog__button:focus-visible {
-  outline: 3px solid rgba(15, 118, 110, 0.32);
-  outline-offset: 2px;
-  border-color: var(--memo-color-focus);
-  border-radius: 1.05rem;
-  transform: scale(1.01);
 }
 
 .memo-dialog__button--primary {
