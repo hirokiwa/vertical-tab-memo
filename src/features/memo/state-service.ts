@@ -1,7 +1,6 @@
 import {
   createFaviconDataUrl,
   createSearchFromMemoState,
-  createTitleFromMemoText,
   DEFAULT_FAVICON_ICON,
   normalizeFaviconIcon,
   normalizeMemoText,
@@ -31,8 +30,10 @@ export const createStateService = (pageElements: PageElements) => {
   const updateView = (memoState: MemoState): void => {
     const normalizedMemoState = createNormalizedMemoState(memoState)
 
-    document.title = createTitleFromMemoText(normalizedMemoState.memoText)
-    pageElements.memoPreview.textContent = `${normalizeFaviconIcon(normalizedMemoState.faviconIcon)} ${normalizeMemoText(normalizedMemoState.memoText)}`
+    const normalizedMemoText = normalizeMemoText(normalizedMemoState.memoText)
+
+    document.title = normalizedMemoText
+    pageElements.memoPreview.textContent = `${normalizeFaviconIcon(normalizedMemoState.faviconIcon)} ${normalizedMemoText}`
     pageElements.memoCustomIconInput.value = normalizedMemoState.faviconIcon
     pageElements.faviconLink.href = createFaviconDataUrl(normalizedMemoState.faviconIcon)
 
