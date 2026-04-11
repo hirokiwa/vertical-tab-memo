@@ -3,6 +3,20 @@ import { relative, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import { generateLocalizedPages } from './build/site-generator'
 
+const siteMessages = JSON.parse(readFileSync(resolve(__dirname, 'src/i18n/common.json'), 'utf-8')) as {
+  site: {
+    siteUrl: string
+  }
+}
+
+const createAbsoluteUrl = (pathname: string): string => {
+  const normalizedSiteUrl = siteMessages.site.siteUrl.endsWith('/')
+    ? siteMessages.site.siteUrl.slice(0, -1)
+    : siteMessages.site.siteUrl
+
+  return `${normalizedSiteUrl}${pathname}`
+}
+
 const googleTagScript = {
   tag: 'script',
   attrs: {
@@ -42,19 +56,16 @@ const createSeoTags = (pathname: string) => {
           ? normalizedPathname.replace(/^\/en/, '')
           : normalizedPathname
 
-  if (!normalizedPathname.startsWith('/ja/') && !normalizedPathname.startsWith('/en/')) {
-    return []
-  }
-
   const canonicalPath = normalizedPathname
   const jaPath = `/ja${pagePath === '/' ? '/' : pagePath}`
   const enPath = `/en${pagePath === '/' ? '/' : pagePath}`
+  const defaultPath = pagePath
 
   return [
-    { tag: 'link', attrs: { rel: 'canonical', href: canonicalPath }, injectTo: 'head' as const },
-    { tag: 'link', attrs: { rel: 'alternate', hreflang: 'ja', href: jaPath }, injectTo: 'head' as const },
-    { tag: 'link', attrs: { rel: 'alternate', hreflang: 'en', href: enPath }, injectTo: 'head' as const },
-    { tag: 'link', attrs: { rel: 'alternate', hreflang: 'x-default', href: pagePath }, injectTo: 'head' as const },
+    { tag: 'link', attrs: { rel: 'canonical', href: createAbsoluteUrl(canonicalPath) }, injectTo: 'head' as const },
+    { tag: 'link', attrs: { rel: 'alternate', hreflang: 'ja', href: createAbsoluteUrl(jaPath) }, injectTo: 'head' as const },
+    { tag: 'link', attrs: { rel: 'alternate', hreflang: 'en', href: createAbsoluteUrl(enPath) }, injectTo: 'head' as const },
+    { tag: 'link', attrs: { rel: 'alternate', hreflang: 'x-default', href: createAbsoluteUrl(defaultPath) }, injectTo: 'head' as const },
   ]
 }
 
