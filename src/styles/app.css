@@ -181,8 +181,8 @@ body {
 }
 
 .memo-app__ad-card {
-  flex: 0 1 20rem;
-  max-width: 20rem;
+  flex: 0 1 60%;
+  max-width: 60%;
 }
 
 .memo-app__ad-unit {
