@@ -84,14 +84,6 @@ type PrivacyBlock =
   | { type: 'orderedList'; items: string[] }
   | { type: 'subheading'; text: string }
   | { type: 'richParagraph'; parts: RichTextPart[] }
-  | {
-      type: 'contactList'
-      rows: Array<{
-        term: string
-        description?: string
-        descriptionLink?: { href: string; label: string }
-      }>
-    }
 
 type PrivacySection = {
   id: string
@@ -325,12 +317,6 @@ const readListItemText = (block: PrivacyBlock, index: number): string =>
 const readRichTextValue = (block: PrivacyBlock, index: number): RichTextPart =>
   block.type === 'richParagraph' ? (block.parts[index] ?? { type: 'text', value: '' }) : { type: 'text', value: '' }
 
-const readContactRow = (
-  block: PrivacyBlock,
-  index: number,
-): { term: string; description?: string; descriptionLink?: { href: string; label: string } } =>
-  block.type === 'contactList' ? (block.rows[index] ?? { term: '' }) : { term: '' }
-
 const createPrivacyReplacements = (localeMessages: LocaleMessages, locale: Locale): Record<string, string> => {
   const section1 = localeMessages.privacy.sections[0]
   const section2 = localeMessages.privacy.sections[1]
@@ -346,8 +332,7 @@ const createPrivacyReplacements = (localeMessages: LocaleMessages, locale: Local
   const section3RichParagraph1Part3 = readRichTextValue(section3.blocks[2], 3)
   const section3RichParagraph1Part5 = readRichTextValue(section3.blocks[2], 5)
   const section3RichParagraph2Part1 = readRichTextValue(section3.blocks[4], 1)
-  const section10ContactRow3 = readContactRow(section10.blocks[1], 2)
-  const section10RichParagraphLink = readRichTextValue(section10.blocks[2], 1)
+  const section10RichParagraphLink = readRichTextValue(section10.blocks[0], 1)
 
   return {
     PRIVACY_SECTION_1_TITLE: escapeHtml(section1.title),
@@ -399,18 +384,10 @@ const createPrivacyReplacements = (localeMessages: LocaleMessages, locale: Local
     PRIVACY_SECTION_9_PARAGRAPH_1: escapeHtml(readParagraphText(section9.blocks[0])),
     PRIVACY_SECTION_9_PARAGRAPH_2: escapeHtml(readParagraphText(section9.blocks[1])),
     PRIVACY_SECTION_10_TITLE: escapeHtml(section10.title),
-    PRIVACY_SECTION_10_PARAGRAPH_1: escapeHtml(readParagraphText(section10.blocks[0])),
-    PRIVACY_SECTION_10_CONTACT_TERM_1: escapeHtml(readContactRow(section10.blocks[1], 0).term),
-    PRIVACY_SECTION_10_CONTACT_DESCRIPTION_1: escapeHtml(readContactRow(section10.blocks[1], 0).description ?? ''),
-    PRIVACY_SECTION_10_CONTACT_TERM_2: escapeHtml(readContactRow(section10.blocks[1], 1).term),
-    PRIVACY_SECTION_10_CONTACT_DESCRIPTION_2: escapeHtml(readContactRow(section10.blocks[1], 1).description ?? ''),
-    PRIVACY_SECTION_10_CONTACT_TERM_3: escapeHtml(section10ContactRow3.term),
-    PRIVACY_SECTION_10_CONTACT_LINK_HREF: section10ContactRow3.descriptionLink?.href ?? '#',
-    PRIVACY_SECTION_10_CONTACT_LINK_LABEL: escapeHtml(section10ContactRow3.descriptionLink?.label ?? ''),
-    PRIVACY_SECTION_10_RICH_PARAGRAPH_PREFIX: escapeHtml(readRichTextValue(section10.blocks[2], 0).value ?? ''),
+    PRIVACY_SECTION_10_RICH_PARAGRAPH_PREFIX: escapeHtml(readRichTextValue(section10.blocks[0], 0).value ?? ''),
     PRIVACY_SECTION_10_RICH_PARAGRAPH_LINK_HREF: resolveInternalHref(locale, section10RichParagraphLink.href ?? '#'),
     PRIVACY_SECTION_10_RICH_PARAGRAPH_LINK_LABEL: escapeHtml(section10RichParagraphLink.label ?? ''),
-    PRIVACY_SECTION_10_RICH_PARAGRAPH_SUFFIX: escapeHtml(readRichTextValue(section10.blocks[2], 2).value ?? ''),
+    PRIVACY_SECTION_10_RICH_PARAGRAPH_SUFFIX: escapeHtml(readRichTextValue(section10.blocks[0], 2).value ?? ''),
   }
 }
 

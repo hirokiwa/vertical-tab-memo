@@ -125,20 +125,12 @@
             "id": "privacy-section-10",
             "title": "第10条（お問い合わせ）",
             "blocks": [
-              { "type": "paragraph", "text": "本ポリシーに関するお問い合わせは、下記までお願いいたします。" },
-              {
-                "type": "contactList",
-                "rows": [
-                  { "term": "サイト名", "description": "縦タブメモ" },
-                  { "term": "運営者", "description": "hirokiwa" },
-                  { "term": "E-mail", "descriptionLink": { "href": "mailto:contact@hirokiwa.com", "label": "contact@hirokiwa.com" } }
-                ]
-              },
               {
                 "type": "richParagraph",
                 "parts": [
-                  { "type": "text", "value": "お問い合わせフォーム: " },
-                  { "type": "link", "href": "/contact/", "label": "📝 お問い合わせページ" }
+                  { "type": "text", "value": "本ポリシーに関するお問い合わせは、" },
+                  { "type": "link", "href": "/contact/", "label": "お問い合わせページ" },
+                  { "type": "text", "value": "までお願いいたします。" }
                 ]
               }
             ]
@@ -273,20 +265,12 @@
             "id": "privacy-section-10",
             "title": "Article 10 (Contact)",
             "blocks": [
-              { "type": "paragraph", "text": "For inquiries about this policy, please contact us below." },
-              {
-                "type": "contactList",
-                "rows": [
-                  { "term": "Site", "description": "Vertical Tab Memo" },
-                  { "term": "Operator", "description": "hirokiwa" },
-                  { "term": "E-mail", "descriptionLink": { "href": "mailto:contact@hirokiwa.com", "label": "contact@hirokiwa.com" } }
-                ]
-              },
               {
                 "type": "richParagraph",
                 "parts": [
-                  { "type": "text", "value": "Contact form: " },
-                  { "type": "link", "href": "/contact/", "label": "📝 Contact page" }
+                  { "type": "text", "value": "For inquiries about this policy, please visit the " },
+                  { "type": "link", "href": "/contact/", "label": "Contact page" },
+                  { "type": "text", "value": "." }
                 ]
               }
             ]

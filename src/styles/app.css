@@ -676,6 +676,7 @@ body {
 .privacy-page__main {
   display: flex;
   flex-direction: column;
+  padding-bottom: 2rem;
 }
 
 .privacy-page__footer {
@@ -693,8 +694,7 @@ body {
 }
 
 .privacy-policy__header,
-.privacy-policy__section,
-.privacy-policy__contact-list {
+.privacy-policy__section {
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -718,8 +718,7 @@ body {
 }
 
 .privacy-policy__lead,
-.privacy-policy__text,
-.privacy-policy__contact-description {
+.privacy-policy__text {
   font-size: 0.98rem;
   line-height: 1.75;
   margin: 0;
@@ -755,20 +754,6 @@ body {
 
 .privacy-policy__ordered-list-item {
   line-height: 1.7;
-}
-
-.privacy-policy__contact-row {
-  padding: 0.8rem 0.9rem;
-  border: 1px solid var(--memo-color-border);
-  border-radius: 0.85rem;
-  background: #fbfcfe;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.privacy-policy__contact-term {
-  font-weight: 700;
 }
 
 .contact-page__privacy-note {
