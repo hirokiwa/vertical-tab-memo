@@ -510,7 +510,7 @@ body {
   padding: 0.6rem 0.8rem;
   min-height: 3.5rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.45rem;
   color: var(--memo-color-text);
   background: #fcfcfa;
