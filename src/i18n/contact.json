@@ -11,8 +11,8 @@
         "formTitle": "フォーム",
         "formFrameTitle": "縦タブメモ お問い合わせフォーム",
         "formFallback": "お問い合わせフォームを表示できない場合は、contact@hirokiwa.com へご連絡ください。",
-        "footerHome": "🏠 メイン画面に戻る",
-        "footerPrivacy": "🔐 プライバシーポリシー"
+        "footerHome": "ホーム",
+        "footerPrivacy": "プライバシーポリシー"
       }
     },
     "en": {
@@ -26,8 +26,8 @@
         "formTitle": "Form",
         "formFrameTitle": "Vertical Tab Memo contact form",
         "formFallback": "If the contact form cannot be displayed, please email contact@hirokiwa.com.",
-        "footerHome": "🏠 Back to Home",
-        "footerPrivacy": "🔐 Privacy Policy"
+        "footerHome": "Home",
+        "footerPrivacy": "Privacy Policy"
       }
     }
   }

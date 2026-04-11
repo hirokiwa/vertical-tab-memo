@@ -145,8 +145,8 @@
             ]
           }
         ],
-        "footerHome": "🏠 メイン画面に戻る",
-        "footerContact": "✉️ お問い合わせ"
+        "footerHome": "ホーム",
+        "footerContact": "お問い合わせ"
       }
     },
     "en": {
@@ -294,8 +294,8 @@
             ]
           }
         ],
-        "footerHome": "🏠 Back to Home",
-        "footerContact": "✉️ Contact"
+        "footerHome": "Home",
+        "footerContact": "Contact"
       }
     }
   }

@@ -1,4 +1,4 @@
-import { cpSync, existsSync, readFileSync, rmSync } from 'node:fs'
+import { cpSync, existsSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs'
 import { relative, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import { generateLocalizedPages } from './build/site-generator'
@@ -60,6 +60,20 @@ const createSeoTags = (pathname: string) => {
 
 const generatedPages = generateLocalizedPages(__dirname)
 
+const copyGeneratedEntry = (sourcePath: string, targetPath: string): void => {
+  const sourceStats = statSync(sourcePath)
+
+  if (sourceStats.isDirectory()) {
+    readdirSync(sourcePath).forEach((entryName) => {
+      copyGeneratedEntry(resolve(sourcePath, entryName), resolve(targetPath, entryName))
+    })
+    return
+  }
+
+  rmSync(targetPath, { force: true })
+  cpSync(sourcePath, targetPath)
+}
+
 const moveGeneratedBuildFiles = (): void => {
   const distGeneratedRoot = resolve(__dirname, 'dist/.generated')
   const distRoot = resolve(__dirname, 'dist')
@@ -68,7 +82,9 @@ const moveGeneratedBuildFiles = (): void => {
     return
   }
 
-  cpSync(distGeneratedRoot, distRoot, { recursive: true })
+  readdirSync(distGeneratedRoot).forEach((entryName) => {
+    copyGeneratedEntry(resolve(distGeneratedRoot, entryName), resolve(distRoot, entryName))
+  })
   rmSync(distGeneratedRoot, { recursive: true, force: true })
 }
 

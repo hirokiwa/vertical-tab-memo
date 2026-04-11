@@ -146,6 +146,7 @@ type LocaleMessages = {
     metaDescription: string
     pageTitle: string
     pageDescription: string
+    footerHome: string
     footerContact: string
     footerPrivacy: string
   }
@@ -459,10 +460,12 @@ const createHomePage = (
     AD_SECTION_ARIA_LABEL: escapeHtml(localeMessages.adSectionAriaLabel),
     FOOTER_ARIA_LABEL: escapeHtml(localeMessages.homeFooterAriaLabel),
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.homeFooterNavAriaLabel),
+    HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
+    HOME_LINK_TEXT: escapeHtml(localeMessages.home.footerHome),
     CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
-    CONTACT_LINK_LABEL: escapeHtml(localeMessages.home.footerContact),
+    CONTACT_LINK_TEXT: escapeHtml(localeMessages.home.footerContact),
     PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
-    PRIVACY_LINK_LABEL: escapeHtml(localeMessages.home.footerPrivacy),
+    PRIVACY_LINK_TEXT: escapeHtml(localeMessages.home.footerPrivacy),
     X_ICON_URL: messages.site.xIconUrl,
     LINE_ICON_URL: messages.site.lineIconUrl,
     ...socialMetaReplacements,
@@ -507,9 +510,11 @@ const createContactPage = (
     CONTACT_FORM_URL: messages.site.contactFormUrl,
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.contactFooterNavAriaLabel),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
-    HOME_LINK_LABEL: escapeHtml(localeMessages.contact.footerHome),
+    HOME_LINK_TEXT: escapeHtml(localeMessages.contact.footerHome),
+    CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
+    CONTACT_LINK_TEXT: escapeHtml(localeMessages.contact.title),
     PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
-    PRIVACY_LINK_LABEL: escapeHtml(localeMessages.contact.footerPrivacy),
+    PRIVACY_LINK_TEXT: escapeHtml(localeMessages.contact.footerPrivacy),
     ...socialMetaReplacements,
   })
 }
@@ -546,9 +551,11 @@ const createPrivacyPage = (
     LEAD: escapeHtml(localeMessages.privacy.lead),
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.privacyFooterNavAriaLabel),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
-    HOME_LINK_LABEL: escapeHtml(localeMessages.privacy.footerHome),
+    HOME_LINK_TEXT: escapeHtml(localeMessages.privacy.footerHome),
+    PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
+    PRIVACY_LINK_TEXT: escapeHtml(localeMessages.privacy.title),
     CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
-    CONTACT_LINK_LABEL: escapeHtml(localeMessages.privacy.footerContact),
+    CONTACT_LINK_TEXT: escapeHtml(localeMessages.privacy.footerContact),
     ...socialMetaReplacements,
     ...privacyReplacements,
   })

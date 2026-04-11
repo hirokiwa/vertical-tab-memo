@@ -126,8 +126,24 @@
       </main>
       <footer class="privacy-page__footer">
         <nav class="memo-app__footer-nav" aria-label="{{FOOTER_NAV_ARIA_LABEL}}">
-          <a class="memo-app__footer-link" href="{{HOME_LINK_HREF}}">{{HOME_LINK_LABEL}}</a>
-          <a class="memo-app__footer-link" href="{{CONTACT_LINK_HREF}}">{{CONTACT_LINK_LABEL}}</a>
+          <a class="memo-app__footer-link" href="{{HOME_LINK_HREF}}">
+            <svg class="memo-app__footer-link-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+              <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+            </svg>
+            <span>{{HOME_LINK_TEXT}}</span>
+          </a>
+          <a class="memo-app__footer-link" href="{{CONTACT_LINK_HREF}}">
+            <svg class="memo-app__footer-link-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+              <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+            </svg>
+            <span>{{CONTACT_LINK_TEXT}}</span>
+          </a>
+          <a class="memo-app__footer-link" href="{{PRIVACY_LINK_HREF}}" aria-current="page">
+            <svg class="memo-app__footer-link-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+              <path d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5ZM480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z" />
+            </svg>
+            <span>{{PRIVACY_LINK_TEXT}}</span>
+          </a>
         </nav>
       </footer>
     </div>
