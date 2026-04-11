@@ -7,7 +7,7 @@
         "placeholder": "縦タブワロタ",
         "iconTitle": "アイコン",
         "shareTitle": "このメモをシェア",
-        "shareNote": "共有 URL を第三者へ送ると入力内容が相手にも表示されます。個人情報や機密情報の入力は避けてください。",
+        "shareNote": "URL を共有するとメモの入力内容が相手にも表示されます。個人情報や機密情報は入力しないでください。",
         "copyLabel": "URLをコピー",
         "copyAriaLabel": "URLをコピー",
         "nativeLabel": "その他",
