@@ -1,7 +1,6 @@
 import {
   clampMemoText,
   countMemoTextCharacters,
-  createFaviconDataUrl,
   createSearchFromMemoState,
   DEFAULT_FAVICON_ICON,
   MAX_MEMO_TEXT_LENGTH,
@@ -10,6 +9,7 @@ import {
   type MemoState,
 } from '../../lib/memo'
 import type { PageElements } from './elements'
+import type { HomeScreenService } from './home-screen-service'
 import type { PageConfig } from './page-config'
 
 export type StateService = ReturnType<typeof createStateService>
@@ -21,7 +21,11 @@ const createNormalizedMemoState = (memoState: MemoState): MemoState => ({
 
 const readMemoText = (pageElements: PageElements): string => pageElements.memoInput.value
 
-export const createStateService = (pageElements: PageElements, pageConfig: PageConfig) => {
+export const createStateService = (
+  pageElements: PageElements,
+  pageConfig: PageConfig,
+  homeScreenService: HomeScreenService,
+) => {
   let updateSelectedIconButtons = (_selectedIcon: string): void => {}
 
   const readCurrentMemoState = (): MemoState => ({
@@ -47,7 +51,7 @@ export const createStateService = (pageElements: PageElements, pageConfig: PageC
     pageElements.memoCharacterCount.textContent = `${memoCharacterCount}/${MAX_MEMO_TEXT_LENGTH}`
     pageElements.memoCharacterCount.classList.toggle('memo-card__character-count--limit', memoCharacterCount >= MAX_MEMO_TEXT_LENGTH)
     pageElements.memoCustomIconInput.value = normalizedMemoState.faviconIcon
-    pageElements.faviconLink.href = createFaviconDataUrl(normalizedMemoState.faviconIcon)
+    homeScreenService.updateHomeScreenIcon(normalizedMemoState.faviconIcon)
 
     updateSelectedIconButtons(normalizedMemoState.faviconIcon)
     storeCurrentFaviconIcon(normalizedMemoState.faviconIcon)

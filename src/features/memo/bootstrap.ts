@@ -1,6 +1,7 @@
 import type { MemoState } from '../../lib/memo'
 import { getPageElements } from './elements'
 import { setupEditor } from './editor-controller'
+import { createHomeScreenService } from './home-screen-service'
 import { setupIconPicker } from './icon-picker-controller'
 import type { PageConfig } from './page-config'
 import { setupShare } from './share-controller'
@@ -8,7 +9,8 @@ import { createStateService } from './state-service'
 
 export const initializePage = (initialMemoState: MemoState, pageConfig: PageConfig): void => {
   const pageElements = getPageElements()
-  const stateService = createStateService(pageElements, pageConfig)
+  const homeScreenService = createHomeScreenService(pageElements)
+  const stateService = createStateService(pageElements, pageConfig, homeScreenService)
 
   setupEditor({
     pageElements,

@@ -4,6 +4,11 @@ import { elementIds } from './view'
 export type PageElements = {
   appRoot: HTMLDivElement
   faviconLink: HTMLLinkElement
+  faviconPngLink: HTMLLinkElement
+  shortcutIconLink: HTMLLinkElement
+  appleTouchIconLink: HTMLLinkElement
+  appleMobileWebAppTitleMeta: HTMLMetaElement
+  manifestLink: HTMLLinkElement
   memoEditor: HTMLDivElement
   memoCharacterCount: HTMLParagraphElement
   memoInput: HTMLInputElement
@@ -26,6 +31,11 @@ export type PageElements = {
 export const getPageElements = (): PageElements => ({
   appRoot: getRequiredElementById<HTMLDivElement>(elementIds.appRoot),
   faviconLink: getRequiredElementById<HTMLLinkElement>(elementIds.faviconLink),
+  faviconPngLink: getRequiredElementById<HTMLLinkElement>(elementIds.faviconPngLink),
+  shortcutIconLink: getRequiredElementById<HTMLLinkElement>(elementIds.shortcutIconLink),
+  appleTouchIconLink: getRequiredElementById<HTMLLinkElement>(elementIds.appleTouchIconLink),
+  appleMobileWebAppTitleMeta: getRequiredElementById<HTMLMetaElement>(elementIds.appleMobileWebAppTitleMeta),
+  manifestLink: getRequiredElementById<HTMLLinkElement>(elementIds.manifestLink),
   memoEditor: getRequiredElementById<HTMLDivElement>(elementIds.memoEditor),
   memoCharacterCount: getRequiredElementById<HTMLParagraphElement>(elementIds.memoCharacterCount),
   memoInput: getRequiredElementById<HTMLInputElement>(elementIds.memoInput),

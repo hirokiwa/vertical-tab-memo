@@ -19,6 +19,11 @@ const MEMO_CUSTOM_ICON_CLOSE_ID = 'memo-custom-icon-close'
 export const elementIds = {
   appRoot: 'app',
   faviconLink: 'app-favicon',
+  faviconPngLink: 'app-favicon-png',
+  shortcutIconLink: 'app-shortcut-icon',
+  appleTouchIconLink: 'app-apple-touch-icon',
+  appleMobileWebAppTitleMeta: 'app-apple-mobile-web-app-title',
+  manifestLink: 'app-manifest',
   memoEditor: MEMO_EDITOR_ID,
   memoCharacterCount: MEMO_CHARACTER_COUNT_ID,
   memoInput: MEMO_INPUT_ID,
