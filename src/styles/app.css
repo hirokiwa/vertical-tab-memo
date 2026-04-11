@@ -592,7 +592,6 @@ body {
 
 .memo-card__share-button {
   border: 2px solid transparent;
-  border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -615,16 +614,9 @@ body {
     background-color 160ms ease;
 }
 
-.memo-card__share-button:hover .memo-card__share-icon {
+.memo-card__share-button:hover .memo-card__share-icon,
+.memo-card__share-button:focus-visible .memo-card__share-icon {
   transform: scale(1.08);
-}
-
-.memo-card__share-button:focus-visible {
-  outline: 3px solid rgba(15, 118, 110, 0.32);
-  outline-offset: 2px;
-  border-color: var(--memo-color-focus);
-  border-radius: 1.05rem;
-  transform: scale(1.01);
 }
 
 .memo-card__share-button:disabled {
