@@ -255,7 +255,16 @@ body {
 }
 
 .memo-card__icon-button--custom {
+  display: flex;
   font-size: 1rem;
+  place-content: center;
+}
+
+.memo-card__icon-button-svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  margin: auto;
 }
 
 .memo-dialog {
