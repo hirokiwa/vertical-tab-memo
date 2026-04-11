@@ -23,6 +23,10 @@ ul {
   margin: 0;
 }
 
+hgroup {
+  margin: 0;
+}
+
 body {
   min-height: 100svh;
   padding: 0;
@@ -121,6 +125,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+}
+
+.memo-card__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.memo-card__heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
 .memo-card__title {
