@@ -1,4 +1,5 @@
 const MEMO_EDITOR_ID = 'memo-editor'
+const MEMO_CHARACTER_COUNT_ID = 'memo-character-count'
 const MEMO_INPUT_ID = 'memo-input'
 const MEMO_ICON_LIST_ID = 'memo-icon-list'
 const MEMO_PREVIEW_ICON_ID = 'memo-preview-icon'
@@ -19,6 +20,7 @@ export const elementIds = {
   appRoot: 'app',
   faviconLink: 'app-favicon',
   memoEditor: MEMO_EDITOR_ID,
+  memoCharacterCount: MEMO_CHARACTER_COUNT_ID,
   memoInput: MEMO_INPUT_ID,
   memoIconList: MEMO_ICON_LIST_ID,
   memoPreviewIcon: MEMO_PREVIEW_ICON_ID,

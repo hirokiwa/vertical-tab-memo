@@ -1,6 +1,6 @@
 import { FAVICON_QUERY_KEY, MEMO_QUERY_KEY } from './stateKeys'
 import { normalizeFaviconIcon } from './icon'
-import { EMPTY_MEMO_TEXT } from './text'
+import { clampMemoText, EMPTY_MEMO_TEXT } from './text'
 
 export type MemoState = {
   memoText: string
@@ -21,7 +21,7 @@ const getFirstQueryValue = (queryValue: QueryValue): string | null => {
 }
 
 export const createMemoState = (memoText: string, faviconIcon: string | null): MemoState => ({
-  memoText,
+  memoText: clampMemoText(memoText),
   faviconIcon: normalizeFaviconIcon(faviconIcon),
 })
 

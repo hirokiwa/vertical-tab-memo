@@ -1,7 +1,10 @@
 import {
+  clampMemoText,
+  countMemoTextCharacters,
   createFaviconDataUrl,
   createSearchFromMemoState,
   DEFAULT_FAVICON_ICON,
+  MAX_MEMO_TEXT_LENGTH,
   normalizeFaviconIcon,
   normalizeMemoText,
   type MemoState,
@@ -11,7 +14,7 @@ import type { PageElements } from './elements'
 export type StateService = ReturnType<typeof createStateService>
 
 const createNormalizedMemoState = (memoState: MemoState): MemoState => ({
-  memoText: memoState.memoText,
+  memoText: clampMemoText(memoState.memoText),
   faviconIcon: normalizeFaviconIcon(memoState.faviconIcon),
 })
 
@@ -31,14 +34,17 @@ export const createStateService = (pageElements: PageElements) => {
 
   const updateView = (memoState: MemoState): void => {
     const normalizedMemoState = createNormalizedMemoState(memoState)
-    const currentMemoText = memoState.memoText
+    const currentMemoText = normalizedMemoState.memoText
     const normalizedMemoText = normalizeMemoText(currentMemoText)
+    const memoCharacterCount = countMemoTextCharacters(currentMemoText)
 
     document.title = normalizedMemoText
     pageElements.memoPreviewIcon.textContent = normalizeFaviconIcon(normalizedMemoState.faviconIcon)
     if (readMemoText(pageElements) !== currentMemoText) {
       pageElements.memoInput.value = currentMemoText
     }
+    pageElements.memoCharacterCount.textContent = `${memoCharacterCount}/${MAX_MEMO_TEXT_LENGTH}`
+    pageElements.memoCharacterCount.classList.toggle('memo-card__character-count--limit', memoCharacterCount >= MAX_MEMO_TEXT_LENGTH)
     pageElements.memoCustomIconInput.value = normalizedMemoState.faviconIcon
     pageElements.faviconLink.href = createFaviconDataUrl(normalizedMemoState.faviconIcon)
 

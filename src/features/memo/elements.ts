@@ -5,6 +5,7 @@ export type PageElements = {
   appRoot: HTMLDivElement
   faviconLink: HTMLLinkElement
   memoEditor: HTMLDivElement
+  memoCharacterCount: HTMLParagraphElement
   memoInput: HTMLInputElement
   memoIconList: HTMLUListElement
   memoPreviewIcon: HTMLSpanElement
@@ -26,6 +27,7 @@ export const getPageElements = (): PageElements => ({
   appRoot: getRequiredElementById<HTMLDivElement>(elementIds.appRoot),
   faviconLink: getRequiredElementById<HTMLLinkElement>(elementIds.faviconLink),
   memoEditor: getRequiredElementById<HTMLDivElement>(elementIds.memoEditor),
+  memoCharacterCount: getRequiredElementById<HTMLParagraphElement>(elementIds.memoCharacterCount),
   memoInput: getRequiredElementById<HTMLInputElement>(elementIds.memoInput),
   memoIconList: getRequiredElementById<HTMLUListElement>(elementIds.memoIconList),
   memoPreviewIcon: getRequiredElementById<HTMLSpanElement>(elementIds.memoPreviewIcon),

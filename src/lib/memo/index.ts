@@ -1,6 +1,6 @@
 export { createCustomIconValidationMessage, createFaviconDataUrl, DEFAULT_FAVICON_ICON, FAVICON_OPTIONS, isPresetFaviconIcon, isSingleEmoji, normalizeFaviconIcon } from './icon'
 export { createShareText, createWebShareDataFromMemoState, SHARE_TEXT } from './share'
 export { createMemoState, createSearchFromMemoState, createSearchFromQueryRecord, createShareUrlFromMemoState, readMemoStateFromQueryRecord, readMemoStateFromSearch } from './state'
-export { EMPTY_MEMO_TEXT, FALLBACK_MEMO_TEXT, normalizeMemoText } from './text'
+export { clampMemoText, countMemoTextCharacters, EMPTY_MEMO_TEXT, FALLBACK_MEMO_TEXT, MAX_MEMO_TEXT_LENGTH, normalizeMemoText } from './text'
 export type { MemoState, QueryRecord, QueryValue } from './state'
 export type { ShareTextPlatform } from './share'

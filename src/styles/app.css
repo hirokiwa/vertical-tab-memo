@@ -406,6 +406,22 @@ body {
   color: transparent;
 }
 
+.memo-card__character-count {
+  padding: 0;
+  color: var(--memo-color-subtext);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.memo-card__icon-section {
+  margin-top: -0.75rem;
+}
+
+.memo-card__character-count--limit {
+  color: #b42318;
+}
+
 .memo-card__share-section {
   display: flex;
   flex-direction: column;
