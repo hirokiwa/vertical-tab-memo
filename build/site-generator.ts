@@ -5,9 +5,11 @@ type Locale = 'ja' | 'en'
 type SiteMessages = {
   site: {
     siteName: string
+    siteUrl: string
     homePath: string
     contactPath: string
     privacyPath: string
+    twitterSite: string
     xIconUrl: string
     lineIconUrl: string
     contactFormUrl: string
@@ -30,6 +32,9 @@ type CommonMessagesFile = {
     Pick<
       LocaleMessages,
       | 'htmlLang'
+      | 'ogLocale'
+      | 'ogImageUrl'
+      | 'ogSiteName'
       | 'switchLabel'
       | 'switchLocale'
       | 'switchAriaLabel'
@@ -92,6 +97,9 @@ type PrivacySection = {
 
 type LocaleMessages = {
   htmlLang: string
+  ogLocale: string
+  ogImageUrl: string
+  ogSiteName: string
   switchLabel: string
   switchLocale: Locale
   switchAriaLabel: string
@@ -242,6 +250,30 @@ const createLocalizedPath = (locale: Locale, pathValue: string): string => {
     : normalizedPath
 }
 
+const createAbsoluteUrl = (siteUrl: string, pathValue: string): string => {
+  const normalizedSiteUrl = siteUrl.endsWith('/') ? siteUrl.slice(0, -1) : siteUrl
+  return `${normalizedSiteUrl}${pathValue}`
+}
+
+const createSocialMetaReplacements = (
+  messages: SiteMessages,
+  localeMessages: LocaleMessages,
+  pageTitle: string,
+  pageDescription: string,
+  pagePath: string,
+): Record<string, string> => ({
+  OG_TITLE: escapeHtml(pageTitle),
+  OG_URL: escapeHtml(createAbsoluteUrl(messages.site.siteUrl, pagePath)),
+  OG_IMAGE_URL: escapeHtml(localeMessages.ogImageUrl),
+  OG_DESCRIPTION: escapeHtml(pageDescription),
+  OG_SITE_NAME: escapeHtml(localeMessages.ogSiteName),
+  OG_LOCALE: escapeHtml(localeMessages.ogLocale),
+  TWITTER_SITE: escapeHtml(messages.site.twitterSite),
+  TWITTER_TITLE: escapeHtml(pageTitle),
+  TWITTER_DESCRIPTION: escapeHtml(pageDescription),
+  TWITTER_IMAGE_URL: escapeHtml(localeMessages.ogImageUrl),
+})
+
 const createHomeConfigJson = (localeMessages: LocaleMessages): string =>
   JSON.stringify({
     fallbackMemoText: localeMessages.memo.fallbackText,
@@ -377,7 +409,15 @@ const createHomePage = (
   localeMessages: LocaleMessages,
 ): string => {
   const switchPath = createLocalizedPath(localeMessages.switchLocale, messages.site.homePath)
+  const pagePath = createLocalizedPath(locale, messages.site.homePath)
   const iconOptionReplacements = createIconOptionReplacements(messages, locale)
+  const socialMetaReplacements = createSocialMetaReplacements(
+    messages,
+    localeMessages,
+    localeMessages.home.metaTitle,
+    localeMessages.home.metaDescription,
+    pagePath,
+  )
 
   return createLocalizedPage(template, {
     HTML_LANG: localeMessages.htmlLang,
@@ -425,6 +465,7 @@ const createHomePage = (
     PRIVACY_LINK_LABEL: escapeHtml(localeMessages.home.footerPrivacy),
     X_ICON_URL: messages.site.xIconUrl,
     LINE_ICON_URL: messages.site.lineIconUrl,
+    ...socialMetaReplacements,
     ...iconOptionReplacements,
   })
 }
@@ -436,6 +477,14 @@ const createContactPage = (
   localeMessages: LocaleMessages,
 ): string => {
   const switchPath = createLocalizedPath(localeMessages.switchLocale, messages.site.contactPath)
+  const pagePath = createLocalizedPath(locale, messages.site.contactPath)
+  const socialMetaReplacements = createSocialMetaReplacements(
+    messages,
+    localeMessages,
+    localeMessages.contact.metaTitle,
+    localeMessages.contact.metaDescription,
+    pagePath,
+  )
 
   return createLocalizedPage(template, {
     HTML_LANG: localeMessages.htmlLang,
@@ -461,6 +510,7 @@ const createContactPage = (
     HOME_LINK_LABEL: escapeHtml(localeMessages.contact.footerHome),
     PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
     PRIVACY_LINK_LABEL: escapeHtml(localeMessages.contact.footerPrivacy),
+    ...socialMetaReplacements,
   })
 }
 
@@ -471,7 +521,15 @@ const createPrivacyPage = (
   localeMessages: LocaleMessages,
 ): string => {
   const switchPath = createLocalizedPath(localeMessages.switchLocale, messages.site.privacyPath)
+  const pagePath = createLocalizedPath(locale, messages.site.privacyPath)
   const privacyReplacements = createPrivacyReplacements(localeMessages, locale)
+  const socialMetaReplacements = createSocialMetaReplacements(
+    messages,
+    localeMessages,
+    localeMessages.privacy.metaTitle,
+    localeMessages.privacy.metaDescription,
+    pagePath,
+  )
 
   return createLocalizedPage(template, {
     HTML_LANG: localeMessages.htmlLang,
@@ -491,18 +549,21 @@ const createPrivacyPage = (
     HOME_LINK_LABEL: escapeHtml(localeMessages.privacy.footerHome),
     CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
     CONTACT_LINK_LABEL: escapeHtml(localeMessages.privacy.footerContact),
+    ...socialMetaReplacements,
     ...privacyReplacements,
   })
 }
 
 const createRedirectPage = (
   template: string,
+  socialMetaReplacements: Record<string, string>,
   redirectTitle: string,
   redirectMessage: string,
   redirectSuffix: string,
   extraComment: string,
 ): string =>
   createLocalizedPage(template, {
+    ...socialMetaReplacements,
     REDIRECT_TITLE: escapeHtml(redirectTitle),
     REDIRECT_MESSAGE: escapeHtml(redirectMessage),
     REDIRECT_SUFFIX: redirectSuffix,
@@ -515,6 +576,7 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
   const contactTemplate = readTextFile(resolve(projectRoot, 'templates/contact.html'))
   const privacyTemplate = readTextFile(resolve(projectRoot, 'templates/privacy.html'))
   const redirectTemplate = readTextFile(resolve(projectRoot, 'templates/redirect.html'))
+  const jaLocaleMessages = messages.locales.ja as LocaleMessages
   const generatedRoot = resolve(projectRoot, '.generated')
 
   const inputs: Record<string, string> = {}
@@ -552,12 +614,32 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
 
   writeGeneratedFile(
     rootIndexFilePath,
-    createRedirectPage(redirectTemplate, 'Redirecting...', 'Redirecting to your preferred language...', '/', ''),
+    createRedirectPage(
+      redirectTemplate,
+      createSocialMetaReplacements(
+        messages,
+        jaLocaleMessages,
+        jaLocaleMessages.home.metaTitle,
+        jaLocaleMessages.home.metaDescription,
+        messages.site.homePath,
+      ),
+      'Redirecting...',
+      'Redirecting to your preferred language...',
+      '/',
+      '',
+    ),
   )
   writeGeneratedFile(
     rootContactFilePath,
     createRedirectPage(
       redirectTemplate,
+      createSocialMetaReplacements(
+        messages,
+        jaLocaleMessages,
+        jaLocaleMessages.contact.metaTitle,
+        jaLocaleMessages.contact.metaDescription,
+        messages.site.contactPath,
+      ),
       'Redirecting...',
       'Redirecting to your preferred language...',
       '/contact/',
@@ -568,6 +650,13 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
     rootPrivacyFilePath,
     createRedirectPage(
       redirectTemplate,
+      createSocialMetaReplacements(
+        messages,
+        jaLocaleMessages,
+        jaLocaleMessages.privacy.metaTitle,
+        jaLocaleMessages.privacy.metaDescription,
+        messages.site.privacyPath,
+      ),
       'Redirecting...',
       'Redirecting to your preferred language...',
       '/privacy/',

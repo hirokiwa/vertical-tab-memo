@@ -1,9 +1,11 @@
 {
   "site": {
     "siteName": "Vertical Tab Memo",
+    "siteUrl": "https://vtab.hirokiwa.com",
     "homePath": "/",
     "contactPath": "/contact/",
     "privacyPath": "/privacy/",
+    "twitterSite": "@hirokiwasan",
     "xIconUrl": "https://grandring.hirokiwa.com/x-icon.svg",
     "lineIconUrl": "https://grandring.hirokiwa.com/line-icon.svg",
     "contactFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd8bpfI5QppLfBfRvHRrGM2N-nkhPpXSy6vbva--LU0qOjWmg/viewform?embedded=true",
@@ -45,6 +47,9 @@
   "locales": {
     "ja": {
       "htmlLang": "ja",
+      "ogLocale": "ja_JP",
+      "ogImageUrl": "https://vtab.hirokiwa.com/ogp-ja.jpg",
+      "ogSiteName": "縦タブメモ",
       "switchLabel": "English",
       "switchLocale": "en",
       "switchAriaLabel": "言語を英語に切り替える",
@@ -60,6 +65,9 @@
     },
     "en": {
       "htmlLang": "en",
+      "ogLocale": "en_US",
+      "ogImageUrl": "https://vtab.hirokiwa.com/ogp-en.jpg",
+      "ogSiteName": "Vertical Tab Memo",
       "switchLabel": "日本語",
       "switchLocale": "ja",
       "switchAriaLabel": "Switch language to Japanese",

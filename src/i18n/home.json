@@ -26,7 +26,7 @@
       },
       "home": {
         "metaTitle": "縦タブメモ",
-        "metaDescription": "Chromeの縦タブ向けメモ",
+        "metaDescription": "ブラウザの縦タブで表示する 1 行メモ",
         "pageTitle": "縦タブメモ",
         "pageDescription": "ブラウザの縦タブで表示する 1 行メモ",
         "footerContact": "✉️ お問い合わせ",
@@ -59,7 +59,7 @@
       },
       "home": {
         "metaTitle": "Vertical Tab Memo",
-        "metaDescription": "A one-line memo for Chrome vertical tabs",
+        "metaDescription": "A one-line memo for your browser's vertical tabs",
         "pageTitle": "Vertical Tab Memo",
         "pageDescription": "A one-line memo for your browser's vertical tabs",
         "footerContact": "✉️ Contact",
