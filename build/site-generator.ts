@@ -51,6 +51,7 @@ type CommonMessagesFile = {
       | 'creatorCreditPrefix'
       | 'creatorCreditLabel'
       | 'externalLinkScreenReaderText'
+      | 'appleMobileWebAppTitle'
     >
   >
 }
@@ -112,6 +113,7 @@ type LocaleMessages = {
   creatorCreditPrefix: string
   creatorCreditLabel: string
   externalLinkScreenReaderText: string
+  appleMobileWebAppTitle: string
   memo: {
     fallbackText: string
     editorTitle: string
@@ -299,6 +301,8 @@ const createLocalizedPage = (
   replacements: Record<string, string>,
 ): string => replaceTemplateTokens(template, replacements)
 
+const createManifestHref = (locale: Locale): string => `/${locale}/site.webmanifest`
+
 const createIconOptionReplacements = (messages: SiteMessages, locale: Locale): Record<string, string> =>
   Object.fromEntries(
     messages.iconOptions.map((iconOption, index) => [
@@ -412,6 +416,8 @@ const createHomePage = (
     HTML_LANG: localeMessages.htmlLang,
     META_DESCRIPTION: escapeHtml(localeMessages.home.metaDescription),
     META_TITLE: escapeHtml(localeMessages.home.metaTitle),
+    APPLE_MOBILE_WEB_APP_TITLE: escapeHtml(localeMessages.appleMobileWebAppTitle),
+    MANIFEST_HREF: createManifestHref(locale),
     SEO_LINKS: '',
     LANGUAGE_NAV_LABEL: escapeHtml(localeMessages.languageNavLabel),
     LANGUAGE_SWITCH_HREF: switchPath,
@@ -486,6 +492,8 @@ const createContactPage = (
     HTML_LANG: localeMessages.htmlLang,
     META_DESCRIPTION: escapeHtml(localeMessages.contact.metaDescription),
     META_TITLE: escapeHtml(localeMessages.contact.metaTitle),
+    APPLE_MOBILE_WEB_APP_TITLE: escapeHtml(localeMessages.appleMobileWebAppTitle),
+    MANIFEST_HREF: createManifestHref(locale),
     SEO_LINKS: '',
     LANGUAGE_NAV_LABEL: escapeHtml(localeMessages.languageNavLabel),
     LANGUAGE_SWITCH_HREF: switchPath,
@@ -543,6 +551,8 @@ const createPrivacyPage = (
     HTML_LANG: localeMessages.htmlLang,
     META_DESCRIPTION: escapeHtml(localeMessages.privacy.metaDescription),
     META_TITLE: escapeHtml(localeMessages.privacy.metaTitle),
+    APPLE_MOBILE_WEB_APP_TITLE: escapeHtml(localeMessages.appleMobileWebAppTitle),
+    MANIFEST_HREF: createManifestHref(locale),
     SEO_LINKS: '',
     LANGUAGE_NAV_LABEL: escapeHtml(localeMessages.languageNavLabel),
     LANGUAGE_SWITCH_HREF: switchPath,
@@ -571,6 +581,7 @@ const createPrivacyPage = (
 const createRedirectPage = (
   template: string,
   socialMetaReplacements: Record<string, string>,
+  localeMessages: LocaleMessages,
   redirectTitle: string,
   redirectMessage: string,
   redirectSuffix: string,
@@ -578,6 +589,8 @@ const createRedirectPage = (
 ): string =>
   createLocalizedPage(template, {
     ...socialMetaReplacements,
+    APPLE_MOBILE_WEB_APP_TITLE: escapeHtml(localeMessages.appleMobileWebAppTitle),
+    MANIFEST_HREF: '/site.webmanifest',
     REDIRECT_TITLE: escapeHtml(redirectTitle),
     REDIRECT_MESSAGE: escapeHtml(redirectMessage),
     REDIRECT_SUFFIX: redirectSuffix,
@@ -637,6 +650,7 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
         jaLocaleMessages.home.metaDescription,
         messages.site.homePath,
       ),
+      jaLocaleMessages,
       'Redirecting...',
       'Redirecting to your preferred language...',
       '/',
@@ -654,6 +668,7 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
         jaLocaleMessages.contact.metaDescription,
         messages.site.contactPath,
       ),
+      jaLocaleMessages,
       'Redirecting...',
       'Redirecting to your preferred language...',
       '/contact/',
@@ -671,6 +686,7 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
         jaLocaleMessages.privacy.metaDescription,
         messages.site.privacyPath,
       ),
+      jaLocaleMessages,
       'Redirecting...',
       'Redirecting to your preferred language...',
       '/privacy/',

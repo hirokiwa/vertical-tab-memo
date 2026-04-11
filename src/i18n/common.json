@@ -65,7 +65,8 @@
       "privacyFooterNavAriaLabel": "プライバシーポリシーページのフッターリンク",
       "creatorCreditPrefix": "2026 ",
       "creatorCreditLabel": "ひろきゎ",
-      "externalLinkScreenReaderText": "（新しいタブで開きます）"
+      "externalLinkScreenReaderText": "（新しいタブで開きます）",
+      "appleMobileWebAppTitle": "縦タブメモ"
     },
     "en": {
       "htmlLang": "en",
@@ -87,7 +88,8 @@
       "privacyFooterNavAriaLabel": "Privacy policy page footer links",
       "creatorCreditPrefix": "2026 ",
       "creatorCreditLabel": "ひろきゎ",
-      "externalLinkScreenReaderText": "(opens in a new tab)"
+      "externalLinkScreenReaderText": "(opens in a new tab)",
+      "appleMobileWebAppTitle": "TabMemo"
     }
   }
 }
