@@ -27,6 +27,11 @@
     {{SEO_LINKS}}
   </head>
   <body>
+    <svg class="app-icon-defs" aria-hidden="true" focusable="false">
+      <symbol id="icon-external-link" viewBox="0 -960 960 960">
+        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+      </symbol>
+    </svg>
     <div id="app" class="privacy-page">
       <main class="privacy-page__main">
         <article class="privacy-policy" aria-labelledby="privacy-policy-title">
@@ -61,9 +66,9 @@
             <h2 id="privacy-section-3" class="privacy-policy__section-title">{{PRIVACY_SECTION_3_TITLE}}</h2>
             <h3 class="privacy-policy__subsection-title">{{PRIVACY_SECTION_3_SUBHEADING_1}}</h3>
             <p class="privacy-policy__text">{{PRIVACY_SECTION_3_PARAGRAPH_1}}</p>
-            <p class="privacy-policy__text">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_PREFIX}}<a class="privacy-policy__link" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_1_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_1_LABEL}}</a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_MIDDLE_1}}<a class="privacy-policy__link" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_2_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_2_LABEL}}</a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_MIDDLE_2}}<a class="privacy-policy__link" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_3_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_3_LABEL}}</a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_SUFFIX}}</p>
+            <p class="privacy-policy__text">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_PREFIX}}<a class="privacy-policy__link privacy-policy__link--external" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_1_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_1_LABEL}}<span class="screen-reader-only">{{EXTERNAL_LINK_SR_TEXT}}</span><svg class="privacy-policy__link-icon" fill="currentColor" aria-hidden="true"><use href="#icon-external-link" /></svg></a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_MIDDLE_1}}<a class="privacy-policy__link privacy-policy__link--external" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_2_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_2_LABEL}}<span class="screen-reader-only">{{EXTERNAL_LINK_SR_TEXT}}</span><svg class="privacy-policy__link-icon" fill="currentColor" aria-hidden="true"><use href="#icon-external-link" /></svg></a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_MIDDLE_2}}<a class="privacy-policy__link privacy-policy__link--external" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_3_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_LINK_3_LABEL}}<span class="screen-reader-only">{{EXTERNAL_LINK_SR_TEXT}}</span><svg class="privacy-policy__link-icon" fill="currentColor" aria-hidden="true"><use href="#icon-external-link" /></svg></a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_1_SUFFIX}}</p>
             <h3 class="privacy-policy__subsection-title">{{PRIVACY_SECTION_3_SUBHEADING_2}}</h3>
-            <p class="privacy-policy__text">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_PREFIX}}<a class="privacy-policy__link" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_LINK_1_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_LINK_1_LABEL}}</a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_SUFFIX}}</p>
+            <p class="privacy-policy__text">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_PREFIX}}<a class="privacy-policy__link privacy-policy__link--external" href="{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_LINK_1_HREF}}" target="_blank" rel="noreferrer">{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_LINK_1_LABEL}}<span class="screen-reader-only">{{EXTERNAL_LINK_SR_TEXT}}</span><svg class="privacy-policy__link-icon" fill="currentColor" aria-hidden="true"><use href="#icon-external-link" /></svg></a>{{PRIVACY_SECTION_3_RICH_PARAGRAPH_2_SUFFIX}}</p>
           </section>
           <section class="privacy-policy__section" aria-labelledby="privacy-section-4">
             <h2 id="privacy-section-4" class="privacy-policy__section-title">{{PRIVACY_SECTION_4_TITLE}}</h2>
@@ -135,10 +140,11 @@
         <p class="memo-app__footer-credit">
           <span class="memo-app__footer-credit-symbol" aria-hidden="true">&copy;</span>
           <span class="memo-app__footer-credit-prefix">{{CREATOR_LINK_PREFIX}}</span>
-          <a class="memo-app__footer-credit-link" href="{{CREATOR_LINK_HREF}}" target="_blank" rel="noopener noreferrer" aria-label="{{CREATOR_LINK_ARIA_LABEL}}">
+          <a class="memo-app__footer-credit-link" href="{{CREATOR_LINK_HREF}}" target="_blank" rel="noopener noreferrer">
             <span>{{CREATOR_LINK_LABEL}}</span>
-            <svg class="memo-app__footer-credit-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
-              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+            <span class="screen-reader-only">{{EXTERNAL_LINK_SR_TEXT}}</span>
+            <svg class="memo-app__footer-credit-icon" fill="currentColor" aria-hidden="true">
+              <use href="#icon-external-link" />
             </svg>
           </a>
         </p>

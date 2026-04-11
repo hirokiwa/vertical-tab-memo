@@ -38,6 +38,25 @@ body {
   justify-content: center;
 }
 
+.app-icon-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.screen-reader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .page-language-nav {
   display: flex;
   justify-content: flex-end;
@@ -218,6 +237,16 @@ body {
     text-underline-offset 160ms ease,
     transform 160ms ease,
     color 160ms ease;
+}
+
+.privacy-policy__link--external {
+  gap: 0.28rem;
+}
+
+.privacy-policy__link-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
 }
 
 .memo-app__footer-link:hover,

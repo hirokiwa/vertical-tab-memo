@@ -27,6 +27,11 @@
     {{SEO_LINKS}}
   </head>
   <body>
+    <svg class="app-icon-defs" aria-hidden="true" focusable="false">
+      <symbol id="icon-external-link" viewBox="0 -960 960 960">
+        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+      </symbol>
+    </svg>
     <div id="app" class="memo-app">
       <main class="memo-app__main">
         <article class="memo-card" aria-labelledby="page-title">
@@ -281,10 +286,11 @@
         <p class="memo-app__footer-credit">
           <span class="memo-app__footer-credit-symbol" aria-hidden="true">&copy;</span>
           <span class="memo-app__footer-credit-prefix">{{CREATOR_LINK_PREFIX}}</span>
-          <a class="memo-app__footer-credit-link" href="{{CREATOR_LINK_HREF}}" target="_blank" rel="noopener noreferrer" aria-label="{{CREATOR_LINK_ARIA_LABEL}}">
+          <a class="memo-app__footer-credit-link" href="{{CREATOR_LINK_HREF}}" target="_blank" rel="noopener noreferrer">
             <span>{{CREATOR_LINK_LABEL}}</span>
-            <svg class="memo-app__footer-credit-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
-              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+            <span class="screen-reader-only">{{EXTERNAL_LINK_SR_TEXT}}</span>
+            <svg class="memo-app__footer-credit-icon" fill="currentColor" aria-hidden="true">
+              <use href="#icon-external-link" />
             </svg>
           </a>
         </p>

@@ -65,7 +65,7 @@
       "privacyFooterNavAriaLabel": "プライバシーポリシーページのフッターリンク",
       "creatorCreditPrefix": "2026 ",
       "creatorCreditLabel": "ひろきゎ",
-      "creatorCreditAriaLabel": "ひろきゎのプロフィールを新しいタブで開く"
+      "externalLinkScreenReaderText": "（新しいタブで開きます）"
     },
     "en": {
       "htmlLang": "en",
@@ -87,7 +87,7 @@
       "privacyFooterNavAriaLabel": "Privacy policy page footer links",
       "creatorCreditPrefix": "2026 ",
       "creatorCreditLabel": "ひろきゎ",
-      "creatorCreditAriaLabel": "Open Hirokiwa profile in a new tab"
+      "externalLinkScreenReaderText": "(opens in a new tab)"
     }
   }
 }

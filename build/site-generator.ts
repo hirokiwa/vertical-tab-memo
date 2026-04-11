@@ -50,7 +50,7 @@ type CommonMessagesFile = {
       | 'privacyFooterNavAriaLabel'
       | 'creatorCreditPrefix'
       | 'creatorCreditLabel'
-      | 'creatorCreditAriaLabel'
+      | 'externalLinkScreenReaderText'
     >
   >
 }
@@ -111,7 +111,7 @@ type LocaleMessages = {
   privacyFooterNavAriaLabel: string
   creatorCreditPrefix: string
   creatorCreditLabel: string
-  creatorCreditAriaLabel: string
+  externalLinkScreenReaderText: string
   memo: {
     fallbackText: string
     editorTitle: string
@@ -452,7 +452,7 @@ const createHomePage = (
     CREATOR_LINK_HREF: messages.site.creatorUrl,
     CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
     CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
-    CREATOR_LINK_ARIA_LABEL: escapeHtml(localeMessages.creatorCreditAriaLabel),
+    EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
     HOME_LINK_TEXT: escapeHtml(localeMessages.home.footerHome),
     CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
@@ -511,7 +511,7 @@ const createContactPage = (
     CREATOR_LINK_HREF: messages.site.creatorUrl,
     CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
     CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
-    CREATOR_LINK_ARIA_LABEL: escapeHtml(localeMessages.creatorCreditAriaLabel),
+    EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
     HOME_LINK_TEXT: escapeHtml(localeMessages.contact.footerHome),
     CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
@@ -556,7 +556,7 @@ const createPrivacyPage = (
     CREATOR_LINK_HREF: messages.site.creatorUrl,
     CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
     CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
-    CREATOR_LINK_ARIA_LABEL: escapeHtml(localeMessages.creatorCreditAriaLabel),
+    EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
     HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
     HOME_LINK_TEXT: escapeHtml(localeMessages.privacy.footerHome),
     PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
