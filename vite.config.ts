@@ -1,4 +1,4 @@
-import { cpSync, existsSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs'
+import { cpSync, existsSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import { relative, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import { generateLocalizedPages } from './build/site-generator'
@@ -99,6 +99,23 @@ const moveGeneratedBuildFiles = (): void => {
   rmSync(distGeneratedRoot, { recursive: true, force: true })
 }
 
+const createBuildDate = (): string =>
+  new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date())
+
+const writeSitemap = (): void => {
+  const sitemapTemplatePath = resolve(__dirname, 'templates/sitemap.xml')
+  const sitemapOutputPath = resolve(__dirname, 'dist/sitemap.xml')
+  const sitemapTemplate = readFileSync(sitemapTemplatePath, 'utf-8')
+  const sitemapXml = sitemapTemplate.replaceAll('2026-03-24', createBuildDate())
+
+  writeFileSync(sitemapOutputPath, sitemapXml)
+}
+
 const resolveGeneratedPagePath = (requestPathname: string): string | undefined => {
   const directMatch = generatedPages.routes[requestPathname]
 
@@ -144,6 +161,7 @@ export default defineConfig(() => ({
       apply: 'build',
       closeBundle: () => {
         moveGeneratedBuildFiles()
+        writeSitemap()
       },
       transformIndexHtml: {
         order: 'post',
