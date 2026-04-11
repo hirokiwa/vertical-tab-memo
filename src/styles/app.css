@@ -68,13 +68,6 @@ body {
   min-height: 16rem;
 }
 
-.memo-app__footer-text {
-  color: var(--memo-color-subtext);
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  line-height: 1.5;
-  padding: 0;
-}
-
 .memo-app__footer-nav {
   display: flex;
   flex-wrap: wrap;
