@@ -2,18 +2,18 @@
   "locales": {
     "ja": {
       "share": {
-        "xTemplate": "『{{ICON}} {{MESSAGE}}』\n\nブラウザの縦タブで表示する 1 行メモ\n\n#縦タブメモ\n",
-        "lineTemplate": "🎉 縦タブメモ\n\n『{{ICON}} {{MESSAGE}}』\n\nブラウザの縦タブで表示する 1 行メモ",
+        "xTemplate": "＼ 縦タブメモ！／\nブラウザの縦タブで表示する 1 行メモ\n\n『{{ICON}} {{MESSAGE}}』\n\n#VerticalTabMemo\n",
+        "lineTemplate": "＼ 縦タブメモ！／\nブラウザの縦タブで表示する 1 行メモ\n\n『{{ICON}} {{MESSAGE}}』",
         "webShareTitle": "縦タブメモ",
-        "webShareText": "🎉 縦タブメモ\n\n『{{ICON}} {{MESSAGE}}』\n\nブラウザの縦タブで表示する 1 行メモ"
+        "webShareText": "＼ 縦タブメモ！／\nブラウザの縦タブで表示する 1 行メモ\n\n『{{ICON}} {{MESSAGE}}』"
       }
     },
     "en": {
       "share": {
-        "xTemplate": "\"{{ICON}} {{MESSAGE}}\"\n\nA one-line memo for your browser's vertical tabs\n\n#VerticalTabMemo\n",
-        "lineTemplate": "🎉 Vertical Tab Memo\n\n\"{{ICON}} {{MESSAGE}}\"\n\nA one-line memo for your browser's vertical tabs",
+        "xTemplate": "＼ Vertical Tab Memo! ／\nA one-line memo for your browser's vertical tabs\n\n\"{{ICON}} {{MESSAGE}}\"\n\n#VerticalTabMemo\n",
+        "lineTemplate": "＼ Vertical Tab Memo! ／\nA one-line memo for your browser's vertical tabs\n\n\"{{ICON}} {{MESSAGE}}\"",
         "webShareTitle": "Vertical Tab Memo",
-        "webShareText": "🎉 Vertical Tab Memo\n\n\"{{ICON}} {{MESSAGE}}\"\n\nA one-line memo for your browser's vertical tabs"
+        "webShareText": "＼ Vertical Tab Memo! ／\nA one-line memo for your browser's vertical tabs\n\n\"{{ICON}} {{MESSAGE}}\""
       }
     }
   }
