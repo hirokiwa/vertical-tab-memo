@@ -14,17 +14,21 @@
         <section class="memo-card" aria-label="Memo editor">
           <h2 class="memo-card__title">縦タブメモ</h2>
           <p class="memo-card__description">ブラウザの縦タブで表示する 1 行メモ</p>
-          <form id="memo-form" class="memo-card__form" aria-label="Memo form">
-            <label class="memo-card__label" for="memo-input">表示テキスト</label>
-            <input
-              id="memo-input"
-              class="memo-card__input"
-              type="text"
-              autocomplete="off"
-              spellcheck="false"
-              aria-describedby="memo-preview"
-            />
-          </form>
+          <section class="memo-card__editor-section" aria-labelledby="memo-editor-title">
+            <h3 id="memo-editor-title" class="memo-card__editor-title">表示テキスト</h3>
+            <div id="memo-editor" class="memo-card__editor">
+              <span id="memo-preview-icon" class="memo-card__editor-icon" aria-hidden="true"></span>
+              <input
+                id="memo-input"
+                class="memo-card__editor-text"
+                type="text"
+                placeholder="縦タブワロタ"
+                aria-labelledby="memo-editor-title"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </div>
+          </section>
           <section class="memo-card__icon-section" aria-label="Favicon icon selector">
             <h3 class="memo-card__icon-title">アイコン</h3>
             <ul id="memo-icon-list" class="memo-card__icon-list">
@@ -134,8 +138,6 @@
               </li>
             </ul>
           </section>
-          <h3 class="memo-card__preview-title">プレビュー</h3>
-          <p id="memo-preview" class="memo-card__preview" aria-live="polite"></p>
           <section class="memo-card__share-section" aria-labelledby="memo-share-title" aria-describedby="memo-share-note">
             <h3 id="memo-share-title" class="memo-card__url-title">このメモをシェア</h3>
             <div class="memo-card__share-actions" role="group" aria-label="共有方法">

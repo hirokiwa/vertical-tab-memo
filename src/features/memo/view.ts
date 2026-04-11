@@ -1,7 +1,7 @@
-const MEMO_FORM_ID = 'memo-form'
+const MEMO_EDITOR_ID = 'memo-editor'
 const MEMO_INPUT_ID = 'memo-input'
 const MEMO_ICON_LIST_ID = 'memo-icon-list'
-const MEMO_PREVIEW_ID = 'memo-preview'
+const MEMO_PREVIEW_ICON_ID = 'memo-preview-icon'
 const MEMO_URL_COPY_ID = 'memo-url-copy'
 const MEMO_URL_COPY_ICON_ID = 'memo-url-copy-icon'
 const MEMO_SHARE_X_ID = 'memo-share-x'
@@ -18,10 +18,10 @@ const MEMO_CUSTOM_ICON_CLOSE_ID = 'memo-custom-icon-close'
 export const elementIds = {
   appRoot: 'app',
   faviconLink: 'app-favicon',
-  memoForm: MEMO_FORM_ID,
+  memoEditor: MEMO_EDITOR_ID,
   memoInput: MEMO_INPUT_ID,
   memoIconList: MEMO_ICON_LIST_ID,
-  memoPreview: MEMO_PREVIEW_ID,
+  memoPreviewIcon: MEMO_PREVIEW_ICON_ID,
   memoUrlCopy: MEMO_URL_COPY_ID,
   memoUrlCopyIcon: MEMO_URL_COPY_ICON_ID,
   memoShareX: MEMO_SHARE_X_ID,

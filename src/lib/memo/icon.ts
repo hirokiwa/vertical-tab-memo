@@ -1,4 +1,4 @@
-export const DEFAULT_FAVICON_ICON = '✏️'
+export const DEFAULT_FAVICON_ICON = '😂'
 
 export const FAVICON_OPTIONS = [
   { icon: '😀', label: '笑顔' },

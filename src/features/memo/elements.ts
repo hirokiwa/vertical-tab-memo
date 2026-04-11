@@ -4,10 +4,10 @@ import { elementIds } from './view'
 export type PageElements = {
   appRoot: HTMLDivElement
   faviconLink: HTMLLinkElement
-  memoForm: HTMLFormElement
+  memoEditor: HTMLDivElement
   memoInput: HTMLInputElement
   memoIconList: HTMLUListElement
-  memoPreview: HTMLParagraphElement
+  memoPreviewIcon: HTMLSpanElement
   memoUrlCopyButton: HTMLButtonElement
   memoUrlCopyIconPath: SVGPathElement
   memoShareXButton: HTMLButtonElement
@@ -25,10 +25,10 @@ export type PageElements = {
 export const getPageElements = (): PageElements => ({
   appRoot: getRequiredElementById<HTMLDivElement>(elementIds.appRoot),
   faviconLink: getRequiredElementById<HTMLLinkElement>(elementIds.faviconLink),
-  memoForm: getRequiredElementById<HTMLFormElement>(elementIds.memoForm),
+  memoEditor: getRequiredElementById<HTMLDivElement>(elementIds.memoEditor),
   memoInput: getRequiredElementById<HTMLInputElement>(elementIds.memoInput),
   memoIconList: getRequiredElementById<HTMLUListElement>(elementIds.memoIconList),
-  memoPreview: getRequiredElementById<HTMLParagraphElement>(elementIds.memoPreview),
+  memoPreviewIcon: getRequiredElementById<HTMLSpanElement>(elementIds.memoPreviewIcon),
   memoUrlCopyButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoUrlCopy),
   memoUrlCopyIconPath: document.getElementById(elementIds.memoUrlCopyIcon)?.querySelector('path') as SVGPathElement,
   memoShareXButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareX),

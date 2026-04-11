@@ -15,11 +15,13 @@ const createNormalizedMemoState = (memoState: MemoState): MemoState => ({
   faviconIcon: normalizeFaviconIcon(memoState.faviconIcon),
 })
 
+const readMemoText = (pageElements: PageElements): string => pageElements.memoInput.value
+
 export const createStateService = (pageElements: PageElements) => {
   let updateSelectedIconButtons = (_selectedIcon: string): void => {}
 
   const readCurrentMemoState = (): MemoState => ({
-    memoText: pageElements.memoInput.value,
+    memoText: readMemoText(pageElements),
     faviconIcon: pageElements.appRoot.dataset.currentFaviconIcon ?? DEFAULT_FAVICON_ICON,
   })
 
@@ -29,11 +31,14 @@ export const createStateService = (pageElements: PageElements) => {
 
   const updateView = (memoState: MemoState): void => {
     const normalizedMemoState = createNormalizedMemoState(memoState)
-
-    const normalizedMemoText = normalizeMemoText(normalizedMemoState.memoText)
+    const currentMemoText = memoState.memoText
+    const normalizedMemoText = normalizeMemoText(currentMemoText)
 
     document.title = normalizedMemoText
-    pageElements.memoPreview.textContent = `${normalizeFaviconIcon(normalizedMemoState.faviconIcon)} ${normalizedMemoText}`
+    pageElements.memoPreviewIcon.textContent = normalizeFaviconIcon(normalizedMemoState.faviconIcon)
+    if (readMemoText(pageElements) !== currentMemoText) {
+      pageElements.memoInput.value = currentMemoText
+    }
     pageElements.memoCustomIconInput.value = normalizedMemoState.faviconIcon
     pageElements.faviconLink.href = createFaviconDataUrl(normalizedMemoState.faviconIcon)
 
@@ -52,7 +57,6 @@ export const createStateService = (pageElements: PageElements) => {
   }
 
   const applyMemoState = (memoState: MemoState): void => {
-    pageElements.memoInput.value = memoState.memoText
     syncMemoState(memoState)
   }
 
