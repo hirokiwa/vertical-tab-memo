@@ -695,6 +695,7 @@ body {
 
 .privacy-page {
   min-height: 100svh;
+  width: 100%;
   max-width: 760px;
   padding: clamp(0.75rem, 2vw, 1.25rem);
   display: flex;
