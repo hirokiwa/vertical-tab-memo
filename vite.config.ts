@@ -71,6 +71,8 @@ const createSeoTags = (pathname: string) => {
 
 const generatedPages = generateLocalizedPages(__dirname)
 
+const removeHtmlComments = (html: string): string => html.replace(/<!--[\s\S]*?-->/g, '')
+
 const copyGeneratedEntry = (sourcePath: string, targetPath: string): void => {
   const sourceStats = statSync(sourcePath)
 
@@ -165,9 +167,12 @@ export default defineConfig(() => ({
       },
       transformIndexHtml: {
         order: 'post',
-        handler: (_html, context) => {
+        handler: (html, context) => {
           const pathname = context.path.startsWith('/') ? context.path : `/${context.path}`
-          return [googleTagScript, googleTagInlineScript, ...createSeoTags(pathname)]
+          return {
+            html: removeHtmlComments(html),
+            tags: [googleTagScript, googleTagInlineScript, ...createSeoTags(pathname)],
+          }
         },
       },
     },
