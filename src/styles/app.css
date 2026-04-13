@@ -116,6 +116,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding-top: 5rem;
 }
 
 .memo-app__footer-credit {
@@ -968,6 +969,9 @@ body {
 @media (max-width: 719px) {
   .memo-app__ad-section {
     display: none;
+  }
+  .memo-app__footer {
+    padding-top: 0;
   }
   .memo-app {
     padding: 0;
