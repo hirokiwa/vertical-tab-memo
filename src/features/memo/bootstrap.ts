@@ -7,7 +7,11 @@ import type { PageConfig } from './page-config'
 import { setupShare } from './share-controller'
 import { createStateService } from './state-service'
 
-export const initializePage = (initialMemoState: MemoState, pageConfig: PageConfig): void => {
+const focusMemoInput = (pageElements: ReturnType<typeof getPageElements>): void => {
+  pageElements.memoInput.focus()
+}
+
+export const initializePage = (initialMemoState: MemoState, pageConfig: PageConfig, shouldFocusMemoInput: boolean): void => {
   const pageElements = getPageElements()
   const homeScreenService = createHomeScreenService(pageElements)
   const stateService = createStateService(pageElements, pageConfig, homeScreenService)
@@ -32,4 +36,8 @@ export const initializePage = (initialMemoState: MemoState, pageConfig: PageConf
 
   stateService.applyMemoState(initialMemoState)
   pageElements.memoShareNativeButton.disabled = typeof navigator.share !== 'function'
+
+  if (shouldFocusMemoInput) {
+    focusMemoInput(pageElements)
+  }
 }

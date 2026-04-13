@@ -773,6 +773,65 @@ body {
   line-height: 1.2;
 }
 
+.memo-card__new-tab-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.memo-card__new-tab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  color: #ffffff;
+  padding: 0.5rem 0.72rem;
+  border: 2px solid #2c8a4c;
+  border-radius: 0.72rem;
+  background: #2c8a4c;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    border-radius 160ms ease,
+    transform 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.memo-card__new-tab-link:hover,
+.memo-card__new-tab-link:focus-visible {
+  transform: translateY(-1px);
+}
+
+.memo-card__new-tab-icon {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+  color: #256f3d;
+  transition: transform 160ms ease;
+}
+
+.memo-card__new-tab-link:hover .memo-card__new-tab-icon,
+.memo-card__new-tab-link:focus-visible .memo-card__new-tab-icon {
+  transform: scale(1.08);
+}
+
+.memo-card__new-tab-icon-svg {
+  width: 0.92rem;
+  height: 0.92rem;
+  display: block;
+}
+
+.memo-card__new-tab-label {
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
 .memo-card__note {
   color: #b42318;
   font-size: 0.8rem;

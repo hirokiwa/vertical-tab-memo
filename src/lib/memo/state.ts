@@ -1,4 +1,4 @@
-import { FAVICON_QUERY_KEY, MEMO_QUERY_KEY } from './stateKeys'
+import { FAVICON_QUERY_KEY, MEMO_QUERY_KEY, NEW_TAB_QUERY_KEY } from './stateKeys'
 import { normalizeFaviconIcon } from './icon'
 import { clampMemoText, EMPTY_MEMO_TEXT } from './text'
 
@@ -60,3 +60,8 @@ export const createShareUrlFromMemoState = (
   memoState: MemoState,
   locationValue: Pick<Location, 'origin' | 'pathname'>,
 ): string => `${locationValue.origin}${locationValue.pathname}${createSearchFromMemoState(memoState)}`
+
+export const shouldFocusMemoInputFromSearch = (search: string): boolean => {
+  const searchParameters = new URLSearchParams(search)
+  return searchParameters.get(NEW_TAB_QUERY_KEY) === '1'
+}

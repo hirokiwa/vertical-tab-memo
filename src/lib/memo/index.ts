@@ -1,6 +1,14 @@
 export { createCustomIconValidationMessage, createFaviconDataUrl, DEFAULT_FAVICON_ICON, FAVICON_OPTIONS, isPresetFaviconIcon, isSingleEmoji, normalizeFaviconIcon } from './icon'
 export { createShareText, createWebShareDataFromMemoState } from './share'
-export { createMemoState, createSearchFromMemoState, createSearchFromQueryRecord, createShareUrlFromMemoState, readMemoStateFromQueryRecord, readMemoStateFromSearch } from './state'
+export {
+  createMemoState,
+  createSearchFromMemoState,
+  createSearchFromQueryRecord,
+  createShareUrlFromMemoState,
+  readMemoStateFromQueryRecord,
+  readMemoStateFromSearch,
+  shouldFocusMemoInputFromSearch,
+} from './state'
 export { clampMemoText, countMemoTextCharacters, EMPTY_MEMO_TEXT, MAX_MEMO_TEXT_LENGTH, normalizeMemoText } from './text'
 export type { MemoState, QueryRecord, QueryValue } from './state'
 export type { ShareMessages, ShareTextPlatform } from './share'

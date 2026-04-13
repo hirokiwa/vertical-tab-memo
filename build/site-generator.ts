@@ -129,6 +129,9 @@ type LocaleMessages = {
     xAriaLabel: string
     lineLabel: string
     lineAriaLabel: string
+    newTabLabel: string
+    newTabSectionAriaLabel: string
+    newTabHrefQuery: string
     customDialogTitle: string
     customInputLabel: string
     customToggleAriaLabel: string
@@ -454,6 +457,9 @@ const createHomePage = (
     SHARE_X_LABEL: escapeHtml(localeMessages.memo.xLabel),
     SHARE_LINE_ARIA_LABEL: escapeHtml(localeMessages.memo.lineAriaLabel),
     SHARE_LINE_LABEL: escapeHtml(localeMessages.memo.lineLabel),
+    NEW_TAB_LABEL: escapeHtml(localeMessages.memo.newTabLabel),
+    NEW_TAB_SECTION_ARIA_LABEL: escapeHtml(localeMessages.memo.newTabSectionAriaLabel),
+    NEW_TAB_HREF: `${createLocalizedPath(locale, messages.site.homePath)}${localeMessages.memo.newTabHrefQuery}`,
     COPY_ARIA_LABEL: escapeHtml(localeMessages.memo.copyAriaLabel),
     COPY_LABEL: escapeHtml(localeMessages.memo.copyLabel),
     SHARE_NATIVE_ARIA_LABEL: escapeHtml(localeMessages.memo.nativeAriaLabel),
