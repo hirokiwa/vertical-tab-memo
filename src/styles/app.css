@@ -388,7 +388,13 @@ body {
 
 @media (max-width: 600px) {
   .memo-card__heading-group {
-    zoom: calc((100vw - 1.65rem) / 620px);
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    border-radius: 0;
+  }
+  
+  .memo-card__header-visual {
+    zoom: calc((100vw - 0.95rem) / 620px);
   }
 }
 
@@ -961,6 +967,9 @@ body {
 @media (max-width: 719px) {
   .memo-app__ad-section {
     display: none;
+  }
+  .memo-app {
+    padding: 0;
   }
 }
 
