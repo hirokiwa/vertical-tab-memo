@@ -345,6 +345,7 @@ body {
 
 .memo-card__header-visual--tab {
   display: flex;
+  align-items: center;
   gap: 12px;
   font-size: 16px;
   padding: 2px 8px;
