@@ -31,7 +31,7 @@
     <link id="app-apple-touch-icon" rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta id="app-apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="{{APPLE_MOBILE_WEB_APP_TITLE}}" />
     <link id="app-manifest" rel="manifest" href="{{MANIFEST_HREF}}" />
-    
+    <link href="{{HEADER_VISUAL_FONT_HREF}}" rel="stylesheet" />
     {{SEO_LINKS}}
   </head>
   <body>
@@ -42,7 +42,7 @@
     </svg>
     <div id="app" class="memo-app">
       <main class="memo-app__main">
-        <article class="memo-card" aria-labelledby="page-title">
+        <article class="memo-card" aria-labelledby="page-title" aria-describedby="page-description">
           <header class="memo-card__header">
             <nav class="page-language-nav" aria-label="{{LANGUAGE_NAV_LABEL}}">
               <a class="page-language-nav__link" href="{{LANGUAGE_SWITCH_HREF}}" hreflang="{{LANGUAGE_SWITCH_LOCALE}}" lang="{{LANGUAGE_SWITCH_LOCALE}}" aria-label="{{LANGUAGE_SWITCH_ARIA_LABEL}}">
@@ -52,10 +52,34 @@
                 <span class="page-language-nav__label">{{LANGUAGE_SWITCH_LABEL}}</span>
               </a>
             </nav>
-            <hgroup class="memo-card__heading-group">
-              <h1 id="page-title" class="memo-card__title">{{PAGE_TITLE}}</h1>
-              <p class="memo-card__description">{{PAGE_DESCRIPTION}}</p>
-            </hgroup>
+            <div class="memo-card__heading-group">
+              <div class="memo-card__header-visual">
+                <aside class="memo-card__header-visual--tabs-area" aria-hidden="true">
+                  <ul class="memo-card__header-visual--tabs-list">
+                    <li class="memo-card__header-visual--tab">
+                      <span class="memo-card__header-visual--tab-icon" aria-hidden="true">🔥</span>
+                      <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_ONE}}</span>
+                    </li>
+                    <li class="memo-card__header-visual--tab memo-card__header-visual--tab-selected">
+                      <span class="memo-card__header-visual--tab-icon" aria-hidden="true">🌏</span>
+                      <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_TWO}}</span>
+                    </li>
+                    <li class="memo-card__header-visual--tab">
+                      <span class="memo-card__header-visual--tab-icon" aria-hidden="true">👆</span>
+                      <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_THREE}}</span>
+                    </li>
+                    <li class="memo-card__header-visual--tab">
+                      <span class="memo-card__header-visual--tab-icon" aria-hidden="true">🎉</span>
+                      <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_FOUR}}</span>
+                    </li>
+                  </ul>
+                </aside>
+                <hgroup class="memo-card__header-visual--contents-area">
+                  <h1 id="page-title" class="{{HEADER_VISUAL_TITLE_CLASS}}">{{HEADER_VISUAL_TITLE}}</h1>
+                  <p id="page-description" class="memo-card__header-visual--contents-description">{{HEADER_VISUAL_DESCRIPTION}}</p>
+                </hgroup>
+              </div>
+            </div>
           </header>
           <section class="memo-card__editor-section" aria-labelledby="memo-editor-title">
             <h2 id="memo-editor-title" class="memo-card__editor-title">{{EDITOR_TITLE}}</h2>

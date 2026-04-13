@@ -148,6 +148,14 @@ type LocaleMessages = {
     metaDescription: string
     pageTitle: string
     pageDescription: string
+    headerVisualFontHref: string
+    headerVisualTitleClass: string
+    headerVisualTabOne: string
+    headerVisualTabTwo: string
+    headerVisualTabThree: string
+    headerVisualTabFour: string
+    headerVisualTitle: string
+    headerVisualDescription: string
     footerHome: string
     footerContact: string
     footerPrivacy: string
@@ -427,6 +435,14 @@ const createHomePage = (
     SITE_NAME: escapeHtml(localeMessages.ogSiteName),
     PAGE_TITLE: escapeHtml(localeMessages.home.pageTitle),
     PAGE_DESCRIPTION: escapeHtml(localeMessages.home.pageDescription),
+    HEADER_VISUAL_FONT_HREF: escapeHtml(localeMessages.home.headerVisualFontHref),
+    HEADER_VISUAL_TITLE_CLASS: escapeHtml(localeMessages.home.headerVisualTitleClass),
+    HEADER_VISUAL_TAB_ONE: escapeHtml(localeMessages.home.headerVisualTabOne),
+    HEADER_VISUAL_TAB_TWO: escapeHtml(localeMessages.home.headerVisualTabTwo),
+    HEADER_VISUAL_TAB_THREE: escapeHtml(localeMessages.home.headerVisualTabThree),
+    HEADER_VISUAL_TAB_FOUR: escapeHtml(localeMessages.home.headerVisualTabFour),
+    HEADER_VISUAL_TITLE: escapeHtml(localeMessages.home.headerVisualTitle),
+    HEADER_VISUAL_DESCRIPTION: escapeHtml(localeMessages.home.headerVisualDescription),
     EDITOR_TITLE: escapeHtml(localeMessages.memo.editorTitle),
     MEMO_PLACEHOLDER: escapeHtml(localeMessages.memo.placeholder),
     ICON_SECTION_ARIA_LABEL: escapeHtml(localeMessages.iconSectionAriaLabel),
