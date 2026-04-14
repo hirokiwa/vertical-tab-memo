@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="{{HTML_LANG}}">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles/app.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="{{META_DESCRIPTION}}" />
+    <title>{{META_TITLE}}</title>
+    <meta name="apple-mobile-web-app-title" content="{{APPLE_MOBILE_WEB_APP_TITLE}}" />
+    <link rel="manifest" href="{{MANIFEST_HREF}}" />
+    <link href="{{HEADER_VISUAL_FONT_HREF}}" rel="stylesheet" />
+  </head>
+  <body>
+    <svg class="app-icon-defs" aria-hidden="true" focusable="false">
+      <symbol id="icon-external-link" viewBox="0 -960 960 960">
+        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+      </symbol>
+    </svg>
+    <div class="memo-app">
+      <main class="memo-app__main">
+        <article class="memo-card not-found-page">
+          <div class="memo-card__heading-group">
+            <div class="memo-card__header-visual">
+              <aside class="memo-card__header-visual--tabs-area" aria-hidden="true">
+                <ul class="memo-card__header-visual--tabs-list">
+                  <li class="memo-card__header-visual--tab">
+                    <span class="memo-card__header-visual--tab-icon" aria-hidden="true">🔥</span>
+                    <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_ONE}}</span>
+                  </li>
+                  <li class="memo-card__header-visual--tab memo-card__header-visual--tab-selected">
+                    <span class="memo-card__header-visual--tab-icon" aria-hidden="true">🌏</span>
+                    <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_TWO}}</span>
+                  </li>
+                  <li class="memo-card__header-visual--tab">
+                    <span class="memo-card__header-visual--tab-icon" aria-hidden="true">👆</span>
+                    <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_THREE}}</span>
+                  </li>
+                  <li class="memo-card__header-visual--tab">
+                    <span class="memo-card__header-visual--tab-icon" aria-hidden="true">🎉</span>
+                    <span class="memo-card__header-visual--tab-label">{{HEADER_VISUAL_TAB_FOUR}}</span>
+                  </li>
+                </ul>
+              </aside>
+              <hgroup class="memo-card__header-visual--contents-area">
+                <h1 class="{{HEADER_VISUAL_TITLE_CLASS}}">{{HEADER_VISUAL_TITLE}}</h1>
+                <p class="memo-card__header-visual--contents-description">{{HEADER_VISUAL_DESCRIPTION}}</p>
+              </hgroup>
+            </div>
+          </div>
+          <section class="not-found-page__body" aria-labelledby="not-found-title">
+            <h2 id="not-found-title" class="not-found-page__title">{{NOT_FOUND_TITLE}}</h2>
+            <p class="not-found-page__description">{{NOT_FOUND_DESCRIPTION}}</p>
+            <a class="not-found-page__home-link" href="{{NOT_FOUND_HOME_HREF}}">{{NOT_FOUND_HOME_LABEL}}</a>
+          </section>
+        </article>
+      </main>
+      <footer class="memo-app__footer" aria-label="{{FOOTER_ARIA_LABEL}}">
+        <nav class="memo-app__footer-nav" aria-label="{{FOOTER_NAV_ARIA_LABEL}}">
+          <a class="memo-app__footer-link" href="{{HOME_LINK_HREF}}">
+            <svg class="memo-app__footer-link-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+              <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+            </svg>
+            <span>{{HOME_LINK_TEXT}}</span>
+          </a>
+          <a class="memo-app__footer-link" href="{{CONTACT_LINK_HREF}}">
+            <svg class="memo-app__footer-link-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+              <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+            </svg>
+            <span>{{CONTACT_LINK_TEXT}}</span>
+          </a>
+          <a class="memo-app__footer-link" href="{{PRIVACY_LINK_HREF}}">
+            <svg class="memo-app__footer-link-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+              <path d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5ZM480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z" />
+            </svg>
+            <span>{{PRIVACY_LINK_TEXT}}</span>
+          </a>
+        </nav>
+        <p class="memo-app__footer-credit">
+          <span class="memo-app__footer-credit-symbol" aria-hidden="true">&copy;</span>
+          <span class="memo-app__footer-credit-prefix">{{CREATOR_LINK_PREFIX}}</span>
+          <a class="memo-app__footer-credit-link" href="{{CREATOR_LINK_HREF}}" target="_blank" rel="noopener noreferrer">
+            <span>{{CREATOR_LINK_LABEL}}</span>
+            <span class="screen-reader-only">{{EXTERNAL_LINK_SR_TEXT}}</span>
+            <svg class="memo-app__footer-credit-icon" fill="currentColor" aria-hidden="true">
+              <use href="#icon-external-link" />
+            </svg>
+          </a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

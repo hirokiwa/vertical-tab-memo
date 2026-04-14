@@ -37,6 +37,10 @@ gtag('config', 'G-TJXMD0CGC7');`,
 } as const
 
 const createSeoTags = (pathname: string) => {
+  if (pathname === '/.generated/404.html' || pathname === '/404.html') {
+    return []
+  }
+
   const normalizedGeneratedPathname = pathname.startsWith('/.generated/')
     ? pathname.replace(/^\/\.generated/, '')
     : pathname === '/.generated/index.html'

@@ -165,6 +165,11 @@ type LocaleMessages = {
     footerHome: string
     footerContact: string
     footerPrivacy: string
+    notFoundMetaTitle: string
+    notFoundMetaDescription: string
+    notFoundTitle: string
+    notFoundDescription: string
+    notFoundHomeLabel: string
   }
   contact: {
     metaTitle: string
@@ -198,6 +203,7 @@ type GeneratedPagePaths = {
   generatedRoot: string
   inputs: Record<string, string>
   routes: Record<string, string>
+  notFoundPage: string
 }
 
 const ensureDirectory = (directoryPath: string): void => {
@@ -315,6 +321,25 @@ const createHomeConfigJson = (localeMessages: LocaleMessages): string =>
     customValidationMultiple: localeMessages.memo.customValidationMultiple,
     share: localeMessages.memo.share,
   }).replaceAll('</script', '<\\/script')
+
+const createFooterReplacements = (
+  messages: SiteMessages,
+  localeMessages: LocaleMessages,
+  locale: Locale,
+): Record<string, string> => ({
+  FOOTER_ARIA_LABEL: escapeHtml(localeMessages.homeFooterAriaLabel),
+  FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.homeFooterNavAriaLabel),
+  CREATOR_LINK_HREF: messages.site.creatorUrl,
+  CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
+  CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
+  EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
+  HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
+  HOME_LINK_TEXT: escapeHtml(localeMessages.home.footerHome),
+  CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
+  CONTACT_LINK_TEXT: escapeHtml(localeMessages.home.footerContact),
+  PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
+  PRIVACY_LINK_TEXT: escapeHtml(localeMessages.home.footerPrivacy),
+})
 
 const resolveInternalHref = (locale: Locale, href: string): string => {
   if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('#')) {
@@ -442,6 +467,7 @@ const createHomePage = (
     localeMessages.home.metaDescription,
     pagePath,
   )
+  const footerReplacements = createFooterReplacements(messages, localeMessages, locale)
 
   return createLocalizedPage(template, {
     HTML_LANG: localeMessages.htmlLang,
@@ -497,22 +523,41 @@ const createHomePage = (
     CUSTOM_SAVE_LABEL: escapeHtml(localeMessages.memo.customSaveLabel),
     PAGE_CONFIG_JSON: createHomeConfigJson(localeMessages),
     AD_SECTION_ARIA_LABEL: escapeHtml(localeMessages.adSectionAriaLabel),
-    FOOTER_ARIA_LABEL: escapeHtml(localeMessages.homeFooterAriaLabel),
-    FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.homeFooterNavAriaLabel),
-    CREATOR_LINK_HREF: messages.site.creatorUrl,
-    CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
-    CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
-    EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
-    HOME_LINK_HREF: createLocalizedPath(locale, messages.site.homePath),
-    HOME_LINK_TEXT: escapeHtml(localeMessages.home.footerHome),
-    CONTACT_LINK_HREF: createLocalizedPath(locale, messages.site.contactPath),
-    CONTACT_LINK_TEXT: escapeHtml(localeMessages.home.footerContact),
-    PRIVACY_LINK_HREF: createLocalizedPath(locale, messages.site.privacyPath),
-    PRIVACY_LINK_TEXT: escapeHtml(localeMessages.home.footerPrivacy),
     X_ICON_URL: messages.site.xIconUrl,
     LINE_ICON_URL: messages.site.lineIconUrl,
     ...socialMetaReplacements,
     ...iconOptionReplacements,
+    ...footerReplacements,
+  })
+}
+
+const createNotFoundPage = (
+  template: string,
+  messages: SiteMessages,
+  locale: Locale,
+  localeMessages: LocaleMessages,
+): string => {
+  const footerReplacements = createFooterReplacements(messages, localeMessages, locale)
+
+  return createLocalizedPage(template, {
+    HTML_LANG: localeMessages.htmlLang,
+    META_DESCRIPTION: escapeHtml(localeMessages.home.notFoundMetaDescription),
+    META_TITLE: escapeHtml(localeMessages.home.notFoundMetaTitle),
+    APPLE_MOBILE_WEB_APP_TITLE: escapeHtml(localeMessages.appleMobileWebAppTitle),
+    MANIFEST_HREF: createManifestHref(locale),
+    HEADER_VISUAL_FONT_HREF: escapeHtml(localeMessages.home.headerVisualFontHref),
+    HEADER_VISUAL_TITLE_CLASS: escapeHtml(localeMessages.home.headerVisualTitleClass),
+    HEADER_VISUAL_TAB_ONE: escapeHtml(localeMessages.home.headerVisualTabOne),
+    HEADER_VISUAL_TAB_TWO: escapeHtml(localeMessages.home.headerVisualTabTwo),
+    HEADER_VISUAL_TAB_THREE: escapeHtml(localeMessages.home.headerVisualTabThree),
+    HEADER_VISUAL_TAB_FOUR: escapeHtml(localeMessages.home.headerVisualTabFour),
+    HEADER_VISUAL_TITLE: escapeHtml(localeMessages.home.headerVisualTitle),
+    HEADER_VISUAL_DESCRIPTION: escapeHtml(localeMessages.home.headerVisualDescription),
+    NOT_FOUND_TITLE: escapeHtml(localeMessages.home.notFoundTitle),
+    NOT_FOUND_DESCRIPTION: escapeHtml(localeMessages.home.notFoundDescription),
+    NOT_FOUND_HOME_HREF: createLocalizedPath(locale, messages.site.homePath),
+    NOT_FOUND_HOME_LABEL: escapeHtml(localeMessages.home.notFoundHomeLabel),
+    ...footerReplacements,
   })
 }
 
@@ -627,10 +672,13 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
   const homeTemplate = readTextFile(resolve(projectRoot, 'templates/home.html'))
   const contactTemplate = readTextFile(resolve(projectRoot, 'templates/contact.html'))
   const privacyTemplate = readTextFile(resolve(projectRoot, 'templates/privacy.html'))
+  const notFoundTemplate = readTextFile(resolve(projectRoot, 'templates/404.html'))
+  const jaLocaleMessages = messages.locales.ja as LocaleMessages
   const generatedRoot = resolve(projectRoot, '.generated')
 
   const inputs: Record<string, string> = {}
   const routes: Record<string, string> = {}
+  const notFoundPage = resolve(generatedRoot, '404.html')
 
   ;(['ja', 'en'] as Locale[]).forEach((locale) => {
     const localeMessages = messages.locales[locale] as LocaleMessages
@@ -662,5 +710,8 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
     routes[createLocalizedPath(locale, messages.site.privacyPath)] = privacyFilePath
   })
 
-  return { generatedRoot, inputs, routes }
+  writeGeneratedFile(notFoundPage, createNotFoundPage(notFoundTemplate, messages, 'ja', jaLocaleMessages))
+  inputs['404'] = notFoundPage
+
+  return { generatedRoot, inputs, routes, notFoundPage }
 }

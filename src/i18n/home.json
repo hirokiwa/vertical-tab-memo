@@ -42,7 +42,12 @@
         "headerVisualDescription": "ブラウザの縦タブで表示する 1 行メモ",
         "footerHome": "ホーム",
         "footerContact": "お問い合わせ",
-        "footerPrivacy": "プライバシーポリシー"
+        "footerPrivacy": "プライバシーポリシー",
+        "notFoundMetaTitle": "ページが見つかりません | 縦タブメモ",
+        "notFoundMetaDescription": "お探しのページは見つかりませんでした。",
+        "notFoundTitle": "ページが見つかりません",
+        "notFoundDescription": "URL が間違っているか、ページが移動または削除された可能性があります。",
+        "notFoundHomeLabel": "トップへ戻る"
       }
     },
     "en": {
@@ -87,7 +92,12 @@
         "headerVisualDescription": "A one-line memo for your browser's vertical tabs",
         "footerHome": "Home",
         "footerContact": "Contact",
-        "footerPrivacy": "Privacy Policy"
+        "footerPrivacy": "Privacy Policy",
+        "notFoundMetaTitle": "Page Not Found | Vertical Tab Memo",
+        "notFoundMetaDescription": "The page you are looking for could not be found.",
+        "notFoundTitle": "Page not found",
+        "notFoundDescription": "The URL may be incorrect, or the page may have moved or been removed.",
+        "notFoundHomeLabel": "Back to top"
       }
     }
   }
