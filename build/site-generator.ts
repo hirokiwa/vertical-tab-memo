@@ -265,9 +265,11 @@ const normalizePath = (pathValue: string): string => (pathValue.endsWith('/') ? 
 
 const createLocalizedPath = (locale: Locale, pathValue: string): string => {
   const normalizedPath = normalizePath(pathValue)
-  return locale === 'ja' || locale === 'en'
-    ? `/${locale}${normalizedPath === '/' ? '/' : normalizedPath}`
-    : normalizedPath
+  if (locale === 'ja') {
+    return normalizedPath
+  }
+
+  return `/${locale}${normalizedPath === '/' ? '/' : normalizedPath}`
 }
 
 const createSharePageConfig = (localeMessages: LocaleMessages): PageConfig => ({
@@ -327,7 +329,7 @@ const createLocalizedPage = (
   replacements: Record<string, string>,
 ): string => replaceTemplateTokens(template, replacements)
 
-const createManifestHref = (locale: Locale): string => `/${locale}/site.webmanifest`
+const createManifestHref = (locale: Locale): string => (locale === 'ja' ? '/site.webmanifest' : `/${locale}/site.webmanifest`)
 
 const createIconOptionReplacements = (messages: SiteMessages, locale: Locale): Record<string, string> =>
   Object.fromEntries(
@@ -620,32 +622,11 @@ const createPrivacyPage = (
   })
 }
 
-const createRedirectPage = (
-  template: string,
-  socialMetaReplacements: Record<string, string>,
-  localeMessages: LocaleMessages,
-  redirectTitle: string,
-  redirectMessage: string,
-  redirectSuffix: string,
-  extraComment: string,
-): string =>
-  createLocalizedPage(template, {
-    ...socialMetaReplacements,
-    APPLE_MOBILE_WEB_APP_TITLE: escapeHtml(localeMessages.appleMobileWebAppTitle),
-    MANIFEST_HREF: '/site.webmanifest',
-    REDIRECT_TITLE: escapeHtml(redirectTitle),
-    REDIRECT_MESSAGE: escapeHtml(redirectMessage),
-    REDIRECT_SUFFIX: redirectSuffix,
-    EXTRA_COMMENT: extraComment,
-  })
-
 export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths => {
   const messages = readMessages(projectRoot)
   const homeTemplate = readTextFile(resolve(projectRoot, 'templates/home.html'))
   const contactTemplate = readTextFile(resolve(projectRoot, 'templates/contact.html'))
   const privacyTemplate = readTextFile(resolve(projectRoot, 'templates/privacy.html'))
-  const redirectTemplate = readTextFile(resolve(projectRoot, 'templates/redirect.html'))
-  const jaLocaleMessages = messages.locales.ja as LocaleMessages
   const generatedRoot = resolve(projectRoot, '.generated')
 
   const inputs: Record<string, string> = {}
@@ -653,9 +634,9 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
 
   ;(['ja', 'en'] as Locale[]).forEach((locale) => {
     const localeMessages = messages.locales[locale] as LocaleMessages
-    const localizedRoot = resolve(generatedRoot, locale)
-    const localizedContactRoot = resolve(generatedRoot, locale, 'contact')
-    const localizedPrivacyRoot = resolve(generatedRoot, locale, 'privacy')
+    const localizedRoot = locale === 'ja' ? generatedRoot : resolve(generatedRoot, locale)
+    const localizedContactRoot = locale === 'ja' ? resolve(generatedRoot, 'contact') : resolve(generatedRoot, locale, 'contact')
+    const localizedPrivacyRoot = locale === 'ja' ? resolve(generatedRoot, 'privacy') : resolve(generatedRoot, locale, 'privacy')
 
     ensureDirectory(localizedRoot)
     ensureDirectory(localizedContactRoot)
@@ -669,79 +650,17 @@ export const generateLocalizedPages = (projectRoot: string): GeneratedPagePaths 
     writeGeneratedFile(contactFilePath, createContactPage(contactTemplate, messages, locale, localeMessages))
     writeGeneratedFile(privacyFilePath, createPrivacyPage(privacyTemplate, messages, locale, localeMessages))
 
-    inputs[`${locale}/index`] = homeFilePath
-    inputs[`${locale}/contact/index`] = contactFilePath
-    inputs[`${locale}/privacy/index`] = privacyFilePath
-    routes[`/${locale}/`] = homeFilePath
-    routes[`/${locale}/contact/`] = contactFilePath
-    routes[`/${locale}/privacy/`] = privacyFilePath
+    const homeInputKey = locale === 'ja' ? 'index' : `${locale}/index`
+    const contactInputKey = locale === 'ja' ? 'contact/index' : `${locale}/contact/index`
+    const privacyInputKey = locale === 'ja' ? 'privacy/index' : `${locale}/privacy/index`
+
+    inputs[homeInputKey] = homeFilePath
+    inputs[contactInputKey] = contactFilePath
+    inputs[privacyInputKey] = privacyFilePath
+    routes[createLocalizedPath(locale, messages.site.homePath)] = homeFilePath
+    routes[createLocalizedPath(locale, messages.site.contactPath)] = contactFilePath
+    routes[createLocalizedPath(locale, messages.site.privacyPath)] = privacyFilePath
   })
-
-  const rootIndexFilePath = resolve(generatedRoot, 'index.html')
-  const rootContactFilePath = resolve(generatedRoot, 'contact/index.html')
-  const rootPrivacyFilePath = resolve(generatedRoot, 'privacy/index.html')
-
-  writeGeneratedFile(
-    rootIndexFilePath,
-    createRedirectPage(
-      redirectTemplate,
-      createSocialMetaReplacements(
-        messages,
-        jaLocaleMessages,
-        jaLocaleMessages.home.metaTitle,
-        jaLocaleMessages.home.metaDescription,
-        messages.site.homePath,
-      ),
-      jaLocaleMessages,
-      'Redirecting...',
-      'Redirecting to your preferred language...',
-      '/',
-      '',
-    ),
-  )
-  writeGeneratedFile(
-    rootContactFilePath,
-    createRedirectPage(
-      redirectTemplate,
-      createSocialMetaReplacements(
-        messages,
-        jaLocaleMessages,
-        jaLocaleMessages.contact.metaTitle,
-        jaLocaleMessages.contact.metaDescription,
-        messages.site.contactPath,
-      ),
-      jaLocaleMessages,
-      'Redirecting...',
-      'Redirecting to your preferred language...',
-      '/contact/',
-      '<!-- <script type="module" src="/src/entries/contact.ts"></script> -->',
-    ),
-  )
-  writeGeneratedFile(
-    rootPrivacyFilePath,
-    createRedirectPage(
-      redirectTemplate,
-      createSocialMetaReplacements(
-        messages,
-        jaLocaleMessages,
-        jaLocaleMessages.privacy.metaTitle,
-        jaLocaleMessages.privacy.metaDescription,
-        messages.site.privacyPath,
-      ),
-      jaLocaleMessages,
-      'Redirecting...',
-      'Redirecting to your preferred language...',
-      '/privacy/',
-      '<!-- <script type="module" src="/src/entries/privacy.ts"></script> -->',
-    ),
-  )
-
-  inputs.index = rootIndexFilePath
-  inputs['contact/index'] = rootContactFilePath
-  inputs['privacy/index'] = rootPrivacyFilePath
-  routes['/'] = rootIndexFilePath
-  routes['/contact/'] = rootContactFilePath
-  routes['/privacy/'] = rootPrivacyFilePath
 
   return { generatedRoot, inputs, routes }
 }

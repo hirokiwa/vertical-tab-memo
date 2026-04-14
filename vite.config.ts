@@ -47,17 +47,12 @@ const createSeoTags = (pathname: string) => {
     ? normalizedGeneratedPathname.replace(/index\.html$/, '')
     : normalizedGeneratedPathname
 
+  const isEnglishPath = normalizedPathname === '/en/' || normalizedPathname.startsWith('/en/')
   const pagePath =
-    normalizedPathname === '/ja/' || normalizedPathname === '/en/'
-      ? '/'
-      : normalizedPathname.startsWith('/ja/')
-        ? normalizedPathname.replace(/^\/ja/, '')
-        : normalizedPathname.startsWith('/en/')
-          ? normalizedPathname.replace(/^\/en/, '')
-          : normalizedPathname
+    normalizedPathname === '/en/' ? '/' : isEnglishPath ? normalizedPathname.replace(/^\/en/, '') : normalizedPathname
 
-  const canonicalPath = normalizedPathname
-  const jaPath = `/ja${pagePath === '/' ? '/' : pagePath}`
+  const canonicalPath = isEnglishPath ? `/en${pagePath === '/' ? '/' : pagePath}` : pagePath
+  const jaPath = pagePath
   const enPath = `/en${pagePath === '/' ? '/' : pagePath}`
   const defaultPath = pagePath
 
