@@ -13,6 +13,7 @@ import type { HomeScreenService } from './home-screen-service'
 import type { PageConfig } from './page-config'
 
 export type StateService = ReturnType<typeof createStateService>
+const INPUT_SETTLE_DELAY_MS = 500
 
 const createNormalizedMemoState = (memoState: MemoState): MemoState => ({
   memoText: clampMemoText(memoState.memoText),
@@ -28,6 +29,8 @@ export const createStateService = (
 ) => {
   let updateSelectedIconButtons = (_selectedIcon: string): void => {}
   const stateChangeListeners = new Set<(memoState: MemoState) => void>()
+  const settledStateChangeListeners = new Set<(memoState: MemoState) => void>()
+  let settledStateChangeTimer = 0
 
   const readCurrentMemoState = (): MemoState => ({
     memoText: readMemoText(pageElements),
@@ -70,6 +73,12 @@ export const createStateService = (
     stateChangeListeners.forEach((listener) => {
       listener(normalizedMemoState)
     })
+    window.clearTimeout(settledStateChangeTimer)
+    settledStateChangeTimer = window.setTimeout(() => {
+      settledStateChangeListeners.forEach((listener) => {
+        listener(normalizedMemoState)
+      })
+    }, INPUT_SETTLE_DELAY_MS)
   }
 
   const applyMemoState = (memoState: MemoState): void => {
@@ -97,8 +106,16 @@ export const createStateService = (
     }
   }
 
+  const addSettledStateChangeListener = (listener: (memoState: MemoState) => void): (() => void) => {
+    settledStateChangeListeners.add(listener)
+    return () => {
+      settledStateChangeListeners.delete(listener)
+    }
+  }
+
   return {
     addStateChangeListener,
+    addSettledStateChangeListener,
     applyMemoState,
     clearCustomIconValidationMessage,
     readCurrentMemoState,

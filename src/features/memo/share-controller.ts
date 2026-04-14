@@ -13,7 +13,6 @@ type SetupShareParameters = {
 const COPY_ICON_PATH =
   'M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z'
 const CHECK_ICON_PATH = 'M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'
-const SHARE_LINK_UPDATE_DELAY_MS = 500
 
 export const createXShareHref = (
   memoState: MemoState,
@@ -36,18 +35,9 @@ export const createLineShareHref = (
 }
 
 export const setupShare = ({ pageConfig, pageElements, stateService }: SetupShareParameters): void => {
-  let shareLinkUpdateTimer = 0
-
   const updateShareLinks = (memoState: MemoState): void => {
     pageElements.memoShareXLink.href = createXShareHref(memoState, pageConfig, window.location)
     pageElements.memoShareLineLink.href = createLineShareHref(memoState, pageConfig, window.location)
-  }
-
-  const scheduleShareLinkUpdate = (memoState: MemoState): void => {
-    window.clearTimeout(shareLinkUpdateTimer)
-    shareLinkUpdateTimer = window.setTimeout(() => {
-      updateShareLinks(memoState)
-    }, SHARE_LINK_UPDATE_DELAY_MS)
   }
 
   const onCopyClick = (): void => {
@@ -81,6 +71,6 @@ export const setupShare = ({ pageConfig, pageElements, stateService }: SetupShar
 
   pageElements.memoUrlCopyButton.addEventListener('click', onCopyClick)
   pageElements.memoShareNativeButton.addEventListener('click', onShareNativeClick)
-  stateService.addStateChangeListener(scheduleShareLinkUpdate)
+  stateService.addSettledStateChangeListener(updateShareLinks)
   updateShareLinks(stateService.readCurrentMemoState())
 }
