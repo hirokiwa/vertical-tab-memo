@@ -8,6 +8,7 @@ const MEMO_URL_COPY_ICON_ID = 'memo-url-copy-icon'
 const MEMO_SHARE_X_ID = 'memo-share-x'
 const MEMO_SHARE_LINE_ID = 'memo-share-line'
 const MEMO_SHARE_NATIVE_ID = 'memo-share-native'
+const MEMO_LANGUAGE_SWITCH_ID = 'memo-language-switch'
 const MEMO_CUSTOM_ICON_TOGGLE_ID = 'memo-custom-icon-toggle'
 const MEMO_CUSTOM_ICON_TOGGLE_ITEM_ID = 'memo-custom-icon-toggle-item'
 const MEMO_CUSTOM_ICON_DIALOG_ID = 'memo-custom-icon-dialog'
@@ -34,6 +35,7 @@ export const elementIds = {
   memoShareX: MEMO_SHARE_X_ID,
   memoShareLine: MEMO_SHARE_LINE_ID,
   memoShareNative: MEMO_SHARE_NATIVE_ID,
+  memoLanguageSwitch: MEMO_LANGUAGE_SWITCH_ID,
   memoCustomIconToggle: MEMO_CUSTOM_ICON_TOGGLE_ID,
   memoCustomIconToggleItem: MEMO_CUSTOM_ICON_TOGGLE_ITEM_ID,
   memoCustomIconDialog: MEMO_CUSTOM_ICON_DIALOG_ID,

@@ -19,6 +19,7 @@ export type PageElements = {
   memoShareXLink: HTMLAnchorElement
   memoShareLineLink: HTMLAnchorElement
   memoShareNativeButton: HTMLButtonElement
+  memoLanguageSwitchLink: HTMLAnchorElement
   memoCustomIconToggleButton: HTMLButtonElement
   memoCustomIconToggleItem: HTMLLIElement
   memoCustomIconDialog: HTMLDialogElement
@@ -46,6 +47,7 @@ export const getPageElements = (): PageElements => ({
   memoShareXLink: getRequiredElementById<HTMLAnchorElement>(elementIds.memoShareX),
   memoShareLineLink: getRequiredElementById<HTMLAnchorElement>(elementIds.memoShareLine),
   memoShareNativeButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareNative),
+  memoLanguageSwitchLink: getRequiredElementById<HTMLAnchorElement>(elementIds.memoLanguageSwitch),
   memoCustomIconToggleButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoCustomIconToggle),
   memoCustomIconToggleItem: getRequiredElementById<HTMLLIElement>(elementIds.memoCustomIconToggleItem),
   memoCustomIconDialog: getRequiredElementById<HTMLDialogElement>(elementIds.memoCustomIconDialog),

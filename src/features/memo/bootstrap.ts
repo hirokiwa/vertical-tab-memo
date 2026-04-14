@@ -3,6 +3,7 @@ import { getPageElements } from './elements'
 import { setupEditor } from './editor-controller'
 import { createHomeScreenService } from './home-screen-service'
 import { setupIconPicker } from './icon-picker-controller'
+import { setupLanguageSwitch } from './language-switch-controller'
 import type { PageConfig } from './page-config'
 import { setupShare } from './share-controller'
 import { createStateService } from './state-service'
@@ -23,6 +24,11 @@ export const initializePage = (initialMemoState: MemoState, pageConfig: PageConf
 
   setupShare({
     pageConfig,
+    pageElements,
+    stateService,
+  })
+
+  setupLanguageSwitch({
     pageElements,
     stateService,
   })
