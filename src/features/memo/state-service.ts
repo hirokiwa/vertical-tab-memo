@@ -27,6 +27,7 @@ export const createStateService = (
   homeScreenService: HomeScreenService,
 ) => {
   let updateSelectedIconButtons = (_selectedIcon: string): void => {}
+  const stateChangeListeners = new Set<(memoState: MemoState) => void>()
 
   const readCurrentMemoState = (): MemoState => ({
     memoText: readMemoText(pageElements),
@@ -63,8 +64,12 @@ export const createStateService = (
   }
 
   const syncMemoState = (memoState: MemoState): void => {
-    updateView(memoState)
-    updateSearch(memoState)
+    const normalizedMemoState = createNormalizedMemoState(memoState)
+    updateView(normalizedMemoState)
+    updateSearch(normalizedMemoState)
+    stateChangeListeners.forEach((listener) => {
+      listener(normalizedMemoState)
+    })
   }
 
   const applyMemoState = (memoState: MemoState): void => {
@@ -85,7 +90,15 @@ export const createStateService = (
     updateSelectedIconButtons = nextUpdater
   }
 
+  const addStateChangeListener = (listener: (memoState: MemoState) => void): (() => void) => {
+    stateChangeListeners.add(listener)
+    return () => {
+      stateChangeListeners.delete(listener)
+    }
+  }
+
   return {
+    addStateChangeListener,
     applyMemoState,
     clearCustomIconValidationMessage,
     readCurrentMemoState,

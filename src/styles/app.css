@@ -709,6 +709,7 @@ body {
   font-size: 0.9rem;
   line-height: 1.2;
   text-align: center;
+  text-decoration: none;
   cursor: pointer;
   transition:
     border-color 160ms ease,

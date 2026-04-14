@@ -222,18 +222,18 @@
           <section class="memo-card__share-section" aria-labelledby="memo-share-title" aria-describedby="memo-share-note">
             <h2 id="memo-share-title" class="memo-card__url-title">{{SHARE_TITLE}}</h2>
             <div class="memo-card__share-actions" role="group" aria-label="{{SHARE_GROUP_ARIA_LABEL}}">
-              <button id="memo-share-x" class="memo-card__share-button" type="button" aria-label="{{SHARE_X_ARIA_LABEL}}">
+              <a id="memo-share-x" class="memo-card__share-button" href="{{SHARE_X_HREF}}" target="_blank" rel="noopener noreferrer" aria-label="{{SHARE_X_ARIA_LABEL}}">
                 <span class="memo-card__share-icon memo-card__share-icon--image" aria-hidden="true">
                   <img class="memo-card__share-icon-image" src="{{X_ICON_URL}}" alt="" width="24" height="24" />
                 </span>
                 <span class="memo-card__share-label">{{SHARE_X_LABEL}}</span>
-              </button>
-              <button id="memo-share-line" class="memo-card__share-button" type="button" aria-label="{{SHARE_LINE_ARIA_LABEL}}">
+              </a>
+              <a id="memo-share-line" class="memo-card__share-button" href="{{SHARE_LINE_HREF}}" target="_blank" rel="noopener noreferrer" aria-label="{{SHARE_LINE_ARIA_LABEL}}">
                 <span class="memo-card__share-icon memo-card__share-icon--image" aria-hidden="true">
                   <img class="memo-card__share-icon-image" src="{{LINE_ICON_URL}}" alt="" width="24" height="24" />
                 </span>
                 <span class="memo-card__share-label">{{SHARE_LINE_LABEL}}</span>
-              </button>
+              </a>
               <button id="memo-url-copy" class="memo-card__share-button" type="button" aria-label="{{COPY_ARIA_LABEL}}">
                 <span class="memo-card__share-icon memo-card__share-icon--copy" aria-hidden="true">
                   <svg id="memo-url-copy-icon" class="memo-card__share-icon-svg" viewBox="0 -960 960 960" fill="currentColor">

@@ -16,8 +16,8 @@ export type PageElements = {
   memoPreviewIcon: HTMLSpanElement
   memoUrlCopyButton: HTMLButtonElement
   memoUrlCopyIconPath: SVGPathElement
-  memoShareXButton: HTMLButtonElement
-  memoShareLineButton: HTMLButtonElement
+  memoShareXLink: HTMLAnchorElement
+  memoShareLineLink: HTMLAnchorElement
   memoShareNativeButton: HTMLButtonElement
   memoCustomIconToggleButton: HTMLButtonElement
   memoCustomIconToggleItem: HTMLLIElement
@@ -43,8 +43,8 @@ export const getPageElements = (): PageElements => ({
   memoPreviewIcon: getRequiredElementById<HTMLSpanElement>(elementIds.memoPreviewIcon),
   memoUrlCopyButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoUrlCopy),
   memoUrlCopyIconPath: document.getElementById(elementIds.memoUrlCopyIcon)?.querySelector('path') as SVGPathElement,
-  memoShareXButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareX),
-  memoShareLineButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareLine),
+  memoShareXLink: getRequiredElementById<HTMLAnchorElement>(elementIds.memoShareX),
+  memoShareLineLink: getRequiredElementById<HTMLAnchorElement>(elementIds.memoShareLine),
   memoShareNativeButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoShareNative),
   memoCustomIconToggleButton: getRequiredElementById<HTMLButtonElement>(elementIds.memoCustomIconToggle),
   memoCustomIconToggleItem: getRequiredElementById<HTMLLIElement>(elementIds.memoCustomIconToggleItem),

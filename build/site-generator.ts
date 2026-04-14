@@ -1,5 +1,8 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
+import { DEFAULT_FAVICON_ICON, createMemoState } from '../src/lib/memo'
+import { createLineShareHref, createXShareHref } from '../src/features/memo/share-controller'
+import type { PageConfig } from '../src/features/memo/page-config'
 
 type Locale = 'ja' | 'en'
 type SiteMessages = {
@@ -267,6 +270,18 @@ const createLocalizedPath = (locale: Locale, pathValue: string): string => {
     : normalizedPath
 }
 
+const createSharePageConfig = (localeMessages: LocaleMessages): PageConfig => ({
+  customValidationEmpty: localeMessages.memo.customValidationEmpty,
+  customValidationMultiple: localeMessages.memo.customValidationMultiple,
+  fallbackMemoText: localeMessages.memo.fallbackText,
+  share: localeMessages.memo.share,
+})
+
+const createDefaultShareLocation = (messages: SiteMessages, locale: Locale): Pick<Location, 'origin' | 'pathname'> => ({
+  origin: messages.site.siteUrl,
+  pathname: createLocalizedPath(locale, messages.site.homePath),
+})
+
 const createAbsoluteUrl = (siteUrl: string, pathValue: string): string => {
   const normalizedSiteUrl = siteUrl.endsWith('/') ? siteUrl.slice(0, -1) : siteUrl
   return `${normalizedSiteUrl}${pathValue}`
@@ -412,6 +427,9 @@ const createHomePage = (
   locale: Locale,
   localeMessages: LocaleMessages,
 ): string => {
+  const sharePageConfig = createSharePageConfig(localeMessages)
+  const defaultMemoState = createMemoState('', DEFAULT_FAVICON_ICON)
+  const defaultShareLocation = createDefaultShareLocation(messages, locale)
   const switchPath = createLocalizedPath(localeMessages.switchLocale, messages.site.homePath)
   const pagePath = createLocalizedPath(locale, messages.site.homePath)
   const iconOptionReplacements = createIconOptionReplacements(messages, locale)
@@ -455,8 +473,10 @@ const createHomePage = (
     SHARE_GROUP_ARIA_LABEL: escapeHtml(localeMessages.shareGroupAriaLabel),
     SHARE_X_ARIA_LABEL: escapeHtml(localeMessages.memo.xAriaLabel),
     SHARE_X_LABEL: escapeHtml(localeMessages.memo.xLabel),
+    SHARE_X_HREF: createXShareHref(defaultMemoState, sharePageConfig, defaultShareLocation),
     SHARE_LINE_ARIA_LABEL: escapeHtml(localeMessages.memo.lineAriaLabel),
     SHARE_LINE_LABEL: escapeHtml(localeMessages.memo.lineLabel),
+    SHARE_LINE_HREF: createLineShareHref(defaultMemoState, sharePageConfig, defaultShareLocation),
     NEW_TAB_LABEL: escapeHtml(localeMessages.memo.newTabLabel),
     NEW_TAB_SECTION_ARIA_LABEL: escapeHtml(localeMessages.memo.newTabSectionAriaLabel),
     NEW_TAB_HREF: `${createLocalizedPath(locale, messages.site.homePath)}${localeMessages.memo.newTabHrefQuery}`,
