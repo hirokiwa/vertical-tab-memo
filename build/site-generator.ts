@@ -38,6 +38,7 @@ type CommonMessagesFile = {
       | 'ogLocale'
       | 'ogImageUrl'
       | 'ogSiteName'
+      | 'creatorUrl'
       | 'switchLabel'
       | 'switchLocale'
       | 'switchAriaLabel'
@@ -100,6 +101,7 @@ type LocaleMessages = {
   ogLocale: string
   ogImageUrl: string
   ogSiteName: string
+  creatorUrl: string
   switchLabel: string
   switchLocale: Locale
   switchAriaLabel: string
@@ -329,7 +331,7 @@ const createFooterReplacements = (
 ): Record<string, string> => ({
   FOOTER_ARIA_LABEL: escapeHtml(localeMessages.homeFooterAriaLabel),
   FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.homeFooterNavAriaLabel),
-  CREATOR_LINK_HREF: messages.site.creatorUrl,
+  CREATOR_LINK_HREF: localeMessages.creatorUrl,
   CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
   CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
   EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
@@ -605,7 +607,7 @@ const createContactPage = (
     CONTACT_EMAIL: messages.site.contactEmail,
     CONTACT_FORM_URL: localeMessages.contactFormUrl,
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.contactFooterNavAriaLabel),
-    CREATOR_LINK_HREF: messages.site.creatorUrl,
+    CREATOR_LINK_HREF: localeMessages.creatorUrl,
     CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
     CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
     EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
@@ -652,7 +654,7 @@ const createPrivacyPage = (
     TITLE: escapeHtml(localeMessages.privacy.title),
     LEAD: escapeHtml(localeMessages.privacy.lead),
     FOOTER_NAV_ARIA_LABEL: escapeHtml(localeMessages.privacyFooterNavAriaLabel),
-    CREATOR_LINK_HREF: messages.site.creatorUrl,
+    CREATOR_LINK_HREF: localeMessages.creatorUrl,
     CREATOR_LINK_PREFIX: escapeHtml(localeMessages.creatorCreditPrefix),
     CREATOR_LINK_LABEL: escapeHtml(localeMessages.creatorCreditLabel),
     EXTERNAL_LINK_SR_TEXT: escapeHtml(localeMessages.externalLinkScreenReaderText),
